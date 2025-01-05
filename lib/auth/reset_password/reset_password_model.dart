@@ -1,0 +1,54 @@
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart'
+    as smooth_page_indicator;
+import 'reset_password_widget.dart' show ResetPasswordWidget;
+import 'package:easy_debounce/easy_debounce.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+class ResetPasswordModel extends FlutterFlowModel<ResetPasswordWidget> {
+  ///  State fields for stateful widgets in this page.
+
+  final formKey = GlobalKey<FormState>();
+  // State field(s) for PageView widget.
+  PageController? pageViewController;
+
+  int get pageViewCurrentIndex => pageViewController != null &&
+          pageViewController!.hasClients &&
+          pageViewController!.page != null
+      ? pageViewController!.page!.round()
+      : 0;
+  // State field(s) for EmailTextField widget.
+  FocusNode? emailTextFieldFocusNode;
+  TextEditingController? emailTextFieldTextController;
+  String? Function(BuildContext, String?)?
+      emailTextFieldTextControllerValidator;
+  String? _emailTextFieldTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
+      return 'Has to be a valid email address.';
+    }
+    return null;
+  }
+
+  @override
+  void initState(BuildContext context) {
+    emailTextFieldTextControllerValidator =
+        _emailTextFieldTextControllerValidator;
+  }
+
+  @override
+  void dispose() {
+    emailTextFieldFocusNode?.dispose();
+    emailTextFieldTextController?.dispose();
+  }
+}
