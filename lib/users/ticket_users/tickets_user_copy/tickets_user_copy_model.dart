@@ -8,14 +8,14 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/users/ticket_users/modal_create_ticket_user/modal_create_ticket_user_widget.dart';
 import 'dart:ui';
-import 'tickets_user_widget.dart' show TicketsUserWidget;
+import 'tickets_user_copy_widget.dart' show TicketsUserCopyWidget;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class TicketsUserModel extends FlutterFlowModel<TicketsUserWidget> {
+class TicketsUserCopyModel extends FlutterFlowModel<TicketsUserCopyWidget> {
   ///  State fields for stateful widgets in this page.
 
   // Model for HeadeUser component.
@@ -46,6 +46,18 @@ class TicketsUserModel extends FlutterFlowModel<TicketsUserWidget> {
   TextEditingController? txtAffairClosedTicketTextController;
   String? Function(BuildContext, String?)?
       txtAffairClosedTicketTextControllerValidator;
+  // State field(s) for txtPriority widget.
+  FocusNode? txtPriorityFocusNode;
+  TextEditingController? txtPriorityTextController;
+  String? Function(BuildContext, String?)? txtPriorityTextControllerValidator;
+  // State field(s) for txtGroup widget.
+  FocusNode? txtGroupFocusNode;
+  TextEditingController? txtGroupTextController;
+  String? Function(BuildContext, String?)? txtGroupTextControllerValidator;
+  // State field(s) for txtType widget.
+  FocusNode? txtTypeFocusNode;
+  TextEditingController? txtTypeTextController;
+  String? Function(BuildContext, String?)? txtTypeTextControllerValidator;
   // Model for Divider component.
   late DividerModel dividerModel1;
   // State field(s) for txtDescriptionTicket widget.
@@ -104,6 +116,15 @@ class TicketsUserModel extends FlutterFlowModel<TicketsUserWidget> {
 
     txtAffairClosedTicketFocusNode?.dispose();
     txtAffairClosedTicketTextController?.dispose();
+
+    txtPriorityFocusNode?.dispose();
+    txtPriorityTextController?.dispose();
+
+    txtGroupFocusNode?.dispose();
+    txtGroupTextController?.dispose();
+
+    txtTypeFocusNode?.dispose();
+    txtTypeTextController?.dispose();
 
     dividerModel1.dispose();
     txtDescriptionTicketFocusNode?.dispose();

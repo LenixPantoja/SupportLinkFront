@@ -141,6 +141,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'EditProfileUser',
           path: '/editProfileUser',
           builder: (context, params) => EditProfileUserWidget(),
+        ),
+        FFRoute(
+          name: 'TicketsUserCopy',
+          path: '/ticketsUserCopy',
+          builder: (context, params) => TicketsUserCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

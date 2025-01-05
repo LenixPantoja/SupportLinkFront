@@ -20,3 +20,5 @@ export '/administrator/tickets/ticket_administrator/ticket_view/ticket_view_widg
     show TicketViewWidget;
 export '/users/profile_user/edit_profile_user/edit_profile_user_widget.dart'
     show EditProfileUserWidget;
+export '/users/ticket_users/tickets_user_copy/tickets_user_copy_widget.dart'
+    show TicketsUserCopyWidget;
