@@ -1,17 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
 import '/index.dart';
-import '/main.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -52,7 +45,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
               ),
             )
-          : LoginPageWidget(),
+          : const LoginPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -70,12 +63,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     ),
                   ),
                 )
-              : LoginPageWidget(),
+              : const LoginPageWidget(),
         ),
         FFRoute(
           name: 'LoginPage',
           path: '/loginPage',
-          builder: (context, params) => LoginPageWidget(),
+          builder: (context, params) => const LoginPageWidget(),
         ),
         FFRoute(
           name: 'ResetPassword',
@@ -90,57 +83,57 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'RegisterPage',
           path: '/registerPage',
-          builder: (context, params) => RegisterPageWidget(),
+          builder: (context, params) => const RegisterPageWidget(),
         ),
         FFRoute(
           name: 'Home',
           path: '/home',
-          builder: (context, params) => HomeWidget(),
+          builder: (context, params) => const HomeWidget(),
         ),
         FFRoute(
           name: 'DetailBuilding',
           path: '/detailBuilding',
-          builder: (context, params) => DetailBuildingWidget(),
+          builder: (context, params) => const DetailBuildingWidget(),
         ),
         FFRoute(
           name: 'Contactos',
           path: '/contactos',
-          builder: (context, params) => ContactosWidget(),
+          builder: (context, params) => const ContactosWidget(),
         ),
         FFRoute(
           name: 'TicketAdministrator',
           path: '/ticketAdministrator',
-          builder: (context, params) => TicketAdministratorWidget(),
+          builder: (context, params) => const TicketAdministratorWidget(),
         ),
         FFRoute(
           name: 'TicketsUser',
           path: '/ticketsUser',
-          builder: (context, params) => TicketsUserWidget(),
+          builder: (context, params) => const TicketsUserWidget(),
         ),
         FFRoute(
           name: 'EditProfileAdministrator',
           path: '/editProfileAdministrator',
-          builder: (context, params) => EditProfileAdministratorWidget(),
+          builder: (context, params) => const EditProfileAdministratorWidget(),
         ),
         FFRoute(
           name: 'Groups',
           path: '/groups',
-          builder: (context, params) => GroupsWidget(),
+          builder: (context, params) => const GroupsWidget(),
         ),
         FFRoute(
           name: 'Types',
           path: '/types',
-          builder: (context, params) => TypesWidget(),
+          builder: (context, params) => const TypesWidget(),
         ),
         FFRoute(
           name: 'TicketView',
           path: '/ticketView',
-          builder: (context, params) => TicketViewWidget(),
+          builder: (context, params) => const TicketViewWidget(),
         ),
         FFRoute(
           name: 'EditProfileUser',
           path: '/editProfileUser',
-          builder: (context, params) => EditProfileUserWidget(),
+          builder: (context, params) => const EditProfileUserWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -304,7 +297,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

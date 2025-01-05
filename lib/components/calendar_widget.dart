@@ -2,10 +2,7 @@ import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'calendar_model.dart';
 export 'calendar_model.dart';
 
@@ -59,7 +56,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             FlutterFlowCalendar(
-              color: Color(0xFF3C6FF3),
+              color: const Color(0xFF3C6FF3),
               iconColor: FlutterFlowTheme.of(context).primary,
               weekFormat: false,
               weekStartsMonday: false,
@@ -100,8 +97,8 @@ class _CalendarWidgetState extends State<CalendarWidget> {
               text: 'Seleccionar',
               options: FFButtonOptions(
                 height: 40.0,
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'Plus Jakarta Sans',

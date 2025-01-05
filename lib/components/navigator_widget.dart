@@ -3,14 +3,10 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:math';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'navigator_model.dart';
 export 'navigator_model.dart';
 
@@ -18,7 +14,7 @@ class NavigatorWidget extends StatefulWidget {
   const NavigatorWidget({
     super.key,
     bool? expanded,
-  }) : this.expanded = expanded ?? false;
+  }) : expanded = expanded ?? false;
 
   final bool expanded;
 
@@ -45,7 +41,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.expanded = !widget!.expanded;
+      _model.expanded = !widget.expanded;
       safeSetState(() {});
     });
 
@@ -63,8 +59,8 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
             curve: Curves.easeOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: Offset(400.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(400.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -83,8 +79,8 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
             curve: Curves.elasticOut,
             delay: 200.0.ms,
             duration: 900.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -112,17 +108,17 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Stack(
-              alignment: AlignmentDirectional(1.0, -1.0),
+              alignment: const AlignmentDirectional(1.0, -1.0),
               children: [
                 if (_model.expanded)
                   Align(
-                    alignment: AlignmentDirectional(1.0, -1.0),
+                    alignment: const AlignmentDirectional(1.0, -1.0),
                     child: Container(
                       width: 375.0,
                       height: 440.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             blurRadius: 25.0,
                             color: Color(0x18000000),
@@ -137,14 +133,14 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                       child: Column(
                         children: [
                           Align(
-                            alignment: Alignment(-1.0, 0),
+                            alignment: const Alignment(-1.0, 0),
                             child: TabBar(
                               isScrollable: true,
                               labelColor:
                                   FlutterFlowTheme.of(context).primaryText,
                               unselectedLabelColor:
                                   FlutterFlowTheme.of(context).secondaryText,
-                              labelPadding: EdgeInsetsDirectional.fromSTEB(
+                              labelPadding: const EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelSmall
@@ -161,7 +157,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                   ),
                               indicatorColor:
                                   FlutterFlowTheme.of(context).primary,
-                              tabs: [
+                              tabs: const [
                                 Tab(
                                   text: 'Pages',
                                 ),
@@ -196,7 +192,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                     scrollDirection: Axis.vertical,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 0.0, 0.0, 0.0),
                                         child: Material(
                                           color: Colors.transparent,
@@ -236,7 +232,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 0.0, 0.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -284,7 +280,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 0.0, 0.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -333,7 +329,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 0.0, 0.0, 0.0),
                                         child: Material(
                                           color: Colors.transparent,
@@ -373,7 +369,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 0.0, 0.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -421,7 +417,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 0.0, 0.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -469,7 +465,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 0.0, 0.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -517,7 +513,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 0.0, 0.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -565,7 +561,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 0.0, 0.0, 0.0),
                                         child: Material(
                                           color: Colors.transparent,
@@ -605,7 +601,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 0.0, 0.0, 0.0),
                                         child: Material(
                                           color: Colors.transparent,
@@ -645,7 +641,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 0.0, 0.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -694,7 +690,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 0.0, 0.0, 0.0),
                                         child: Material(
                                           color: Colors.transparent,
@@ -734,7 +730,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 0.0, 0.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -782,7 +778,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 0.0, 0.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -830,7 +826,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 0.0, 0.0, 0.0),
                                         child: Material(
                                           color: Colors.transparent,
@@ -870,7 +866,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 0.0, 0.0, 0.0),
                                         child: Material(
                                           color: Colors.transparent,
@@ -910,7 +906,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 0.0, 0.0, 0.0),
                                         child: Material(
                                           color: Colors.transparent,
@@ -958,7 +954,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                     scrollDirection: Axis.vertical,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 0.0, 0.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -978,7 +974,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                                   padding:
                                                       MediaQuery.viewInsetsOf(
                                                           context),
-                                                  child: Container(
+                                                  child: const SizedBox(
                                                     height: double.infinity,
                                                     child:
                                                         ModalCreateUserWidget(),
@@ -1032,7 +1028,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                   builder: (context) => Container(
                                     width: double.infinity,
                                     height: double.infinity,
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: SingleChildScrollView(
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -1043,7 +1039,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                             onLinkTap: (url, _, __) =>
                                                 launchURL(url!),
                                           ),
-                                        ].addToEnd(SizedBox(height: 24.0)),
+                                        ].addToEnd(const SizedBox(height: 24.0)),
                                       ),
                                     ),
                                   ),
@@ -1059,7 +1055,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                           onLinkTap: (url, _, __) =>
                                               launchURL(url!),
                                         ),
-                                      ].addToEnd(SizedBox(height: 24.0)),
+                                      ].addToEnd(const SizedBox(height: 24.0)),
                                     ),
                                   ),
                                 ),
@@ -1073,22 +1069,22 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                   ),
                 if (!_model.hide)
                   Align(
-                    alignment: AlignmentDirectional(1.0, -1.0),
-                    child: Container(
+                    alignment: const AlignmentDirectional(1.0, -1.0),
+                    child: SizedBox(
                       width: 50.0,
                       height: 50.0,
                       child: Stack(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Container(
                               width: 38.0,
                               height: 38.0,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     blurRadius: 20.0,
                                     color: Color(0x24000000),
@@ -1100,7 +1096,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                 ],
                                 shape: BoxShape.circle,
                               ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: ToggleIcon(
                                 onPressed: () async {
                                   safeSetState(
@@ -1123,7 +1119,7 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                           ),
                           if (!_model.expanded)
                             Align(
-                              alignment: AlignmentDirectional(1.0, -1.0),
+                              alignment: const AlignmentDirectional(1.0, -1.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -1142,9 +1138,9 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                         FlutterFlowTheme.of(context).tertiary,
                                     shape: BoxShape.circle,
                                   ),
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Icon(
                                       Icons.close,
                                       color: FlutterFlowTheme.of(context)

@@ -8,11 +8,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
-import 'dart:ui';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'ticket_view_model.dart';
 export 'ticket_view_model.dart';
@@ -69,7 +67,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: SafeArea(
           top: true,
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
             height: double.infinity,
             child: Stack(
@@ -94,7 +92,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                           model: _model.menuModel,
                           updateCallback: () => safeSetState(() {}),
                           updateOnChange: true,
-                          child: MenuWidget(
+                          child: const MenuWidget(
                             activePageName: 'Dashboard',
                             pageIsInSubMenu: false,
                           ),
@@ -107,7 +105,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                               model: _model.headerAdministratorModel,
                               updateCallback: () => safeSetState(() {}),
                               updateOnChange: true,
-                              child: HeaderAdministratorWidget(),
+                              child: const HeaderAdministratorWidget(),
                             ),
                             Expanded(
                               child: Container(
@@ -124,7 +122,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                         CrossAxisAlignment.stretch,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             20.0, 0.0, 20.0, 0.0),
                                         child: Wrap(
                                           spacing: 20.0,
@@ -154,7 +152,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(20.0, 0.0,
                                                                 20.0, 0.0),
                                                     child: Wrap(
@@ -233,7 +231,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                     ),
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           20.0,
                                                                           10.0,
                                                                           20.0,
@@ -280,16 +278,16 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                                   ),
                                                                                   tileColor: FlutterFlowTheme.of(context).primaryBackground,
                                                                                   dense: false,
-                                                                                  contentPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
+                                                                                  contentPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                           ),
-                                                                        ].divide(SizedBox(width: 16.0)),
+                                                                        ].divide(const SizedBox(width: 16.0)),
                                                                       ),
                                                                     ),
                                                                   ),
-                                                                ].divide(SizedBox(
+                                                                ].divide(const SizedBox(
                                                                     height:
                                                                         16.0)),
                                                               ),
@@ -317,7 +315,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                       Flexible(
                                                                         child:
                                                                             Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               10.0,
                                                                               0.0,
                                                                               0.0,
@@ -354,7 +352,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                       ))
                                                                         Expanded(
                                                                           child:
-                                                                              Container(
+                                                                              SizedBox(
                                                                             width:
                                                                                 200.0,
                                                                             child:
@@ -375,14 +373,14 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                                       letterSpacing: 0.0,
                                                                                     ),
                                                                                 enabledBorder: OutlineInputBorder(
-                                                                                  borderSide: BorderSide(
+                                                                                  borderSide: const BorderSide(
                                                                                     color: Color(0x00000000),
                                                                                     width: 1.0,
                                                                                   ),
                                                                                   borderRadius: BorderRadius.circular(8.0),
                                                                                 ),
                                                                                 focusedBorder: OutlineInputBorder(
-                                                                                  borderSide: BorderSide(
+                                                                                  borderSide: const BorderSide(
                                                                                     color: Color(0x00000000),
                                                                                     width: 1.0,
                                                                                   ),
@@ -425,12 +423,12 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                         safeSetState(
                                                                             () {}),
                                                                     child:
-                                                                        DividerWidget(
+                                                                        const DividerWidget(
                                                                       titleInLeftSide:
                                                                           false,
                                                                     ),
                                                                   ),
-                                                                ].divide(SizedBox(
+                                                                ].divide(const SizedBox(
                                                                     height:
                                                                         16.0)),
                                                               ),
@@ -458,7 +456,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                                 24.0,
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -497,7 +495,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                           Axis.vertical,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               20.0,
                                                                               12.0,
                                                                               20.0,
@@ -543,17 +541,17 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                               wrapWithModel(
                                                                                 model: _model.dividerModel2,
                                                                                 updateCallback: () => safeSetState(() {}),
-                                                                                child: DividerWidget(
+                                                                                child: const DividerWidget(
                                                                                   titleInLeftSide: false,
                                                                                 ),
                                                                               ),
-                                                                            ].divide(SizedBox(height: 10.0)),
+                                                                            ].divide(const SizedBox(height: 10.0)),
                                                                           ),
                                                                         ),
                                                                       ],
                                                                     ),
                                                                   ),
-                                                                ].divide(SizedBox(
+                                                                ].divide(const SizedBox(
                                                                     height:
                                                                         24.0)),
                                                               ),
@@ -564,7 +562,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                     safeSetState(
                                                                         () {}),
                                                                 child:
-                                                                    DividerWidget(
+                                                                    const DividerWidget(
                                                                   titleInLeftSide:
                                                                       false,
                                                                 ),
@@ -593,7 +591,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                                 24.0,
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -632,7 +630,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                           Axis.vertical,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               20.0,
                                                                               12.0,
                                                                               20.0,
@@ -678,8 +676,8 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                                 children: [
                                                                                   Expanded(
                                                                                     child: Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
-                                                                                      child: Container(
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
+                                                                                      child: SizedBox(
                                                                                         width: 200.0,
                                                                                         child: TextFormField(
                                                                                           controller: _model.textController2,
@@ -698,14 +696,14 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                                                   letterSpacing: 0.0,
                                                                                                 ),
                                                                                             enabledBorder: OutlineInputBorder(
-                                                                                              borderSide: BorderSide(
+                                                                                              borderSide: const BorderSide(
                                                                                                 color: Color(0x00000000),
                                                                                                 width: 1.0,
                                                                                               ),
                                                                                               borderRadius: BorderRadius.circular(8.0),
                                                                                             ),
                                                                                             focusedBorder: OutlineInputBorder(
-                                                                                              borderSide: BorderSide(
+                                                                                              borderSide: const BorderSide(
                                                                                                 color: Color(0x00000000),
                                                                                                 width: 1.0,
                                                                                               ),
@@ -743,13 +741,13 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                                   ),
                                                                                 ],
                                                                               ),
-                                                                            ].divide(SizedBox(height: 10.0)),
+                                                                            ].divide(const SizedBox(height: 10.0)),
                                                                           ),
                                                                         ),
                                                                       ],
                                                                     ),
                                                                   ),
-                                                                ].divide(SizedBox(
+                                                                ].divide(const SizedBox(
                                                                     height:
                                                                         24.0)),
                                                               ),
@@ -760,7 +758,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                     safeSetState(
                                                                         () {}),
                                                                 child:
-                                                                    DividerWidget(
+                                                                    const DividerWidget(
                                                                   titleInLeftSide:
                                                                       false,
                                                                 ),
@@ -794,7 +792,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                   ),
                                                                   Padding(
                                                                     padding:
-                                                                        EdgeInsets.all(
+                                                                        const EdgeInsets.all(
                                                                             20.0),
                                                                     child: Row(
                                                                       mainAxisSize:
@@ -810,7 +808,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                               borderRadius: BorderRadius.circular(8.0),
                                                                               border: Border.all(
                                                                                 color: valueOrDefault<Color>(
-                                                                                  _model.messageTextFieldTextController.text != null && _model.messageTextFieldTextController.text != '' ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).neutral100,
+                                                                                  _model.messageTextFieldTextController.text != '' ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).neutral100,
                                                                                   FlutterFlowTheme.of(context).neutral100,
                                                                                 ),
                                                                               ),
@@ -821,14 +819,14 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                               crossAxisAlignment: CrossAxisAlignment.start,
                                                                               children: [
                                                                                 Expanded(
-                                                                                  child: Container(
+                                                                                  child: SizedBox(
                                                                                     width: 500.0,
                                                                                     child: TextFormField(
                                                                                       controller: _model.messageTextFieldTextController,
                                                                                       focusNode: _model.messageTextFieldFocusNode,
                                                                                       onChanged: (_) => EasyDebounce.debounce(
                                                                                         '_model.messageTextFieldTextController',
-                                                                                        Duration(milliseconds: 500),
+                                                                                        const Duration(milliseconds: 500),
                                                                                         () => safeSetState(() {}),
                                                                                       ),
                                                                                       autofocus: false,
@@ -848,7 +846,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                                         focusedBorder: InputBorder.none,
                                                                                         errorBorder: InputBorder.none,
                                                                                         focusedErrorBorder: InputBorder.none,
-                                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                        contentPadding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                             fontFamily: 'Plus Jakarta Sans',
@@ -900,7 +898,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                                     }
                                                                                   },
                                                                                 ),
-                                                                              ].divide(SizedBox(width: 16.0)),
+                                                                              ].divide(const SizedBox(width: 16.0)),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -928,15 +926,15 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                             print('IconButton pressed ...');
                                                                           },
                                                                         ),
-                                                                      ].divide(SizedBox(
+                                                                      ].divide(const SizedBox(
                                                                               width: 16.0)),
                                                                     ),
                                                                   ),
-                                                                ].divide(SizedBox(
+                                                                ].divide(const SizedBox(
                                                                     height:
                                                                         16.0)),
                                                               ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 height: 24.0)),
                                                           ),
                                                         ),
@@ -947,7 +945,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                     model: _model.dividerModel5,
                                                     updateCallback: () =>
                                                         safeSetState(() {}),
-                                                    child: DividerWidget(
+                                                    child: const DividerWidget(
                                                       titleInLeftSide: false,
                                                     ),
                                                   ),
@@ -955,22 +953,22 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                     model: _model.dividerModel6,
                                                     updateCallback: () =>
                                                         safeSetState(() {}),
-                                                    child: DividerWidget(
+                                                    child: const DividerWidget(
                                                       titleInLeftSide: false,
                                                     ),
                                                   ),
                                                 ]
                                                     .divide(
-                                                        SizedBox(height: 24.0))
+                                                        const SizedBox(height: 24.0))
                                                     .addToStart(
-                                                        SizedBox(height: 12.0))
+                                                        const SizedBox(height: 12.0))
                                                     .addToEnd(
-                                                        SizedBox(height: 24.0)),
+                                                        const SizedBox(height: 24.0)),
                                               ),
                                             ),
                                             Container(
                                               width: 300.0,
-                                              constraints: BoxConstraints(
+                                              constraints: const BoxConstraints(
                                                 maxWidth: 500.0,
                                               ),
                                               decoration: BoxDecoration(
@@ -987,7 +985,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(20.0, 0.0,
                                                                 20.0, 0.0),
                                                     child: Wrap(
@@ -1076,7 +1074,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                 ),
                                                               ),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         10.0,
@@ -1104,7 +1102,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                               24.0,
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               10.0,
                                                                               0.0,
                                                                               0.0,
@@ -1136,7 +1134,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                               24.0,
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               10.0,
                                                                               0.0,
                                                                               0.0,
@@ -1167,7 +1165,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                               24.0,
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               10.0,
                                                                               0.0,
                                                                               0.0,
@@ -1198,7 +1196,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                               24.0,
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               10.0,
                                                                               0.0,
                                                                               0.0,
@@ -1219,17 +1217,17 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                 ),
                                                               ),
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               height: 16.0)),
                                                         ),
                                                     ].divide(
-                                                        SizedBox(height: 24.0)),
+                                                        const SizedBox(height: 24.0)),
                                                   ),
                                                   wrapWithModel(
                                                     model: _model.dividerModel7,
                                                     updateCallback: () =>
                                                         safeSetState(() {}),
-                                                    child: DividerWidget(
+                                                    child: const DividerWidget(
                                                       titleInLeftSide: false,
                                                     ),
                                                   ),
@@ -1246,7 +1244,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                 .dropDownValueController1 ??=
                                                             FormFieldController<
                                                                 String>(null),
-                                                        options: [
+                                                        options: const [
                                                           'Baja',
                                                           'Media',
                                                           'Alta'
@@ -1287,7 +1285,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                         borderWidth: 0.0,
                                                         borderRadius: 8.0,
                                                         margin:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     12.0,
                                                                     0.0,
@@ -1304,7 +1302,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                 .dropDownValueController2 ??=
                                                             FormFieldController<
                                                                 String>(null),
-                                                        options: [
+                                                        options: const [
                                                           'Lenix Pantoja',
                                                           'Yazmin Teran',
                                                           'Thamara Pantoja Teran'
@@ -1366,7 +1364,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                         borderWidth: 0.0,
                                                         borderRadius: 8.0,
                                                         margin:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     12.0,
                                                                     0.0,
@@ -1383,7 +1381,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                 .dropDownValueController3 ??=
                                                             FormFieldController<
                                                                 String>(null),
-                                                        options: [
+                                                        options: const [
                                                           'Sistemas',
                                                           'Mantenimiento',
                                                           'Infraestructura'
@@ -1445,7 +1443,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                         borderWidth: 0.0,
                                                         borderRadius: 8.0,
                                                         margin:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     12.0,
                                                                     0.0,
@@ -1462,7 +1460,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                 .dropDownValueController4 ??=
                                                             FormFieldController<
                                                                 String>(null),
-                                                        options: [
+                                                        options: const [
                                                           'Abierto',
                                                           'Pendiente',
                                                           'Cerrado'
@@ -1528,7 +1526,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                         borderWidth: 0.0,
                                                         borderRadius: 8.0,
                                                         margin:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     12.0,
                                                                     0.0,
@@ -1541,7 +1539,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     12.0,
@@ -1570,7 +1568,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                       TextAlign
                                                                           .center,
                                                                 ),
-                                                                duration: Duration(
+                                                                duration: const Duration(
                                                                     milliseconds:
                                                                         1650),
                                                                 backgroundColor:
@@ -1586,14 +1584,14 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                             width: 170.0,
                                                             height: 30.0,
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
                                                                         0.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1616,7 +1614,7 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                                     ),
                                                             elevation: 2.0,
                                                             borderSide:
-                                                                BorderSide(
+                                                                const BorderSide(
                                                               color: Colors
                                                                   .transparent,
                                                               width: 1.0,
@@ -1634,26 +1632,26 @@ class _TicketViewWidgetState extends State<TicketViewWidget> {
                                                     model: _model.dividerModel8,
                                                     updateCallback: () =>
                                                         safeSetState(() {}),
-                                                    child: DividerWidget(
+                                                    child: const DividerWidget(
                                                       titleInLeftSide: false,
                                                     ),
                                                   ),
                                                 ]
                                                     .divide(
-                                                        SizedBox(height: 24.0))
+                                                        const SizedBox(height: 24.0))
                                                     .addToStart(
-                                                        SizedBox(height: 12.0))
+                                                        const SizedBox(height: 12.0))
                                                     .addToEnd(
-                                                        SizedBox(height: 24.0)),
+                                                        const SizedBox(height: 24.0)),
                                               ),
                                             ),
                                           ],
                                         ),
                                       ),
                                     ]
-                                        .divide(SizedBox(height: 20.0))
-                                        .addToStart(SizedBox(height: 20.0))
-                                        .addToEnd(SizedBox(height: 20.0)),
+                                        .divide(const SizedBox(height: 20.0))
+                                        .addToStart(const SizedBox(height: 20.0))
+                                        .addToEnd(const SizedBox(height: 20.0)),
                                   ),
                                 ),
                               ),

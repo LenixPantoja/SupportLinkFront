@@ -4,14 +4,9 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:math';
-import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'menu_model.dart';
 export 'menu_model.dart';
 
@@ -21,7 +16,7 @@ class MenuWidget extends StatefulWidget {
     required this.activePageName,
     bool? pageIsInSubMenu,
     this.subMenuName,
-  }) : this.pageIsInSubMenu = pageIsInSubMenu ?? false;
+  }) : pageIsInSubMenu = pageIsInSubMenu ?? false;
 
   final String? activePageName;
   final bool pageIsInSubMenu;
@@ -77,7 +72,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Container(
       height: double.infinity,
-      constraints: BoxConstraints(
+      constraints: const BoxConstraints(
         minWidth: 90.0,
         maxWidth: 290.0,
       ),
@@ -85,7 +80,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
         color: FlutterFlowTheme.of(context).primaryBackground,
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
@@ -96,7 +91,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                 Container(
                   width: 50.0,
                   height: 50.0,
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(0.0),
                     child: Image.asset(
@@ -115,10 +110,10 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                 ))
                   Container(
                     height: 50.0,
-                    decoration: BoxDecoration(),
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    decoration: const BoxDecoration(),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                   ),
-              ].divide(SizedBox(width: 4.0)),
+              ].divide(const SizedBox(width: 4.0)),
             ),
             Expanded(
               child: Column(
@@ -139,7 +134,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  if (widget!.activePageName == 'Dashboard') {
+                                  if (widget.activePageName == 'Dashboard') {
                                     context.pushNamed('Home');
                                   }
                                 },
@@ -148,7 +143,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                   updateCallback: () => safeSetState(() {}),
                                   child: MenuItemWidget(
                                     isActivePage:
-                                        widget!.activePageName == 'Dashboard',
+                                        widget.activePageName == 'Dashboard',
                                     text: 'Dashboard',
                                     icon: Icon(
                                       Icons.grid_view,
@@ -174,7 +169,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                   context.pushNamed(
                                     'TicketAdministrator',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      kTransitionInfoKey: const TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -239,7 +234,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                   ),
                                   Container(
                                     decoration: BoxDecoration(
-                                      color: Color(0x80EFF3FA),
+                                      color: const Color(0x80EFF3FA),
                                       borderRadius: BorderRadius.circular(2.0),
                                     ),
                                     child: Visibility(
@@ -316,7 +311,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                                 'Groups',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      TransitionInfo(
+                                                      const TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType.fade,
@@ -352,7 +347,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                                 'Types',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      TransitionInfo(
+                                                      const TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType.fade,
@@ -423,7 +418,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                   context.goNamed(
                                     'EditProfileAdministrator',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      kTransitionInfoKey: const TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -454,7 +449,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                               ),
                             ],
                           ),
-                        ].divide(SizedBox(height: 8.0)),
+                        ].divide(const SizedBox(height: 8.0)),
                       ),
                     ),
                   ),
@@ -490,7 +485,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                   child: Stack(
                                     children: [
                                       Padding(
-                                        padding: EdgeInsets.all(12.0),
+                                        padding: const EdgeInsets.all(12.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -538,12 +533,12 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                                 ),
                                               ],
                                             ),
-                                          ].divide(SizedBox(height: 8.0)),
+                                          ].divide(const SizedBox(height: 8.0)),
                                         ),
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(1.0, -1.0),
+                                            const AlignmentDirectional(1.0, -1.0),
                                         child: FlutterFlowIconButton(
                                           borderColor: Colors.transparent,
                                           borderRadius: 8.0,
@@ -577,17 +572,17 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                         },
                         child: Container(
                           height: 50.0,
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Container(
                                 width: 50.0,
                                 height: 50.0,
-                                decoration: BoxDecoration(),
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                decoration: const BoxDecoration(),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Icon(
                                     Icons.logout,
                                     color: FlutterFlowTheme.of(context).error,
@@ -604,8 +599,8 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                 Container(
                                   width: 200.0,
                                   height: 50.0,
-                                  decoration: BoxDecoration(),
-                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  decoration: const BoxDecoration(),
+                                  alignment: const AlignmentDirectional(-1.0, 0.0),
                                   child: Text(
                                     'Logout',
                                     style: FlutterFlowTheme.of(context)
@@ -627,7 +622,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                 ],
               ),
             ),
-          ].divide(SizedBox(height: 24.0)).addToStart(SizedBox(height: 16.0)),
+          ].divide(const SizedBox(height: 24.0)).addToStart(const SizedBox(height: 16.0)),
         ),
       ),
     );

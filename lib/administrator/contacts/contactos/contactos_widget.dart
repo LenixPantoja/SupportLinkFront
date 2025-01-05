@@ -5,9 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'contactos_model.dart';
 export 'contactos_model.dart';
@@ -62,7 +60,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
               phone: false,
               tablet: false,
             ),
-            child: Container(
+            child: SizedBox(
               width: double.infinity,
               height: double.infinity,
               child: Stack(
@@ -87,7 +85,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                             model: _model.menuModel,
                             updateCallback: () => safeSetState(() {}),
                             updateOnChange: true,
-                            child: MenuWidget(
+                            child: const MenuWidget(
                               activePageName: 'Dashboard',
                               pageIsInSubMenu: false,
                             ),
@@ -100,7 +98,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                 model: _model.headerAdministratorModel,
                                 updateCallback: () => safeSetState(() {}),
                                 updateOnChange: true,
-                                child: HeaderAdministratorWidget(),
+                                child: const HeaderAdministratorWidget(),
                               ),
                               Expanded(
                                 child: Container(
@@ -130,10 +128,10 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                 Container(
                                                   width: double.infinity,
                                                   height: 24.0,
-                                                  decoration: BoxDecoration(),
+                                                  decoration: const BoxDecoration(),
                                                 ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 16.0, 0.0, 4.0),
                                                 child: Text(
@@ -149,15 +147,15 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           4.0, 16.0, 4.0, 16.0),
                                                   child: Container(
                                                     width: double.infinity,
-                                                    constraints: BoxConstraints(
+                                                    constraints: const BoxConstraints(
                                                       maxWidth: 1170.0,
                                                     ),
                                                     decoration: BoxDecoration(
@@ -170,7 +168,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
-                                                          offset: Offset(
+                                                          offset: const Offset(
                                                             0.0,
                                                             1.0,
                                                           ),
@@ -187,7 +185,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(16.0),
+                                                          const EdgeInsets.all(16.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -213,7 +211,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           4.0,
                                                                           12.0,
@@ -239,14 +237,14 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                 tablet: false,
                                                               ))
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
                                                                   child:
-                                                                      Container(
+                                                                      SizedBox(
                                                                     width:
                                                                         270.0,
                                                                     child:
@@ -291,7 +289,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                         focusedBorder:
                                                                             OutlineInputBorder(
                                                                           borderSide:
-                                                                              BorderSide(
+                                                                              const BorderSide(
                                                                             color:
                                                                                 Color(0x00000000),
                                                                             width:
@@ -303,7 +301,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                         errorBorder:
                                                                             OutlineInputBorder(
                                                                           borderSide:
-                                                                              BorderSide(
+                                                                              const BorderSide(
                                                                             color:
                                                                                 Color(0x00000000),
                                                                             width:
@@ -315,7 +313,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                         focusedErrorBorder:
                                                                             OutlineInputBorder(
                                                                           borderSide:
-                                                                              BorderSide(
+                                                                              const BorderSide(
                                                                             color:
                                                                                 Color(0x00000000),
                                                                             width:
@@ -380,7 +378,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                           padding:
                                                                               MediaQuery.viewInsetsOf(context),
                                                                           child:
-                                                                              ModalCreateUserWidget(),
+                                                                              const ModalCreateUserWidget(),
                                                                         ),
                                                                       );
                                                                     },
@@ -390,7 +388,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                 },
                                                                 text:
                                                                     'Crear usuario',
-                                                                icon: Icon(
+                                                                icon: const Icon(
                                                                   Icons
                                                                       .add_rounded,
                                                                   size: 15.0,
@@ -398,13 +396,13 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                 options:
                                                                     FFButtonOptions(
                                                                   height: 40.0,
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
-                                                                  iconPadding: EdgeInsetsDirectional
+                                                                  iconPadding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -427,7 +425,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                   elevation:
                                                                       3.0,
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Colors
                                                                         .transparent,
                                                                     width: 1.0,
@@ -442,7 +440,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         16.0,
@@ -458,7 +456,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                         context)
                                                                     .primaryBackground,
                                                                 borderRadius:
-                                                                    BorderRadius
+                                                                    const BorderRadius
                                                                         .only(
                                                                   bottomLeft: Radius
                                                                       .circular(
@@ -475,7 +473,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                 ),
                                                               ),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
@@ -585,7 +583,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -606,7 +604,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
                                                                         offset:
-                                                                            Offset(
+                                                                            const Offset(
                                                                           0.0,
                                                                           1.0,
                                                                         ),
@@ -615,7 +613,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             0.0,
@@ -651,7 +649,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                               4,
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 8.0,
                                                                                 12.0,
@@ -661,7 +659,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                   child: ClipRRect(
                                                                                     borderRadius: BorderRadius.circular(40.0),
                                                                                     child: Image.network(
@@ -674,7 +672,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                 ),
                                                                                 Expanded(
                                                                                   child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                                                                                     child: Column(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       mainAxisAlignment: MainAxisAlignment.center,
@@ -689,7 +687,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                               ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                                           child: Text(
                                                                                             'randy.p@domainname.com',
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -737,9 +735,9 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                   borderRadius: BorderRadius.circular(40.0),
                                                                                 ),
-                                                                                alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                   child: Text(
                                                                                     'Active',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -770,7 +768,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                   tablet: false,
                                                                                 ))
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: FlutterFlowIconButton(
                                                                                       borderColor: Colors.transparent,
                                                                                       borderRadius: 30.0,
@@ -814,7 +812,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -835,7 +833,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
                                                                         offset:
-                                                                            Offset(
+                                                                            const Offset(
                                                                           0.0,
                                                                           1.0,
                                                                         ),
@@ -844,7 +842,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             0.0,
@@ -880,7 +878,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                               4,
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 8.0,
                                                                                 12.0,
@@ -890,7 +888,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                   child: ClipRRect(
                                                                                     borderRadius: BorderRadius.circular(40.0),
                                                                                     child: Image.network(
@@ -903,7 +901,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                 ),
                                                                                 Expanded(
                                                                                   child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                                                                                     child: Column(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       mainAxisAlignment: MainAxisAlignment.center,
@@ -918,7 +916,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                               ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                                           child: Text(
                                                                                             'randy.p@domainname.com',
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -966,9 +964,9 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                   borderRadius: BorderRadius.circular(40.0),
                                                                                 ),
-                                                                                alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                   child: Text(
                                                                                     'Active',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -999,7 +997,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                   tablet: false,
                                                                                 ))
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: FlutterFlowIconButton(
                                                                                       borderColor: Colors.transparent,
                                                                                       borderRadius: 30.0,
@@ -1043,7 +1041,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1064,7 +1062,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
                                                                         offset:
-                                                                            Offset(
+                                                                            const Offset(
                                                                           0.0,
                                                                           1.0,
                                                                         ),
@@ -1073,7 +1071,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             0.0,
@@ -1109,7 +1107,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                               4,
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 8.0,
                                                                                 12.0,
@@ -1119,7 +1117,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                   child: ClipRRect(
                                                                                     borderRadius: BorderRadius.circular(40.0),
                                                                                     child: Image.network(
@@ -1132,7 +1130,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                 ),
                                                                                 Expanded(
                                                                                   child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                                                                                     child: Column(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       mainAxisAlignment: MainAxisAlignment.center,
@@ -1147,7 +1145,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                               ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                                           child: Text(
                                                                                             'randy.p@domainname.com',
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -1195,9 +1193,9 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                   borderRadius: BorderRadius.circular(40.0),
                                                                                 ),
-                                                                                alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                   child: Text(
                                                                                     'Active',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1228,7 +1226,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                   tablet: false,
                                                                                 ))
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: FlutterFlowIconButton(
                                                                                       borderColor: Colors.transparent,
                                                                                       borderRadius: 30.0,
@@ -1272,7 +1270,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1293,7 +1291,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
                                                                         offset:
-                                                                            Offset(
+                                                                            const Offset(
                                                                           0.0,
                                                                           1.0,
                                                                         ),
@@ -1302,7 +1300,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             0.0,
@@ -1338,7 +1336,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                               4,
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 8.0,
                                                                                 12.0,
@@ -1348,7 +1346,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                   child: ClipRRect(
                                                                                     borderRadius: BorderRadius.circular(40.0),
                                                                                     child: Image.network(
@@ -1361,7 +1359,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                 ),
                                                                                 Expanded(
                                                                                   child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                                                                                     child: Column(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       mainAxisAlignment: MainAxisAlignment.center,
@@ -1376,7 +1374,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                               ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                                           child: Text(
                                                                                             'randy.p@domainname.com',
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -1424,9 +1422,9 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                   borderRadius: BorderRadius.circular(40.0),
                                                                                 ),
-                                                                                alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                   child: Text(
                                                                                     'Active',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1457,7 +1455,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                   tablet: false,
                                                                                 ))
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: FlutterFlowIconButton(
                                                                                       borderColor: Colors.transparent,
                                                                                       borderRadius: 30.0,
@@ -1501,7 +1499,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1522,7 +1520,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
                                                                         offset:
-                                                                            Offset(
+                                                                            const Offset(
                                                                           0.0,
                                                                           1.0,
                                                                         ),
@@ -1531,7 +1529,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             0.0,
@@ -1567,7 +1565,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                               4,
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 8.0,
                                                                                 12.0,
@@ -1577,7 +1575,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                   child: ClipRRect(
                                                                                     borderRadius: BorderRadius.circular(40.0),
                                                                                     child: Image.network(
@@ -1590,7 +1588,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                 ),
                                                                                 Expanded(
                                                                                   child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                                                                                     child: Column(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       mainAxisAlignment: MainAxisAlignment.center,
@@ -1605,7 +1603,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                               ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                                           child: Text(
                                                                                             'randy.p@domainname.com',
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -1653,9 +1651,9 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                   borderRadius: BorderRadius.circular(40.0),
                                                                                 ),
-                                                                                alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                   child: Text(
                                                                                     'Active',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1686,7 +1684,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                   tablet: false,
                                                                                 ))
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: FlutterFlowIconButton(
                                                                                       borderColor: Colors.transparent,
                                                                                       borderRadius: 30.0,
@@ -1730,7 +1728,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1751,7 +1749,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
                                                                         offset:
-                                                                            Offset(
+                                                                            const Offset(
                                                                           0.0,
                                                                           1.0,
                                                                         ),
@@ -1760,7 +1758,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             0.0,
@@ -1796,7 +1794,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                               4,
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 8.0,
                                                                                 12.0,
@@ -1806,7 +1804,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                   child: ClipRRect(
                                                                                     borderRadius: BorderRadius.circular(40.0),
                                                                                     child: Image.network(
@@ -1819,7 +1817,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                 ),
                                                                                 Expanded(
                                                                                   child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                                                                                     child: Column(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       mainAxisAlignment: MainAxisAlignment.center,
@@ -1834,7 +1832,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                               ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                                           child: Text(
                                                                                             'randy.p@domainname.com',
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -1882,9 +1880,9 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                   borderRadius: BorderRadius.circular(40.0),
                                                                                 ),
-                                                                                alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                   child: Text(
                                                                                     'Active',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1915,7 +1913,7 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                                                   tablet: false,
                                                                                 ))
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: FlutterFlowIconButton(
                                                                                       borderColor: Colors.transparent,
                                                                                       borderRadius: 30.0,
@@ -1965,13 +1963,13 @@ class _ContactosWidgetState extends State<ContactosWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            ].addToEnd(SizedBox(height: 64.0)),
+                                            ].addToEnd(const SizedBox(height: 64.0)),
                                           ),
                                         ),
                                       ]
-                                          .divide(SizedBox(height: 20.0))
-                                          .addToStart(SizedBox(height: 20.0))
-                                          .addToEnd(SizedBox(height: 20.0)),
+                                          .divide(const SizedBox(height: 20.0))
+                                          .addToStart(const SizedBox(height: 20.0))
+                                          .addToEnd(const SizedBox(height: 20.0)),
                                     ),
                                   ),
                                 ),

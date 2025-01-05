@@ -5,8 +5,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'modal_update_password_model.dart';
 export 'modal_update_password_model.dart';
 
@@ -66,7 +64,7 @@ class _ModalUpdatePasswordWidgetState extends State<ModalUpdatePasswordWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Spacer(),
+              const Spacer(),
               Expanded(
                 flex: 4,
                 child: Row(
@@ -77,11 +75,11 @@ class _ModalUpdatePasswordWidgetState extends State<ModalUpdatePasswordWidget> {
                       phone: false,
                       tablet: false,
                     ))
-                      Spacer(),
+                      const Spacer(),
                     Expanded(
                       flex: 2,
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 0.0, 20.0, 0.0),
                         child: Container(
                           decoration: BoxDecoration(
@@ -108,7 +106,7 @@ class _ModalUpdatePasswordWidgetState extends State<ModalUpdatePasswordWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 10.0, 0.0),
                                             child: FlutterFlowIconButton(
                                               borderRadius: 20.0,
@@ -129,7 +127,7 @@ class _ModalUpdatePasswordWidgetState extends State<ModalUpdatePasswordWidget> {
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             20.0, 0.0, 20.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -153,13 +151,13 @@ class _ModalUpdatePasswordWidgetState extends State<ModalUpdatePasswordWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 32.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       20.0, 0.0, 20.0, 0.0),
                                               child: Column(
@@ -195,7 +193,7 @@ class _ModalUpdatePasswordWidgetState extends State<ModalUpdatePasswordWidget> {
                                                     onChanged: (_) =>
                                                         EasyDebounce.debounce(
                                                       '_model.textController1',
-                                                      Duration(
+                                                      const Duration(
                                                           milliseconds: 500),
                                                       () => safeSetState(() {}),
                                                     ),
@@ -277,13 +275,13 @@ class _ModalUpdatePasswordWidgetState extends State<ModalUpdatePasswordWidget> {
                                                                 .circular(4.0),
                                                       ),
                                                       contentPadding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
-                                                      prefixIcon: Icon(
+                                                      prefixIcon: const Icon(
                                                         Icons.person,
                                                       ),
                                                     ),
@@ -303,11 +301,11 @@ class _ModalUpdatePasswordWidgetState extends State<ModalUpdatePasswordWidget> {
                                                         .textController1Validator
                                                         .asValidator(context),
                                                   ),
-                                                ].divide(SizedBox(height: 8.0)),
+                                                ].divide(const SizedBox(height: 8.0)),
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       20.0, 0.0, 20.0, 0.0),
                                               child: Column(
@@ -343,7 +341,7 @@ class _ModalUpdatePasswordWidgetState extends State<ModalUpdatePasswordWidget> {
                                                     onChanged: (_) =>
                                                         EasyDebounce.debounce(
                                                       '_model.textController2',
-                                                      Duration(
+                                                      const Duration(
                                                           milliseconds: 500),
                                                       () => safeSetState(() {}),
                                                     ),
@@ -425,13 +423,13 @@ class _ModalUpdatePasswordWidgetState extends State<ModalUpdatePasswordWidget> {
                                                                 .circular(4.0),
                                                       ),
                                                       contentPadding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
-                                                      prefixIcon: Icon(
+                                                      prefixIcon: const Icon(
                                                         Icons.lock,
                                                       ),
                                                     ),
@@ -451,10 +449,10 @@ class _ModalUpdatePasswordWidgetState extends State<ModalUpdatePasswordWidget> {
                                                         .textController2Validator
                                                         .asValidator(context),
                                                   ),
-                                                ].divide(SizedBox(height: 8.0)),
+                                                ].divide(const SizedBox(height: 8.0)),
                                               ),
                                             ),
-                                          ].divide(SizedBox(height: 16.0)),
+                                          ].divide(const SizedBox(height: 16.0)),
                                         ),
                                       ),
                                     ],
@@ -462,7 +460,7 @@ class _ModalUpdatePasswordWidgetState extends State<ModalUpdatePasswordWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsets.all(20.0),
+                                padding: const EdgeInsets.all(20.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -476,10 +474,10 @@ class _ModalUpdatePasswordWidgetState extends State<ModalUpdatePasswordWidget> {
                                           width: 250.0,
                                           height: 50.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 13.0, 24.0, 13.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -494,7 +492,7 @@ class _ModalUpdatePasswordWidgetState extends State<ModalUpdatePasswordWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                           elevation: 0.0,
-                                          borderSide: BorderSide(
+                                          borderSide: const BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -516,11 +514,11 @@ class _ModalUpdatePasswordWidgetState extends State<ModalUpdatePasswordWidget> {
                       phone: false,
                       tablet: false,
                     ))
-                      Spacer(),
+                      const Spacer(),
                   ],
                 ),
               ),
-              Spacer(),
+              const Spacer(),
             ],
           ),
         ),

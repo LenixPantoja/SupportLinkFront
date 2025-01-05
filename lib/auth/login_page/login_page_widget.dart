@@ -2,13 +2,10 @@ import '/components/divider/divider_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'login_page_model.dart';
 export 'login_page_model.dart';
 
@@ -59,7 +56,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: SafeArea(
           top: true,
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
             height: double.infinity,
             child: Stack(
@@ -89,17 +86,17 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   .secondaryBackground,
                             ),
                             child: Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     100.0, 0.0, 100.0, 0.0),
-                                child: Container(
+                                child: SizedBox(
                                   width: double.infinity,
                                   height: 700.0,
                                   child: Stack(
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 40.0),
                                         child: PageView(
                                           controller: _model
@@ -118,12 +115,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 24.0),
                                                     child: ClipRRect(
                                                       borderRadius:
-                                                          BorderRadius.only(
+                                                          const BorderRadius.only(
                                                         bottomLeft:
                                                             Radius.circular(
                                                                 0.0),
@@ -193,7 +190,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                       ],
                                                     ),
                                                   ].divide(
-                                                      SizedBox(height: 24.0)),
+                                                      const SizedBox(height: 24.0)),
                                                 ),
                                               ],
                                             ),
@@ -207,12 +204,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 24.0),
                                                     child: ClipRRect(
                                                       borderRadius:
-                                                          BorderRadius.only(
+                                                          const BorderRadius.only(
                                                         bottomLeft:
                                                             Radius.circular(
                                                                 0.0),
@@ -282,7 +279,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                       ],
                                                     ),
                                                   ].divide(
-                                                      SizedBox(height: 24.0)),
+                                                      const SizedBox(height: 24.0)),
                                                 ),
                                               ],
                                             ),
@@ -297,12 +294,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 24.0),
                                                     child: ClipRRect(
                                                       borderRadius:
-                                                          BorderRadius.only(
+                                                          const BorderRadius.only(
                                                         bottomLeft:
                                                             Radius.circular(
                                                                 0.0),
@@ -372,7 +369,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                       ],
                                                     ),
                                                   ].divide(
-                                                      SizedBox(height: 24.0)),
+                                                      const SizedBox(height: 24.0)),
                                                 ),
                                               ],
                                             ),
@@ -381,10 +378,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 1.0),
+                                            const AlignmentDirectional(-1.0, 1.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
                                           child: smooth_page_indicator
                                               .SmoothPageIndicator(
@@ -398,7 +395,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                   .animateToPage(
                                                 i,
                                                 duration:
-                                                    Duration(milliseconds: 500),
+                                                    const Duration(milliseconds: 500),
                                                 curve: Curves.ease,
                                               );
                                               safeSetState(() {});
@@ -440,9 +437,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.0, -1.0),
+                                alignment: const AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       20.0, 0.0, 20.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -460,15 +457,15 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: <Widget>[]
-                                                  .divide(SizedBox(width: 4.0)),
+                                                  .divide(const SizedBox(width: 4.0)),
                                             ),
                                         ],
                                       ),
                                       Container(
                                         height: 50.0,
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                       ),
                                     ],
                                   ),
@@ -476,10 +473,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       20.0, 0.0, 20.0, 0.0),
                                   child: Container(
-                                    constraints: BoxConstraints(
+                                    constraints: const BoxConstraints(
                                       maxWidth: 446.0,
                                     ),
                                     decoration: BoxDecoration(
@@ -505,7 +502,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                 Container(
                                                   width: 100.0,
                                                   height: 120.0,
-                                                  decoration: BoxDecoration(),
+                                                  decoration: const BoxDecoration(),
                                                 ),
                                               Column(
                                                 mainAxisSize: MainAxisSize.max,
@@ -556,7 +553,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                     ],
                                                   ),
                                                 ].divide(
-                                                    SizedBox(height: 16.0)),
+                                                    const SizedBox(height: 16.0)),
                                               ),
                                               Form(
                                                 key: _model.formKey,
@@ -601,7 +598,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                               MainAxisSize.max,
                                                           children: [
                                                             Expanded(
-                                                              child: Container(
+                                                              child: SizedBox(
                                                                 width: 250.0,
                                                                 child:
                                                                     TextFormField(
@@ -613,7 +610,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                       EasyDebounce
                                                                           .debounce(
                                                                     '_model.emailTextFieldTextController',
-                                                                    Duration(
+                                                                    const Duration(
                                                                         milliseconds:
                                                                             500),
                                                                     () => safeSetState(
@@ -700,7 +697,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                               8.0),
                                                                     ),
                                                                     contentPadding:
-                                                                        EdgeInsetsDirectional.fromSTEB(
+                                                                        const EdgeInsetsDirectional.fromSTEB(
                                                                             24.0,
                                                                             0.0,
                                                                             0.0,
@@ -728,7 +725,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                             ),
                                                           ],
                                                         ),
-                                                      ].divide(SizedBox(
+                                                      ].divide(const SizedBox(
                                                           height: 12.0)),
                                                     ),
                                                     Column(
@@ -763,7 +760,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                               MainAxisSize.max,
                                                           children: [
                                                             Expanded(
-                                                              child: Container(
+                                                              child: SizedBox(
                                                                 width: 250.0,
                                                                 child:
                                                                     TextFormField(
@@ -775,7 +772,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                       EasyDebounce
                                                                           .debounce(
                                                                     '_model.passwordTextFieldTextController',
-                                                                    Duration(
+                                                                    const Duration(
                                                                         milliseconds:
                                                                             500),
                                                                     () => safeSetState(
@@ -863,7 +860,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                               8.0),
                                                                     ),
                                                                     contentPadding:
-                                                                        EdgeInsetsDirectional.fromSTEB(
+                                                                        const EdgeInsetsDirectional.fromSTEB(
                                                                             24.0,
                                                                             0.0,
                                                                             0.0,
@@ -912,7 +909,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                             ),
                                                           ],
                                                         ),
-                                                      ].divide(SizedBox(
+                                                      ].divide(const SizedBox(
                                                           height: 12.0)),
                                                     ),
                                                     Row(
@@ -954,7 +951,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           8.0,
@@ -999,14 +996,14 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                         width: 250.0,
                                                         height: 50.0,
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     24.0,
                                                                     13.0,
                                                                     24.0,
                                                                     13.0),
                                                         iconPadding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1030,7 +1027,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                       0.0,
                                                                 ),
                                                         elevation: 0.0,
-                                                        borderSide: BorderSide(
+                                                        borderSide: const BorderSide(
                                                           color: Colors
                                                               .transparent,
                                                           width: 1.0,
@@ -1045,7 +1042,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                           _model.dividerModel,
                                                       updateCallback: () =>
                                                           safeSetState(() {}),
-                                                      child: DividerWidget(
+                                                      child: const DividerWidget(
                                                         title:
                                                             'Created by Panthosoft',
                                                         titleInLeftSide: false,
@@ -1083,9 +1080,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                       ],
                                                     ),
                                                   ]
-                                                      .divide(SizedBox(
+                                                      .divide(const SizedBox(
                                                           height: 24.0))
-                                                      .addToStart(SizedBox(
+                                                      .addToStart(const SizedBox(
                                                           height: 48.0)),
                                                 ),
                                               ),

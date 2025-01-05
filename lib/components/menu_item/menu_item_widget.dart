@@ -1,9 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'menu_item_model.dart';
 export 'menu_item_model.dart';
 
@@ -18,12 +15,12 @@ class MenuItemWidget extends StatefulWidget {
     Color? tagColor,
     bool? hasSubMenu,
     bool? subMenuExpanded,
-  })  : this.isActivePage = isActivePage ?? false,
-        this.hasNumberTag = hasNumberTag ?? false,
-        this.number = number ?? 0,
-        this.tagColor = tagColor ?? const Color(0xFF6C94E5),
-        this.hasSubMenu = hasSubMenu ?? false,
-        this.subMenuExpanded = subMenuExpanded ?? false;
+  })  : isActivePage = isActivePage ?? false,
+        hasNumberTag = hasNumberTag ?? false,
+        number = number ?? 0,
+        tagColor = tagColor ?? const Color(0xFF6C94E5),
+        hasSubMenu = hasSubMenu ?? false,
+        subMenuExpanded = subMenuExpanded ?? false;
 
   final bool isActivePage;
   final String? text;
@@ -67,20 +64,26 @@ class _MenuItemWidgetState extends State<MenuItemWidget> {
     return MouseRegion(
       opaque: false,
       cursor: MouseCursor.defer ?? MouseCursor.defer,
+      onEnter: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = true);
+      }),
+      onExit: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = false);
+      }),
       child: Container(
         height: 50.0,
         decoration: BoxDecoration(
           color: valueOrDefault<Color>(
             () {
-              if (widget!.isActivePage) {
+              if (widget.isActivePage) {
                 return FlutterFlowTheme.of(context).brand100;
-              } else if (!widget!.isActivePage && _model.mouseRegionHovered!) {
+              } else if (!widget.isActivePage && _model.mouseRegionHovered) {
                 return FlutterFlowTheme.of(context).neutral100;
               } else {
-                return Color(0x00FFFFFF);
+                return const Color(0x00FFFFFF);
               }
             }(),
-            Color(0x00FFFFFF),
+            const Color(0x00FFFFFF),
           ),
           borderRadius: BorderRadius.circular(8.0),
         ),
@@ -90,8 +93,8 @@ class _MenuItemWidgetState extends State<MenuItemWidget> {
             Container(
               width: 50.0,
               height: 50.0,
-              decoration: BoxDecoration(),
-              child: widget!.icon!,
+              decoration: const BoxDecoration(),
+              child: widget.icon!,
             ),
             if (responsiveVisibility(
               context: context,
@@ -102,23 +105,23 @@ class _MenuItemWidgetState extends State<MenuItemWidget> {
               Container(
                 width: 200.0,
                 height: 50.0,
-                decoration: BoxDecoration(),
+                decoration: const BoxDecoration(),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Expanded(
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                         child: Text(
-                          widget!.text!,
+                          widget.text!,
                           maxLines: 1,
                           style: FlutterFlowTheme.of(context)
                               .bodyLarge
                               .override(
                                 fontFamily: 'Plus Jakarta Sans',
                                 color: valueOrDefault<Color>(
-                                  widget!.isActivePage
+                                  widget.isActivePage
                                       ? FlutterFlowTheme.of(context).primary
                                       : FlutterFlowTheme.of(context)
                                           .secondaryText,
@@ -130,21 +133,21 @@ class _MenuItemWidgetState extends State<MenuItemWidget> {
                         ),
                       ),
                     ),
-                    if (widget!.hasSubMenu)
-                      Container(
+                    if (widget.hasSubMenu)
+                      SizedBox(
                         width: 24.0,
                         height: 24.0,
                         child: Stack(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           children: [
-                            if (widget!.subMenuExpanded)
+                            if (widget.subMenuExpanded)
                               Icon(
                                 Icons.keyboard_arrow_up,
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 size: 20.0,
                               ),
-                            if (!widget!.subMenuExpanded)
+                            if (!widget.subMenuExpanded)
                               Icon(
                                 Icons.keyboard_arrow_down_sharp,
                                 color:
@@ -160,12 +163,6 @@ class _MenuItemWidgetState extends State<MenuItemWidget> {
           ],
         ),
       ),
-      onEnter: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = true);
-      }),
-      onExit: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = false);
-      }),
     );
   }
 }

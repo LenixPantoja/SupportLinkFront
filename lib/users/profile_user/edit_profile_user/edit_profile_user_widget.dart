@@ -4,13 +4,10 @@ import '/components/sub_header/sub_header_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'edit_profile_user_model.dart';
 export 'edit_profile_user_model.dart';
 
@@ -68,7 +65,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: SafeArea(
           top: true,
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
             height: double.infinity,
             child: Stack(
@@ -91,7 +88,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                               model: _model.headerAdministratorModel,
                               updateCallback: () => safeSetState(() {}),
                               updateOnChange: true,
-                              child: HeaderAdministratorWidget(),
+                              child: const HeaderAdministratorWidget(),
                             ),
                             Expanded(
                               child: Container(
@@ -108,7 +105,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                         CrossAxisAlignment.stretch,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             20.0, 0.0, 20.0, 0.0),
                                         child: Wrap(
                                           spacing: 20.0,
@@ -143,7 +140,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                       Expanded(
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       20.0,
                                                                       0.0,
@@ -165,7 +162,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
-                                                                      TransitionInfo(
+                                                                      const TransitionInfo(
                                                                     hasTransition:
                                                                         true,
                                                                     transitionType:
@@ -186,7 +183,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                   safeSetState(
                                                                       () {}),
                                                               child:
-                                                                  SubHeaderWidget(
+                                                                  const SubHeaderWidget(
                                                                 title:
                                                                     'My perfil',
                                                                 showBackBtn:
@@ -200,7 +197,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(20.0, 0.0,
                                                                 20.0, 0.0),
                                                     child: Wrap(
@@ -262,16 +259,16 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                           clipBehavior:
                                                                               Clip.antiAlias,
                                                                           decoration:
-                                                                              BoxDecoration(
+                                                                              const BoxDecoration(
                                                                             shape:
                                                                                 BoxShape.circle,
                                                                           ),
                                                                           child:
                                                                               CachedNetworkImage(
                                                                             fadeInDuration:
-                                                                                Duration(milliseconds: 500),
+                                                                                const Duration(milliseconds: 500),
                                                                             fadeOutDuration:
-                                                                                Duration(milliseconds: 500),
+                                                                                const Duration(milliseconds: 500),
                                                                             imageUrl:
                                                                                 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyfHx1c2VyfGVufDB8fHx8MTY5OTQxODQ1OHww&ixlib=rb-4.0.3&q=80&w=1080',
                                                                             fit:
@@ -298,7 +295,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                           children: [
                                                                             Container(
                                                                               width: 300.0,
-                                                                              decoration: BoxDecoration(),
+                                                                              decoration: const BoxDecoration(),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
@@ -327,12 +324,12 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                                       ),
                                                                                     ],
                                                                                   ),
-                                                                                ].divide(SizedBox(height: 4.0)),
+                                                                                ].divide(const SizedBox(height: 4.0)),
                                                                               ),
                                                                             ),
                                                                             Container(
                                                                               width: 600.0,
-                                                                              decoration: BoxDecoration(),
+                                                                              decoration: const BoxDecoration(),
                                                                             ),
                                                                           ],
                                                                         ),
@@ -356,7 +353,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                           children: [
                                                                             Container(
                                                                               width: 300.0,
-                                                                              decoration: BoxDecoration(),
+                                                                              decoration: const BoxDecoration(),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
@@ -385,24 +382,24 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                                       ),
                                                                                     ],
                                                                                   ),
-                                                                                ].divide(SizedBox(height: 4.0)),
+                                                                                ].divide(const SizedBox(height: 4.0)),
                                                                               ),
                                                                             ),
                                                                             Container(
                                                                               width: 600.0,
-                                                                              decoration: BoxDecoration(),
+                                                                              decoration: const BoxDecoration(),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
-                                                                                  Container(
+                                                                                  SizedBox(
                                                                                     width: 400.0,
                                                                                     child: TextFormField(
                                                                                       controller: _model.fullNameTextFieldTextController1,
                                                                                       focusNode: _model.fullNameTextFieldFocusNode1,
                                                                                       onChanged: (_) => EasyDebounce.debounce(
                                                                                         '_model.fullNameTextFieldTextController1',
-                                                                                        Duration(milliseconds: 500),
+                                                                                        const Duration(milliseconds: 500),
                                                                                         () => safeSetState(() {}),
                                                                                       ),
                                                                                       autofocus: false,
@@ -446,7 +443,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                                           ),
                                                                                           borderRadius: BorderRadius.circular(4.0),
                                                                                         ),
-                                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                                                                                        contentPadding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                             fontFamily: 'Plus Jakarta Sans',
@@ -496,7 +493,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                           children: [
                                                                             Container(
                                                                               width: 300.0,
-                                                                              decoration: BoxDecoration(),
+                                                                              decoration: const BoxDecoration(),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
@@ -525,24 +522,24 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                                       ),
                                                                                     ],
                                                                                   ),
-                                                                                ].divide(SizedBox(height: 4.0)),
+                                                                                ].divide(const SizedBox(height: 4.0)),
                                                                               ),
                                                                             ),
                                                                             Container(
                                                                               width: 600.0,
-                                                                              decoration: BoxDecoration(),
+                                                                              decoration: const BoxDecoration(),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
-                                                                                  Container(
+                                                                                  SizedBox(
                                                                                     width: 400.0,
                                                                                     child: TextFormField(
                                                                                       controller: _model.fullNameTextFieldTextController2,
                                                                                       focusNode: _model.fullNameTextFieldFocusNode2,
                                                                                       onChanged: (_) => EasyDebounce.debounce(
                                                                                         '_model.fullNameTextFieldTextController2',
-                                                                                        Duration(milliseconds: 500),
+                                                                                        const Duration(milliseconds: 500),
                                                                                         () => safeSetState(() {}),
                                                                                       ),
                                                                                       autofocus: false,
@@ -586,7 +583,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                                           ),
                                                                                           borderRadius: BorderRadius.circular(4.0),
                                                                                         ),
-                                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                                                                                        contentPadding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                             fontFamily: 'Plus Jakarta Sans',
@@ -622,7 +619,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                           updateCallback: () =>
                                                                               safeSetState(() {}),
                                                                           child:
-                                                                              DividerWidget(
+                                                                              const DividerWidget(
                                                                             titleInLeftSide:
                                                                                 false,
                                                                           ),
@@ -647,7 +644,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                           children: [
                                                                             Container(
                                                                               width: 300.0,
-                                                                              decoration: BoxDecoration(),
+                                                                              decoration: const BoxDecoration(),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
@@ -663,24 +660,24 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                                       ),
                                                                                     ],
                                                                                   ),
-                                                                                ].divide(SizedBox(height: 4.0)),
+                                                                                ].divide(const SizedBox(height: 4.0)),
                                                                               ),
                                                                             ),
                                                                             Container(
                                                                               width: 600.0,
-                                                                              decoration: BoxDecoration(),
+                                                                              decoration: const BoxDecoration(),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
-                                                                                  Container(
+                                                                                  SizedBox(
                                                                                     width: 400.0,
                                                                                     child: TextFormField(
                                                                                       controller: _model.addressTextFieldTextController,
                                                                                       focusNode: _model.addressTextFieldFocusNode,
                                                                                       onChanged: (_) => EasyDebounce.debounce(
                                                                                         '_model.addressTextFieldTextController',
-                                                                                        Duration(milliseconds: 500),
+                                                                                        const Duration(milliseconds: 500),
                                                                                         () => safeSetState(() {}),
                                                                                       ),
                                                                                       autofocus: false,
@@ -724,7 +721,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                                           ),
                                                                                           borderRadius: BorderRadius.circular(4.0),
                                                                                         ),
-                                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                                                                                        contentPadding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                             fontFamily: 'Plus Jakarta Sans',
@@ -734,7 +731,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                                       validator: _model.addressTextFieldTextControllerValidator.asValidator(context),
                                                                                     ),
                                                                                   ),
-                                                                                ].divide(SizedBox(height: 10.0)),
+                                                                                ].divide(const SizedBox(height: 10.0)),
                                                                               ),
                                                                             ),
                                                                           ],
@@ -745,7 +742,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                           updateCallback: () =>
                                                                               safeSetState(() {}),
                                                                           child:
-                                                                              DividerWidget(
+                                                                              const DividerWidget(
                                                                             titleInLeftSide:
                                                                                 false,
                                                                           ),
@@ -770,7 +767,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                           children: [
                                                                             Container(
                                                                               width: 300.0,
-                                                                              decoration: BoxDecoration(),
+                                                                              decoration: const BoxDecoration(),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
@@ -799,24 +796,24 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                                       ),
                                                                                     ],
                                                                                   ),
-                                                                                ].divide(SizedBox(height: 4.0)),
+                                                                                ].divide(const SizedBox(height: 4.0)),
                                                                               ),
                                                                             ),
                                                                             Container(
                                                                               width: 600.0,
-                                                                              decoration: BoxDecoration(),
+                                                                              decoration: const BoxDecoration(),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
-                                                                                  Container(
+                                                                                  SizedBox(
                                                                                     width: 400.0,
                                                                                     child: TextFormField(
                                                                                       controller: _model.emailTextFieldTextController,
                                                                                       focusNode: _model.emailTextFieldFocusNode,
                                                                                       onChanged: (_) => EasyDebounce.debounce(
                                                                                         '_model.emailTextFieldTextController',
-                                                                                        Duration(milliseconds: 500),
+                                                                                        const Duration(milliseconds: 500),
                                                                                         () => safeSetState(() {}),
                                                                                       ),
                                                                                       autofocus: false,
@@ -860,7 +857,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                                           ),
                                                                                           borderRadius: BorderRadius.circular(4.0),
                                                                                         ),
-                                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                                                                                        contentPadding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                             fontFamily: 'Plus Jakarta Sans',
@@ -870,7 +867,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                                       validator: _model.emailTextFieldTextControllerValidator.asValidator(context),
                                                                                     ),
                                                                                   ),
-                                                                                ].divide(SizedBox(height: 10.0)),
+                                                                                ].divide(const SizedBox(height: 10.0)),
                                                                               ),
                                                                             ),
                                                                           ],
@@ -881,7 +878,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                           updateCallback: () =>
                                                                               safeSetState(() {}),
                                                                           child:
-                                                                              DividerWidget(
+                                                                              const DividerWidget(
                                                                             titleInLeftSide:
                                                                                 false,
                                                                           ),
@@ -906,7 +903,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                           children: [
                                                                             Container(
                                                                               width: 300.0,
-                                                                              decoration: BoxDecoration(),
+                                                                              decoration: const BoxDecoration(),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
@@ -935,24 +932,24 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                                       ),
                                                                                     ],
                                                                                   ),
-                                                                                ].divide(SizedBox(height: 4.0)),
+                                                                                ].divide(const SizedBox(height: 4.0)),
                                                                               ),
                                                                             ),
                                                                             Container(
                                                                               width: 600.0,
-                                                                              decoration: BoxDecoration(),
+                                                                              decoration: const BoxDecoration(),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
-                                                                                  Container(
+                                                                                  SizedBox(
                                                                                     width: 400.0,
                                                                                     child: TextFormField(
                                                                                       controller: _model.phoneTextFieldTextController,
                                                                                       focusNode: _model.phoneTextFieldFocusNode,
                                                                                       onChanged: (_) => EasyDebounce.debounce(
                                                                                         '_model.phoneTextFieldTextController',
-                                                                                        Duration(milliseconds: 500),
+                                                                                        const Duration(milliseconds: 500),
                                                                                         () => safeSetState(() {}),
                                                                                       ),
                                                                                       autofocus: false,
@@ -996,7 +993,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                                           ),
                                                                                           borderRadius: BorderRadius.circular(4.0),
                                                                                         ),
-                                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                                                                                        contentPadding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                             fontFamily: 'Plus Jakarta Sans',
@@ -1006,7 +1003,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                                       validator: _model.phoneTextFieldTextControllerValidator.asValidator(context),
                                                                                     ),
                                                                                   ),
-                                                                                ].divide(SizedBox(height: 10.0)),
+                                                                                ].divide(const SizedBox(height: 10.0)),
                                                                               ),
                                                                             ),
                                                                           ],
@@ -1023,8 +1020,8 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                               options: FFButtonOptions(
                                                                                 width: 200.0,
                                                                                 height: 50.0,
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(24.0, 13.0, 24.0, 13.0),
-                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 13.0, 24.0, 13.0),
+                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                 color: FlutterFlowTheme.of(context).primary,
                                                                                 textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                       fontFamily: 'Plus Jakarta Sans',
@@ -1032,7 +1029,7 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                                       letterSpacing: 0.0,
                                                                                     ),
                                                                                 elevation: 0.0,
-                                                                                borderSide: BorderSide(
+                                                                                borderSide: const BorderSide(
                                                                                   color: Colors.transparent,
                                                                                   width: 1.0,
                                                                                 ),
@@ -1041,15 +1038,15 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                                             ),
                                                                           ],
                                                                         ),
-                                                                      ].divide(SizedBox(
+                                                                      ].divide(const SizedBox(
                                                                               height: 24.0)),
                                                                     ),
                                                                   ),
-                                                                ].divide(SizedBox(
+                                                                ].divide(const SizedBox(
                                                                     height:
                                                                         16.0)),
                                                               ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 height: 24.0)),
                                                           ),
                                                         ),
@@ -1058,20 +1055,20 @@ class _EditProfileUserWidgetState extends State<EditProfileUserWidget> {
                                                   ),
                                                 ]
                                                     .divide(
-                                                        SizedBox(height: 24.0))
+                                                        const SizedBox(height: 24.0))
                                                     .addToStart(
-                                                        SizedBox(height: 12.0))
+                                                        const SizedBox(height: 12.0))
                                                     .addToEnd(
-                                                        SizedBox(height: 24.0)),
+                                                        const SizedBox(height: 24.0)),
                                               ),
                                             ),
                                           ],
                                         ),
                                       ),
                                     ]
-                                        .divide(SizedBox(height: 20.0))
-                                        .addToStart(SizedBox(height: 20.0))
-                                        .addToEnd(SizedBox(height: 20.0)),
+                                        .divide(const SizedBox(height: 20.0))
+                                        .addToStart(const SizedBox(height: 20.0))
+                                        .addToEnd(const SizedBox(height: 20.0)),
                                   ),
                                 ),
                               ),

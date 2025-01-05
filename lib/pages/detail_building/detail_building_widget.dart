@@ -7,12 +7,9 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'detail_building_model.dart';
 export 'detail_building_model.dart';
@@ -58,7 +55,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: SafeArea(
           top: true,
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
             height: double.infinity,
             child: Stack(
@@ -83,7 +80,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                           model: _model.menuModel,
                           updateCallback: () => safeSetState(() {}),
                           updateOnChange: true,
-                          child: MenuWidget(
+                          child: const MenuWidget(
                             activePageName: 'Dashboard',
                             pageIsInSubMenu: false,
                           ),
@@ -96,7 +93,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                               model: _model.headerAdministratorModel,
                               updateCallback: () => safeSetState(() {}),
                               updateOnChange: true,
-                              child: HeaderAdministratorWidget(),
+                              child: const HeaderAdministratorWidget(),
                             ),
                             Expanded(
                               child: Container(
@@ -113,7 +110,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                         CrossAxisAlignment.stretch,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             20.0, 0.0, 20.0, 0.0),
                                         child: Container(
                                           decoration: BoxDecoration(
@@ -128,21 +125,21 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 0.0, 20.0, 0.0),
                                                 child: wrapWithModel(
                                                   model: _model.subHeaderModel,
                                                   updateCallback: () =>
                                                       safeSetState(() {}),
-                                                  child: SubHeaderWidget(
+                                                  child: const SubHeaderWidget(
                                                     title: 'Detail',
                                                     showBackBtn: true,
                                                   ),
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 0.0, 20.0, 0.0),
                                                 child: Wrap(
@@ -177,7 +174,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                             width:
                                                                 double.infinity,
                                                             decoration:
-                                                                BoxDecoration(),
+                                                                const BoxDecoration(),
                                                             child: Wrap(
                                                               spacing: 12.0,
                                                               runSpacing: 12.0,
@@ -202,7 +199,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                   width: 450.0,
                                                                   height: 300.0,
                                                                   decoration:
-                                                                      BoxDecoration(),
+                                                                      const BoxDecoration(),
                                                                   child: Stack(
                                                                     children: [
                                                                       ClipRRect(
@@ -211,9 +208,9 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                         child:
                                                                             CachedNetworkImage(
                                                                           fadeInDuration:
-                                                                              Duration(milliseconds: 500),
+                                                                              const Duration(milliseconds: 500),
                                                                           fadeOutDuration:
-                                                                              Duration(milliseconds: 500),
+                                                                              const Duration(milliseconds: 500),
                                                                           imageUrl:
                                                                               'https://images.unsplash.com/photo-1554435493-93422e8220c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw4fHxidWlsZGluZ3xlbnwwfHx8fDE2OTg5NDg4OTd8MA&ixlib=rb-4.0.3&q=80&w=1080',
                                                                           width:
@@ -225,12 +222,12 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                         ),
                                                                       ),
                                                                       Align(
-                                                                        alignment: AlignmentDirectional(
+                                                                        alignment: const AlignmentDirectional(
                                                                             0.0,
                                                                             1.0),
                                                                         child:
                                                                             Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               0.0,
@@ -248,7 +245,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                                   borderRadius: BorderRadius.circular(8.0),
                                                                                 ),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 12.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 12.0),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
@@ -274,7 +271,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                   width: 288.0,
                                                                   height: 300.0,
                                                                   decoration:
-                                                                      BoxDecoration(),
+                                                                      const BoxDecoration(),
                                                                   child: Column(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -288,9 +285,9 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                           child:
                                                                               CachedNetworkImage(
                                                                             fadeInDuration:
-                                                                                Duration(milliseconds: 500),
+                                                                                const Duration(milliseconds: 500),
                                                                             fadeOutDuration:
-                                                                                Duration(milliseconds: 500),
+                                                                                const Duration(milliseconds: 500),
                                                                             imageUrl:
                                                                                 'https://images.unsplash.com/photo-1599797755470-81a4e20c94ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw2fHxidWlsZGluZyUyMGluc2lkZXxlbnwwfHx8fDE2OTg5NDg5MDl8MA&ixlib=rb-4.0.3&q=80&w=1080',
                                                                             width:
@@ -310,9 +307,9 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                           child:
                                                                               CachedNetworkImage(
                                                                             fadeInDuration:
-                                                                                Duration(milliseconds: 500),
+                                                                                const Duration(milliseconds: 500),
                                                                             fadeOutDuration:
-                                                                                Duration(milliseconds: 500),
+                                                                                const Duration(milliseconds: 500),
                                                                             imageUrl:
                                                                                 'https://images.unsplash.com/photo-1611216212569-d739dbe9ed40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxNnx8YnVpbGRpbmclMjBpbnRlcmlvcnxlbnwwfHx8fDE2OTg5NDg5MjJ8MA&ixlib=rb-4.0.3&q=80&w=1080',
                                                                             width:
@@ -324,7 +321,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                           ),
                                                                         ),
                                                                       ),
-                                                                    ].divide(SizedBox(
+                                                                    ].divide(const SizedBox(
                                                                         height:
                                                                             12.0)),
                                                                   ),
@@ -362,7 +359,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                     width:
                                                                         450.0,
                                                                     decoration:
-                                                                        BoxDecoration(),
+                                                                        const BoxDecoration(),
                                                                     child:
                                                                         Column(
                                                                       mainAxisSize:
@@ -411,14 +408,14 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                               child: wrapWithModel(
                                                                                 model: _model.addressRowModel1,
                                                                                 updateCallback: () => safeSetState(() {}),
-                                                                                child: AddressRowWidget(
+                                                                                child: const AddressRowWidget(
                                                                                   address: '23 Sutter St, San Francisco, California',
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                           ],
                                                                         ),
-                                                                      ].divide(SizedBox(
+                                                                      ].divide(const SizedBox(
                                                                               height: 12.0)),
                                                                     ),
                                                                   ),
@@ -426,7 +423,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                     width:
                                                                         288.0,
                                                                     decoration:
-                                                                        BoxDecoration(),
+                                                                        const BoxDecoration(),
                                                                     child:
                                                                         Column(
                                                                       mainAxisSize:
@@ -507,9 +504,9 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                                 ),
                                                                               ),
                                                                             ),
-                                                                          ].divide(SizedBox(width: 10.0)),
+                                                                          ].divide(const SizedBox(width: 10.0)),
                                                                         ),
-                                                                      ].divide(SizedBox(
+                                                                      ].divide(const SizedBox(
                                                                               height: 12.0)),
                                                                     ),
                                                                   ),
@@ -569,7 +566,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                 children: [
                                                                   Container(
                                                                     decoration:
-                                                                        BoxDecoration(),
+                                                                        const BoxDecoration(),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -597,13 +594,13 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                         ),
-                                                                      ].divide(SizedBox(
+                                                                      ].divide(const SizedBox(
                                                                               width: 10.0)),
                                                                     ),
                                                                   ),
                                                                   Container(
                                                                     decoration:
-                                                                        BoxDecoration(),
+                                                                        const BoxDecoration(),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -631,13 +628,13 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                         ),
-                                                                      ].divide(SizedBox(
+                                                                      ].divide(const SizedBox(
                                                                               width: 10.0)),
                                                                     ),
                                                                   ),
                                                                   Container(
                                                                     decoration:
-                                                                        BoxDecoration(),
+                                                                        const BoxDecoration(),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -665,13 +662,13 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                         ),
-                                                                      ].divide(SizedBox(
+                                                                      ].divide(const SizedBox(
                                                                               width: 10.0)),
                                                                     ),
                                                                   ),
                                                                   Container(
                                                                     decoration:
-                                                                        BoxDecoration(),
+                                                                        const BoxDecoration(),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -699,13 +696,13 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                         ),
-                                                                      ].divide(SizedBox(
+                                                                      ].divide(const SizedBox(
                                                                               width: 10.0)),
                                                                     ),
                                                                   ),
                                                                   Container(
                                                                     decoration:
-                                                                        BoxDecoration(),
+                                                                        const BoxDecoration(),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -733,13 +730,13 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                         ),
-                                                                      ].divide(SizedBox(
+                                                                      ].divide(const SizedBox(
                                                                               width: 10.0)),
                                                                     ),
                                                                   ),
                                                                   Container(
                                                                     decoration:
-                                                                        BoxDecoration(),
+                                                                        const BoxDecoration(),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -767,13 +764,13 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                         ),
-                                                                      ].divide(SizedBox(
+                                                                      ].divide(const SizedBox(
                                                                               width: 10.0)),
                                                                     ),
                                                                   ),
                                                                   Container(
                                                                     decoration:
-                                                                        BoxDecoration(),
+                                                                        const BoxDecoration(),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -801,13 +798,13 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                         ),
-                                                                      ].divide(SizedBox(
+                                                                      ].divide(const SizedBox(
                                                                               width: 10.0)),
                                                                     ),
                                                                   ),
                                                                   Container(
                                                                     decoration:
-                                                                        BoxDecoration(),
+                                                                        const BoxDecoration(),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -835,13 +832,13 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                         ),
-                                                                      ].divide(SizedBox(
+                                                                      ].divide(const SizedBox(
                                                                               width: 10.0)),
                                                                     ),
                                                                   ),
                                                                 ],
                                                               ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 height: 16.0)),
                                                           ),
                                                           Column(
@@ -915,21 +912,21 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                       ),
                                                                     ),
                                                                   ),
-                                                                ].divide(SizedBox(
+                                                                ].divide(const SizedBox(
                                                                     width:
                                                                         25.0)),
                                                               ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 height: 16.0)),
                                                           ),
-                                                        ].divide(SizedBox(
+                                                        ].divide(const SizedBox(
                                                             height: 24.0)),
                                                       ),
                                                     ),
                                                     Container(
                                                       width: 280.0,
                                                       constraints:
-                                                          BoxConstraints(
+                                                          const BoxConstraints(
                                                         maxWidth: 500.0,
                                                       ),
                                                       decoration: BoxDecoration(
@@ -979,7 +976,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                               children: [
                                                                 Padding(
                                                                   padding:
-                                                                      EdgeInsets
+                                                                      const EdgeInsets
                                                                           .all(
                                                                               8.0),
                                                                   child: Row(
@@ -1016,7 +1013,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
@@ -1047,9 +1044,9 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                           child:
                                                                               CachedNetworkImage(
                                                                             fadeInDuration:
-                                                                                Duration(milliseconds: 500),
+                                                                                const Duration(milliseconds: 500),
                                                                             fadeOutDuration:
-                                                                                Duration(milliseconds: 500),
+                                                                                const Duration(milliseconds: 500),
                                                                             imageUrl:
                                                                                 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHx1c2VyfGVufDB8fHx8MTY5ODYxNDM4NHww&ixlib=rb-4.0.3&q=80&w=1080',
                                                                             width:
@@ -1101,7 +1098,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                               ),
                                                                             ],
                                                                           ),
-                                                                        ].divide(SizedBox(height: 8.0)),
+                                                                        ].divide(const SizedBox(height: 8.0)),
                                                                       ),
                                                                       Column(
                                                                         mainAxisSize:
@@ -1116,7 +1113,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                                 child: wrapWithModel(
                                                                                   model: _model.addressRowModel2,
                                                                                   updateCallback: () => safeSetState(() {}),
-                                                                                  child: AddressRowWidget(
+                                                                                  child: const AddressRowWidget(
                                                                                     address: '766 Sutter St, San Francisco, California',
                                                                                   ),
                                                                                 ),
@@ -1141,7 +1138,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                               ),
                                                                             ],
                                                                           ),
-                                                                        ].divide(SizedBox(height: 8.0)),
+                                                                        ].divide(const SizedBox(height: 8.0)),
                                                                       ),
                                                                       Row(
                                                                         mainAxisSize:
@@ -1155,14 +1152,14 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                                 context.pushNamed('TicketsUser');
                                                                               },
                                                                               text: 'Message',
-                                                                              icon: Icon(
+                                                                              icon: const Icon(
                                                                                 Icons.message_outlined,
                                                                                 size: 16.0,
                                                                               ),
                                                                               options: FFButtonOptions(
                                                                                 height: 40.0,
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 9.0, 16.0, 9.0),
-                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 9.0, 16.0, 9.0),
+                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                 color: FlutterFlowTheme.of(context).primary,
                                                                                 textStyle: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                       fontFamily: 'Plus Jakarta Sans',
@@ -1170,7 +1167,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                                       letterSpacing: 0.0,
                                                                                     ),
                                                                                 elevation: 0.0,
-                                                                                borderSide: BorderSide(
+                                                                                borderSide: const BorderSide(
                                                                                   color: Colors.transparent,
                                                                                   width: 1.0,
                                                                                 ),
@@ -1185,22 +1182,22 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                                 print('Button pressed ...');
                                                                               },
                                                                               text: 'Call',
-                                                                              icon: Icon(
+                                                                              icon: const Icon(
                                                                                 Icons.call_sharp,
                                                                                 size: 16.0,
                                                                               ),
                                                                               options: FFButtonOptions(
                                                                                 height: 40.0,
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 9.0, 16.0, 9.0),
-                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                color: Color(0xFF66B949),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 9.0, 16.0, 9.0),
+                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                color: const Color(0xFF66B949),
                                                                                 textStyle: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                       fontFamily: 'Plus Jakarta Sans',
                                                                                       color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                       letterSpacing: 0.0,
                                                                                     ),
                                                                                 elevation: 0.0,
-                                                                                borderSide: BorderSide(
+                                                                                borderSide: const BorderSide(
                                                                                   color: Colors.transparent,
                                                                                   width: 1.0,
                                                                                 ),
@@ -1208,9 +1205,9 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                               ),
                                                                             ),
                                                                           ),
-                                                                        ].divide(SizedBox(width: 8.0)),
+                                                                        ].divide(const SizedBox(width: 8.0)),
                                                                       ),
-                                                                    ].divide(SizedBox(
+                                                                    ].divide(const SizedBox(
                                                                         height:
                                                                             24.0)),
                                                                   ),
@@ -1246,11 +1243,11 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                   child:
                                                                       CachedNetworkImage(
                                                                     fadeInDuration:
-                                                                        Duration(
+                                                                        const Duration(
                                                                             milliseconds:
                                                                                 500),
                                                                     fadeOutDuration:
-                                                                        Duration(
+                                                                        const Duration(
                                                                             milliseconds:
                                                                                 500),
                                                                     imageUrl:
@@ -1285,12 +1282,12 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                               double.infinity,
                                                                           height:
                                                                               40.0,
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               16.0,
                                                                               9.0,
                                                                               16.0,
                                                                               9.0),
-                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               0.0,
@@ -1307,7 +1304,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                           elevation:
                                                                               0.0,
                                                                           borderSide:
-                                                                              BorderSide(
+                                                                              const BorderSide(
                                                                             color:
                                                                                 Colors.transparent,
                                                                             width:
@@ -1318,11 +1315,11 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ].divide(SizedBox(
+                                                                  ].divide(const SizedBox(
                                                                       width:
                                                                           16.0)),
                                                                 ),
-                                                              ].divide(SizedBox(
+                                                              ].divide(const SizedBox(
                                                                   height:
                                                                       24.0)),
                                                             ),
@@ -1334,16 +1331,16 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                 ),
                                               ),
                                             ]
-                                                .divide(SizedBox(height: 24.0))
+                                                .divide(const SizedBox(height: 24.0))
                                                 .addToStart(
-                                                    SizedBox(height: 12.0))
+                                                    const SizedBox(height: 12.0))
                                                 .addToEnd(
-                                                    SizedBox(height: 24.0)),
+                                                    const SizedBox(height: 24.0)),
                                           ),
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             20.0, 0.0, 20.0, 0.0),
                                         child: Container(
                                           width: double.infinity,
@@ -1354,7 +1351,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                 BorderRadius.circular(16.0),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(20.0),
+                                            padding: const EdgeInsets.all(20.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
@@ -1385,10 +1382,10 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                     Flexible(
                                                       child: Container(
                                                         decoration:
-                                                            BoxDecoration(),
+                                                            const BoxDecoration(),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       8.0,
@@ -1436,7 +1433,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         4.0,
@@ -1483,7 +1480,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                       ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(width: 12.0)),
+                                                      const SizedBox(width: 12.0)),
                                                 ),
                                                 Row(
                                                   mainAxisSize:
@@ -1513,7 +1510,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                               safeSetState(
                                                                   () {}),
                                                           child:
-                                                              ReviewCardWidget(
+                                                              const ReviewCardWidget(
                                                             whoReviewed:
                                                                 'Albert Flores',
                                                             review:
@@ -1528,7 +1525,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                               safeSetState(
                                                                   () {}),
                                                           child:
-                                                              ReviewCardWidget(
+                                                              const ReviewCardWidget(
                                                             whoReviewed:
                                                                 'Mona Manneer',
                                                             review:
@@ -1543,7 +1540,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                               safeSetState(
                                                                   () {}),
                                                           child:
-                                                              ReviewCardWidget(
+                                                              const ReviewCardWidget(
                                                             whoReviewed:
                                                                 'Jannet McCarter',
                                                             review:
@@ -1560,7 +1557,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                     ))
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     20.0,
                                                                     0.0,
@@ -1574,7 +1571,7 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primaryBackground,
-                                                            boxShadow: [
+                                                            boxShadow: const [
                                                               BoxShadow(
                                                                 blurRadius:
                                                                     25.0,
@@ -1618,15 +1615,15 @@ class _DetailBuildingWidgetState extends State<DetailBuildingWidget> {
                                                       ),
                                                   ],
                                                 ),
-                                              ].divide(SizedBox(height: 24.0)),
+                                              ].divide(const SizedBox(height: 24.0)),
                                             ),
                                           ),
                                         ),
                                       ),
                                     ]
-                                        .divide(SizedBox(height: 20.0))
-                                        .addToStart(SizedBox(height: 20.0))
-                                        .addToEnd(SizedBox(height: 20.0)),
+                                        .divide(const SizedBox(height: 20.0))
+                                        .addToStart(const SizedBox(height: 20.0))
+                                        .addToEnd(const SizedBox(height: 20.0)),
                                   ),
                                 ),
                               ),

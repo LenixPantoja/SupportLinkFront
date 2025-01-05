@@ -2,11 +2,9 @@ import '/components/notifications/notifications_widget.dart';
 import '/components/user_menu_user/user_menu_user_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:ui';
 import 'package:badges/badges.dart' as badges;
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'heade_user_model.dart';
 export 'heade_user_model.dart';
@@ -64,7 +62,7 @@ class _HeadeUserWidgetState extends State<HeadeUserWidget> {
           ),
           Expanded(
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -103,9 +101,9 @@ class _HeadeUserWidgetState extends State<HeadeUserWidget> {
                                 fit: BoxFit.contain,
                               ),
                             ),
-                          ].divide(SizedBox(width: 8.0)),
+                          ].divide(const SizedBox(width: 8.0)),
                         ),
-                    ].divide(SizedBox(width: 8.0)),
+                    ].divide(const SizedBox(width: 8.0)),
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
@@ -124,13 +122,13 @@ class _HeadeUserWidgetState extends State<HeadeUserWidget> {
                                   context: context,
                                   isGlobal: false,
                                   avoidOverflow: false,
-                                  targetAnchor: AlignmentDirectional(1.0, 1.0)
+                                  targetAnchor: const AlignmentDirectional(1.0, 1.0)
                                       .resolve(Directionality.of(context)),
                                   followerAnchor:
-                                      AlignmentDirectional(1.0, -1.0)
+                                      const AlignmentDirectional(1.0, -1.0)
                                           .resolve(Directionality.of(context)),
                                   builder: (dialogContext) {
-                                    return Material(
+                                    return const Material(
                                       color: Colors.transparent,
                                       child: NotificationsWidget(),
                                     );
@@ -155,7 +153,7 @@ class _HeadeUserWidgetState extends State<HeadeUserWidget> {
                                 badgeColor:
                                     FlutterFlowTheme.of(context).secondary,
                                 elevation: 4.0,
-                                padding: EdgeInsets.all(5.0),
+                                padding: const EdgeInsets.all(5.0),
                                 position: badges.BadgePosition.topEnd(),
                                 animationType: badges.BadgeAnimationType.scale,
                                 toAnimate: true,
@@ -167,7 +165,7 @@ class _HeadeUserWidgetState extends State<HeadeUserWidget> {
                                         .secondaryBackground,
                                     shape: BoxShape.circle,
                                   ),
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Icon(
                                     Icons.notifications_none,
                                     color: FlutterFlowTheme.of(context)
@@ -191,12 +189,12 @@ class _HeadeUserWidgetState extends State<HeadeUserWidget> {
                               context: context,
                               isGlobal: false,
                               avoidOverflow: false,
-                              targetAnchor: AlignmentDirectional(1.0, 1.0)
+                              targetAnchor: const AlignmentDirectional(1.0, 1.0)
                                   .resolve(Directionality.of(context)),
-                              followerAnchor: AlignmentDirectional(1.0, -1.0)
+                              followerAnchor: const AlignmentDirectional(1.0, -1.0)
                                   .resolve(Directionality.of(context)),
                               builder: (dialogContext) {
-                                return Material(
+                                return const Material(
                                   color: Colors.transparent,
                                   child: UserMenuUserWidget(),
                                 );
@@ -207,7 +205,7 @@ class _HeadeUserWidgetState extends State<HeadeUserWidget> {
                             width: 44.0,
                             height: 44.0,
                             clipBehavior: Clip.antiAlias,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                             ),
                             child: Image.network(
@@ -217,7 +215,7 @@ class _HeadeUserWidgetState extends State<HeadeUserWidget> {
                           ),
                         ),
                       ),
-                    ].divide(SizedBox(width: 24.0)),
+                    ].divide(const SizedBox(width: 24.0)),
                   ),
                 ],
               ),

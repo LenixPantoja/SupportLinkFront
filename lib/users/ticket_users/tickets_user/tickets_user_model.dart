@@ -1,20 +1,9 @@
 import '/components/divider/divider_widget.dart';
 import '/components/heade_user/heade_user_widget.dart';
 import '/components/sub_header/sub_header_widget.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/upload_data.dart';
-import '/users/ticket_users/modal_create_ticket_user/modal_create_ticket_user_widget.dart';
-import 'dart:ui';
 import 'tickets_user_widget.dart' show TicketsUserWidget;
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class TicketsUserModel extends FlutterFlowModel<TicketsUserWidget> {
   ///  State fields for stateful widgets in this page.

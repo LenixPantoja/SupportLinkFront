@@ -5,8 +5,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'modal_create_type_model.dart';
 export 'modal_create_type_model.dart';
 
@@ -65,7 +63,7 @@ class _ModalCreateTypeWidgetState extends State<ModalCreateTypeWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Spacer(),
+              const Spacer(),
               Expanded(
                 flex: 4,
                 child: Row(
@@ -76,11 +74,11 @@ class _ModalCreateTypeWidgetState extends State<ModalCreateTypeWidget> {
                       phone: false,
                       tablet: false,
                     ))
-                      Spacer(),
+                      const Spacer(),
                     Expanded(
                       flex: 2,
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 0.0, 20.0, 0.0),
                         child: Container(
                           decoration: BoxDecoration(
@@ -107,7 +105,7 @@ class _ModalCreateTypeWidgetState extends State<ModalCreateTypeWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 10.0, 0.0),
                                             child: FlutterFlowIconButton(
                                               borderRadius: 20.0,
@@ -128,7 +126,7 @@ class _ModalCreateTypeWidgetState extends State<ModalCreateTypeWidget> {
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             20.0, 0.0, 20.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -152,13 +150,13 @@ class _ModalCreateTypeWidgetState extends State<ModalCreateTypeWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 32.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       20.0, 0.0, 20.0, 0.0),
                                               child: Column(
@@ -194,7 +192,7 @@ class _ModalCreateTypeWidgetState extends State<ModalCreateTypeWidget> {
                                                     onChanged: (_) =>
                                                         EasyDebounce.debounce(
                                                       '_model.textController1',
-                                                      Duration(
+                                                      const Duration(
                                                           milliseconds: 500),
                                                       () => safeSetState(() {}),
                                                     ),
@@ -276,7 +274,7 @@ class _ModalCreateTypeWidgetState extends State<ModalCreateTypeWidget> {
                                                                 .circular(4.0),
                                                       ),
                                                       contentPadding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -299,11 +297,11 @@ class _ModalCreateTypeWidgetState extends State<ModalCreateTypeWidget> {
                                                         .textController1Validator
                                                         .asValidator(context),
                                                   ),
-                                                ].divide(SizedBox(height: 8.0)),
+                                                ].divide(const SizedBox(height: 8.0)),
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       20.0, 0.0, 20.0, 0.0),
                                               child: Column(
@@ -339,7 +337,7 @@ class _ModalCreateTypeWidgetState extends State<ModalCreateTypeWidget> {
                                                     onChanged: (_) =>
                                                         EasyDebounce.debounce(
                                                       '_model.textController2',
-                                                      Duration(
+                                                      const Duration(
                                                           milliseconds: 500),
                                                       () => safeSetState(() {}),
                                                     ),
@@ -421,7 +419,7 @@ class _ModalCreateTypeWidgetState extends State<ModalCreateTypeWidget> {
                                                                 .circular(4.0),
                                                       ),
                                                       contentPadding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -444,10 +442,10 @@ class _ModalCreateTypeWidgetState extends State<ModalCreateTypeWidget> {
                                                         .textController2Validator
                                                         .asValidator(context),
                                                   ),
-                                                ].divide(SizedBox(height: 8.0)),
+                                                ].divide(const SizedBox(height: 8.0)),
                                               ),
                                             ),
-                                          ].divide(SizedBox(height: 16.0)),
+                                          ].divide(const SizedBox(height: 16.0)),
                                         ),
                                       ),
                                     ],
@@ -455,7 +453,7 @@ class _ModalCreateTypeWidgetState extends State<ModalCreateTypeWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsets.all(20.0),
+                                padding: const EdgeInsets.all(20.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -480,7 +478,7 @@ class _ModalCreateTypeWidgetState extends State<ModalCreateTypeWidget> {
                                                         ),
                                               ),
                                               duration:
-                                                  Duration(milliseconds: 3000),
+                                                  const Duration(milliseconds: 3000),
                                               backgroundColor:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
@@ -493,10 +491,10 @@ class _ModalCreateTypeWidgetState extends State<ModalCreateTypeWidget> {
                                           width: 250.0,
                                           height: 50.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 13.0, 24.0, 13.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -511,7 +509,7 @@ class _ModalCreateTypeWidgetState extends State<ModalCreateTypeWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                           elevation: 0.0,
-                                          borderSide: BorderSide(
+                                          borderSide: const BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -533,11 +531,11 @@ class _ModalCreateTypeWidgetState extends State<ModalCreateTypeWidget> {
                       phone: false,
                       tablet: false,
                     ))
-                      Spacer(),
+                      const Spacer(),
                   ],
                 ),
               ),
-              Spacer(),
+              const Spacer(),
             ],
           ),
         ),

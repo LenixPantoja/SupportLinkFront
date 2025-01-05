@@ -3,18 +3,9 @@ import '/components/header_administrator/header_administrator_widget.dart';
 import '/components/menu/menu_widget.dart';
 import '/components/review_card/review_card_widget.dart';
 import '/components/sub_header/sub_header_widget.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'detail_building_widget.dart' show DetailBuildingWidget;
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class DetailBuildingModel extends FlutterFlowModel<DetailBuildingWidget> {
   ///  State fields for stateful widgets in this page.
