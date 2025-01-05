@@ -42,7 +42,9 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
       length: 3,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
-    _model.txtAffairOpenTextController ??= TextEditingController();
+    _model.txtAffairOpenTextController ??= TextEditingController(
+        text:
+            'Asunto del ticketAsunto del ticketAsunto del ticketAsunto del ticket');
     _model.txtAffairOpenFocusNode ??= FocusNode();
 
     _model.txtAffairPendingTextController ??= TextEditingController();
@@ -563,6 +565,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                   fontFamily: 'Plus Jakarta Sans',
                                                                                                   color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                  fontSize: 15.0,
                                                                                                   letterSpacing: 0.0,
                                                                                                   fontWeight: FontWeight.bold,
                                                                                                 ),
@@ -584,7 +587,6 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                       fontFamily: 'Plus Jakarta Sans',
                                                                                                       letterSpacing: 0.0,
                                                                                                     ),
-                                                                                                hintText: 'Asunto del ticketAsunto del ticketAsunto del ticketAsunto del ticket',
                                                                                                 hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                       fontFamily: 'Plus Jakarta Sans',
                                                                                                       color: FlutterFlowTheme.of(context).primaryText,
@@ -623,6 +625,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                     fontFamily: 'Plus Jakarta Sans',
+                                                                                                    fontSize: 12.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                   ),
                                                                                               cursorColor: FlutterFlowTheme.of(context).primaryText,
@@ -1110,7 +1113,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                     hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                           fontFamily: 'Plus Jakarta Sans',
                                                                                           color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                          fontSize: 14.0,
+                                                                                          fontSize: 12.0,
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                     enabledBorder: OutlineInputBorder(
@@ -1177,6 +1180,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                     hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                           fontFamily: 'Plus Jakarta Sans',
                                                                                           color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                          fontSize: 12.0,
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                     enabledBorder: OutlineInputBorder(
@@ -1242,6 +1246,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                     hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                           fontFamily: 'Plus Jakarta Sans',
                                                                                           color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                          fontSize: 12.0,
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                     enabledBorder: OutlineInputBorder(
@@ -1426,6 +1431,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                                 'Asunto del ticket o solicitud',
                                                                                                                 style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                                                       fontFamily: 'Plus Jakarta Sans',
+                                                                                                                      fontSize: 15.0,
                                                                                                                       letterSpacing: 0.0,
                                                                                                                     ),
                                                                                                               ),
@@ -1434,6 +1440,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                       fontFamily: 'Plus Jakarta Sans',
                                                                                                                       color: FlutterFlowTheme.of(context).neutral500,
+                                                                                                                      fontSize: 12.0,
                                                                                                                       letterSpacing: 0.0,
                                                                                                                     ),
                                                                                                               ),
@@ -1476,6 +1483,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                           hintText: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
                                                                                                           hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                 fontFamily: 'Plus Jakarta Sans',
+                                                                                                                fontSize: 12.0,
                                                                                                                 letterSpacing: 0.0,
                                                                                                               ),
                                                                                                           enabledBorder: OutlineInputBorder(
@@ -1552,6 +1560,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                           'Archivos adjuntos',
                                                                                                           style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                                                 fontFamily: 'Plus Jakarta Sans',
+                                                                                                                fontSize: 15.0,
                                                                                                                 letterSpacing: 0.0,
                                                                                                               ),
                                                                                                         ),
@@ -1650,6 +1659,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                           'Comentario respuesta',
                                                                                                           style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                                                 fontFamily: 'Plus Jakarta Sans',
+                                                                                                                fontSize: 15.0,
                                                                                                                 letterSpacing: 0.0,
                                                                                                               ),
                                                                                                         ),
@@ -1683,6 +1693,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                                   style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                                                         fontFamily: 'Plus Jakarta Sans',
                                                                                                                         color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                                        fontSize: 14.0,
                                                                                                                         letterSpacing: 0.0,
                                                                                                                         fontStyle: FontStyle.italic,
                                                                                                                         decoration: TextDecoration.underline,
@@ -1761,6 +1772,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                             fontFamily: 'Plus Jakarta Sans',
                                                                                                                             color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                                            fontSize: 12.0,
                                                                                                                             letterSpacing: 0.0,
                                                                                                                           ),
                                                                                                                       maxLines: null,
@@ -1896,6 +1908,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                     fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontSize: 12.0,
                                                                                     letterSpacing: 0.0,
                                                                                   ),
                                                                               maxLines: null,
