@@ -53,8 +53,8 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
     _model.txtAffairClosedTicketTextController ??= TextEditingController();
     _model.txtAffairClosedTicketFocusNode ??= FocusNode();
 
-    _model.txtPriorityTextController ??= TextEditingController();
-    _model.txtPriorityFocusNode ??= FocusNode();
+    _model.txtPrioritysTextController ??= TextEditingController();
+    _model.txtPrioritysFocusNode ??= FocusNode();
 
     _model.txtGroupTextController ??= TextEditingController();
     _model.txtGroupFocusNode ??= FocusNode();
@@ -1097,8 +1097,8 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                               Container(
                                                                                 width: double.infinity,
                                                                                 child: TextFormField(
-                                                                                  controller: _model.txtPriorityTextController,
-                                                                                  focusNode: _model.txtPriorityFocusNode,
+                                                                                  controller: _model.txtPrioritysTextController,
+                                                                                  focusNode: _model.txtPrioritysFocusNode,
                                                                                   autofocus: false,
                                                                                   readOnly: true,
                                                                                   obscureText: false,
@@ -1158,7 +1158,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                         letterSpacing: 0.0,
                                                                                       ),
                                                                                   cursorColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                  validator: _model.txtPriorityTextControllerValidator.asValidator(context),
+                                                                                  validator: _model.txtPrioritysTextControllerValidator.asValidator(context),
                                                                                 ),
                                                                               ),
                                                                               Container(

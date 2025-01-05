@@ -46,10 +46,10 @@ class TicketsUserModel extends FlutterFlowModel<TicketsUserWidget> {
   TextEditingController? txtAffairClosedTicketTextController;
   String? Function(BuildContext, String?)?
       txtAffairClosedTicketTextControllerValidator;
-  // State field(s) for txtPriority widget.
-  FocusNode? txtPriorityFocusNode;
-  TextEditingController? txtPriorityTextController;
-  String? Function(BuildContext, String?)? txtPriorityTextControllerValidator;
+  // State field(s) for txtPrioritys widget.
+  FocusNode? txtPrioritysFocusNode;
+  TextEditingController? txtPrioritysTextController;
+  String? Function(BuildContext, String?)? txtPrioritysTextControllerValidator;
   // State field(s) for txtGroup widget.
   FocusNode? txtGroupFocusNode;
   TextEditingController? txtGroupTextController;
@@ -117,8 +117,8 @@ class TicketsUserModel extends FlutterFlowModel<TicketsUserWidget> {
     txtAffairClosedTicketFocusNode?.dispose();
     txtAffairClosedTicketTextController?.dispose();
 
-    txtPriorityFocusNode?.dispose();
-    txtPriorityTextController?.dispose();
+    txtPrioritysFocusNode?.dispose();
+    txtPrioritysTextController?.dispose();
 
     txtGroupFocusNode?.dispose();
     txtGroupTextController?.dispose();
