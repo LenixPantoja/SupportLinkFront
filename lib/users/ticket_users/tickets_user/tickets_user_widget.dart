@@ -7,10 +7,13 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/users/ticket_users/modal_create_ticket_user/modal_create_ticket_user_widget.dart';
+import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'tickets_user_model.dart';
 export 'tickets_user_model.dart';
 
@@ -89,7 +92,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: SafeArea(
           top: true,
-          child: SizedBox(
+          child: Container(
             width: double.infinity,
             height: double.infinity,
             child: Stack(
@@ -111,7 +114,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                             wrapWithModel(
                               model: _model.headeUserModel,
                               updateCallback: () => safeSetState(() {}),
-                              child: const HeadeUserWidget(),
+                              child: HeadeUserWidget(),
                             ),
                             Expanded(
                               child: Container(
@@ -128,7 +131,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                   children: [
                                     Expanded(
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             20.0, 0.0, 20.0, 0.0),
                                         child: Container(
                                           width: double.infinity,
@@ -148,7 +151,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                 child: Container(
                                                   width: 300.0,
                                                   height: double.infinity,
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -158,7 +161,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     20.0,
                                                                     0.0,
@@ -180,7 +183,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                     safeSetState(
                                                                         () {}),
                                                                 child:
-                                                                    const SubHeaderWidget(
+                                                                    SubHeaderWidget(
                                                                   title:
                                                                       'Mis solicitudes',
                                                                   showBackBtn:
@@ -218,7 +221,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                         padding:
                                                                             MediaQuery.viewInsetsOf(context),
                                                                         child:
-                                                                            const ModalCreateTicketUserWidget(),
+                                                                            ModalCreateTicketUserWidget(),
                                                                       ),
                                                                     );
                                                                   },
@@ -238,14 +241,14 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                               options:
                                                                   FFButtonOptions(
                                                                 height: 40.0,
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         13.0,
                                                                         24.0,
                                                                         13.0),
                                                                 iconPadding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             0.0),
                                                                 color: FlutterFlowTheme.of(
@@ -265,7 +268,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                     ),
                                                                 elevation: 0.0,
                                                                 borderSide:
-                                                                    const BorderSide(
+                                                                    BorderSide(
                                                                   color: Colors
                                                                       .transparent,
                                                                   width: 1.0,
@@ -286,13 +289,13 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                           Expanded(
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           20.0,
                                                                           0.0,
                                                                           20.0,
                                                                           0.0),
-                                                              child: SizedBox(
+                                                              child: Container(
                                                                 width: 200.0,
                                                                 child:
                                                                     TextFormField(
@@ -304,7 +307,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                       EasyDebounce
                                                                           .debounce(
                                                                     '_model.searchTextFieldTextController',
-                                                                    const Duration(
+                                                                    Duration(
                                                                         milliseconds:
                                                                             500),
                                                                     () => safeSetState(
@@ -427,7 +430,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     4.0,
                                                                     0.0,
@@ -440,14 +443,14 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                       .width *
                                                                   2.0,
                                                           decoration:
-                                                              const BoxDecoration(),
-                                                          child: SizedBox(
+                                                              BoxDecoration(),
+                                                          child: Container(
                                                             height: 200.0,
                                                             child: Column(
                                                               children: [
                                                                 Align(
                                                                   alignment:
-                                                                      const Alignment(
+                                                                      Alignment(
                                                                           0.0,
                                                                           0),
                                                                   child: TabBar(
@@ -467,13 +470,13 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                               0.0,
                                                                         ),
                                                                     unselectedLabelStyle:
-                                                                        const TextStyle(),
+                                                                        TextStyle(),
                                                                     indicatorColor:
                                                                         FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                     indicatorWeight:
                                                                         3.0,
-                                                                    tabs: const [
+                                                                    tabs: [
                                                                       Tab(
                                                                         text:
                                                                             'Abiertos',
@@ -508,7 +511,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                             .tabBarController,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -532,7 +535,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                 Axis.vertical,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                                 child: Container(
                                                                                   width: double.infinity,
                                                                                   decoration: BoxDecoration(
@@ -555,7 +558,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                       crossAxisAlignment: CrossAxisAlignment.start,
                                                                                       children: [
                                                                                         Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 0.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 0.0, 0.0),
                                                                                           child: Text(
                                                                                             'Ticket : #23551',
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -567,8 +570,8 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
-                                                                                          child: SizedBox(
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
+                                                                                          child: Container(
                                                                                             width: double.infinity,
                                                                                             child: TextFormField(
                                                                                               controller: _model.txtAffairOpenTextController,
@@ -596,7 +599,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                   borderRadius: BorderRadius.circular(8.0),
                                                                                                 ),
                                                                                                 focusedBorder: OutlineInputBorder(
-                                                                                                  borderSide: const BorderSide(
+                                                                                                  borderSide: BorderSide(
                                                                                                     color: Color(0x00000000),
                                                                                                     width: 1.0,
                                                                                                   ),
@@ -655,7 +658,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                               Axis.vertical,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                               child: Container(
                                                                                 width: double.infinity,
                                                                                 decoration: BoxDecoration(
@@ -678,7 +681,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 0.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 0.0, 0.0),
                                                                                         child: Text(
                                                                                           'Ticket : #23551',
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -690,8 +693,8 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                         ),
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
-                                                                                        child: SizedBox(
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
+                                                                                        child: Container(
                                                                                           width: double.infinity,
                                                                                           child: TextFormField(
                                                                                             controller: _model.txtAffairPendingTextController,
@@ -719,7 +722,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                 borderRadius: BorderRadius.circular(8.0),
                                                                                               ),
                                                                                               focusedBorder: OutlineInputBorder(
-                                                                                                borderSide: const BorderSide(
+                                                                                                borderSide: BorderSide(
                                                                                                   color: Color(0x00000000),
                                                                                                   width: 1.0,
                                                                                                 ),
@@ -777,7 +780,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                               Axis.vertical,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                                                                               child: Container(
                                                                                 width: double.infinity,
                                                                                 decoration: BoxDecoration(
@@ -800,7 +803,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 0.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 0.0, 0.0),
                                                                                         child: Text(
                                                                                           'Ticket : #23551',
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -812,8 +815,8 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                         ),
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
-                                                                                        child: SizedBox(
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
+                                                                                        child: Container(
                                                                                           width: double.infinity,
                                                                                           child: TextFormField(
                                                                                             controller: _model.txtAffairClosedTicketTextController,
@@ -841,7 +844,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                 borderRadius: BorderRadius.circular(8.0),
                                                                                               ),
                                                                                               focusedBorder: OutlineInputBorder(
-                                                                                                borderSide: const BorderSide(
+                                                                                                borderSide: BorderSide(
                                                                                                   color: Color(0x00000000),
                                                                                                   width: 1.0,
                                                                                                 ),
@@ -890,9 +893,9 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                         ),
                                                       ),
                                                     ]
-                                                        .divide(const SizedBox(
+                                                        .divide(SizedBox(
                                                             height: 24.0))
-                                                        .addToStart(const SizedBox(
+                                                        .addToStart(SizedBox(
                                                             height: 12.0)),
                                                   ),
                                                 ),
@@ -936,10 +939,10 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                 double.infinity,
                                                             height: 100.0,
                                                             decoration:
-                                                                const BoxDecoration(),
+                                                                BoxDecoration(),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsets
+                                                                  EdgeInsets
                                                                       .all(
                                                                           20.0),
                                                               child: Column(
@@ -962,7 +965,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                         ),
                                                                   ),
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             10.0,
@@ -983,24 +986,24 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                               Container(
                                                                                 width: 60.0,
                                                                                 height: 60.0,
-                                                                                decoration: const BoxDecoration(
+                                                                                decoration: BoxDecoration(
                                                                                   shape: BoxShape.rectangle,
                                                                                 ),
                                                                                 child: Padding(
-                                                                                  padding: const EdgeInsets.all(4.0),
-                                                                                  child: SizedBox(
+                                                                                  padding: EdgeInsets.all(4.0),
+                                                                                  child: Container(
                                                                                     width: double.infinity,
                                                                                     height: double.infinity,
                                                                                     child: Stack(
-                                                                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                      alignment: AlignmentDirectional(0.0, 0.0),
                                                                                       children: [
                                                                                         Padding(
-                                                                                          padding: const EdgeInsets.all(2.0),
+                                                                                          padding: EdgeInsets.all(2.0),
                                                                                           child: ClipRRect(
                                                                                             borderRadius: BorderRadius.circular(8.0),
                                                                                             child: CachedNetworkImage(
-                                                                                              fadeInDuration: const Duration(milliseconds: 500),
-                                                                                              fadeOutDuration: const Duration(milliseconds: 500),
+                                                                                              fadeInDuration: Duration(milliseconds: 500),
+                                                                                              fadeOutDuration: Duration(milliseconds: 500),
                                                                                               imageUrl: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHx1c2VyfGVufDB8fHx8MTY5OTE4NDcxOXww&ixlib=rb-4.0.3&q=80&w=400',
                                                                                               width: 40.0,
                                                                                               height: 40.0,
@@ -1049,10 +1052,10 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                         ),
                                                                                       ],
                                                                                     ),
-                                                                                  ].divide(const SizedBox(height: 8.0)),
+                                                                                  ].divide(SizedBox(height: 8.0)),
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(width: 20.0)),
+                                                                            ].divide(SizedBox(width: 20.0)),
                                                                           ),
                                                                         ),
                                                                         Container(
@@ -1072,7 +1075,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                             crossAxisAlignment:
                                                                                 CrossAxisAlignment.start,
                                                                             children: [
-                                                                              SizedBox(
+                                                                              Container(
                                                                                 width: double.infinity,
                                                                                 child: TextFormField(
                                                                                   controller: _model.txtPriorityTextController,
@@ -1095,14 +1098,14 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                     enabledBorder: OutlineInputBorder(
-                                                                                      borderSide: const BorderSide(
+                                                                                      borderSide: BorderSide(
                                                                                         color: Color(0x00000000),
                                                                                         width: 1.0,
                                                                                       ),
                                                                                       borderRadius: BorderRadius.circular(8.0),
                                                                                     ),
                                                                                     focusedBorder: OutlineInputBorder(
-                                                                                      borderSide: const BorderSide(
+                                                                                      borderSide: BorderSide(
                                                                                         color: Color(0x00000000),
                                                                                         width: 1.0,
                                                                                       ),
@@ -1139,7 +1142,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                   validator: _model.txtPriorityTextControllerValidator.asValidator(context),
                                                                                 ),
                                                                               ),
-                                                                              SizedBox(
+                                                                              Container(
                                                                                 width: double.infinity,
                                                                                 child: TextFormField(
                                                                                   controller: _model.txtGroupTextController,
@@ -1161,14 +1164,14 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                     enabledBorder: OutlineInputBorder(
-                                                                                      borderSide: const BorderSide(
+                                                                                      borderSide: BorderSide(
                                                                                         color: Color(0x00000000),
                                                                                         width: 1.0,
                                                                                       ),
                                                                                       borderRadius: BorderRadius.circular(8.0),
                                                                                     ),
                                                                                     focusedBorder: OutlineInputBorder(
-                                                                                      borderSide: const BorderSide(
+                                                                                      borderSide: BorderSide(
                                                                                         color: Color(0x00000000),
                                                                                         width: 1.0,
                                                                                       ),
@@ -1204,7 +1207,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                   validator: _model.txtGroupTextControllerValidator.asValidator(context),
                                                                                 ),
                                                                               ),
-                                                                              SizedBox(
+                                                                              Container(
                                                                                 width: double.infinity,
                                                                                 child: TextFormField(
                                                                                   controller: _model.txtTypeTextController,
@@ -1226,14 +1229,14 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                     enabledBorder: OutlineInputBorder(
-                                                                                      borderSide: const BorderSide(
+                                                                                      borderSide: BorderSide(
                                                                                         color: Color(0x00000000),
                                                                                         width: 1.0,
                                                                                       ),
                                                                                       borderRadius: BorderRadius.circular(8.0),
                                                                                     ),
                                                                                     focusedBorder: OutlineInputBorder(
-                                                                                      borderSide: const BorderSide(
+                                                                                      borderSide: BorderSide(
                                                                                         color: Color(0x00000000),
                                                                                         width: 1.0,
                                                                                       ),
@@ -1295,7 +1298,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                     ],
                                                                   ),
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             20.0,
@@ -1309,7 +1312,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                           () =>
                                                                               safeSetState(() {}),
                                                                       child:
-                                                                          const DividerWidget(
+                                                                          DividerWidget(
                                                                         title:
                                                                             '',
                                                                         titleInLeftSide:
@@ -1336,7 +1339,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                             children:
                                                                                 [
                                                                               Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                                                                                 child: Wrap(
                                                                                   spacing: 24.0,
                                                                                   runSpacing: 24.0,
@@ -1383,7 +1386,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 child: Padding(
-                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 10.0),
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 10.0),
                                                                                                   child: Row(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     mainAxisAlignment: MainAxisAlignment.start,
@@ -1419,16 +1422,16 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                               ),
                                                                                                               tileColor: FlutterFlowTheme.of(context).primaryBackground,
                                                                                                               dense: false,
-                                                                                                              contentPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
+                                                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                                                                                                             ),
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                    ].divide(const SizedBox(width: 16.0)),
+                                                                                                    ].divide(SizedBox(width: 16.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
-                                                                                            ].divide(const SizedBox(height: 16.0)),
+                                                                                            ].divide(SizedBox(height: 16.0)),
                                                                                           ),
                                                                                           Column(
                                                                                             mainAxisSize: MainAxisSize.min,
@@ -1439,7 +1442,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                                 children: [
                                                                                                   Expanded(
-                                                                                                    child: SizedBox(
+                                                                                                    child: Container(
                                                                                                       width: 200.0,
                                                                                                       child: TextFormField(
                                                                                                         controller: _model.txtDescriptionTicketTextController,
@@ -1459,14 +1462,14 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                                 letterSpacing: 0.0,
                                                                                                               ),
                                                                                                           enabledBorder: OutlineInputBorder(
-                                                                                                            borderSide: const BorderSide(
+                                                                                                            borderSide: BorderSide(
                                                                                                               color: Color(0x00000000),
                                                                                                               width: 1.0,
                                                                                                             ),
                                                                                                             borderRadius: BorderRadius.circular(8.0),
                                                                                                           ),
                                                                                                           focusedBorder: OutlineInputBorder(
-                                                                                                            borderSide: const BorderSide(
+                                                                                                            borderSide: BorderSide(
                                                                                                               color: Color(0x00000000),
                                                                                                               width: 1.0,
                                                                                                             ),
@@ -1505,11 +1508,11 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                               wrapWithModel(
                                                                                                 model: _model.dividerModel2,
                                                                                                 updateCallback: () => safeSetState(() {}),
-                                                                                                child: const DividerWidget(
+                                                                                                child: DividerWidget(
                                                                                                   titleInLeftSide: false,
                                                                                                 ),
                                                                                               ),
-                                                                                            ].divide(const SizedBox(height: 16.0)),
+                                                                                            ].divide(SizedBox(height: 16.0)),
                                                                                           ),
                                                                                           Column(
                                                                                             mainAxisSize: MainAxisSize.max,
@@ -1527,7 +1530,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                         size: 24.0,
                                                                                                       ),
                                                                                                       Padding(
-                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                                                         child: Text(
                                                                                                           'Archivos adjuntos',
                                                                                                           style: FlutterFlowTheme.of(context).titleLarge.override(
@@ -1551,7 +1554,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                   scrollDirection: Axis.vertical,
                                                                                                   children: [
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(20.0, 12.0, 20.0, 12.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(20.0, 12.0, 20.0, 12.0),
                                                                                                       child: Column(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         children: [
@@ -1590,22 +1593,22 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                           wrapWithModel(
                                                                                                             model: _model.dividerModel3,
                                                                                                             updateCallback: () => safeSetState(() {}),
-                                                                                                            child: const DividerWidget(
+                                                                                                            child: DividerWidget(
                                                                                                               titleInLeftSide: false,
                                                                                                             ),
                                                                                                           ),
-                                                                                                        ].divide(const SizedBox(height: 10.0)),
+                                                                                                        ].divide(SizedBox(height: 10.0)),
                                                                                                       ),
                                                                                                     ),
                                                                                                   ],
                                                                                                 ),
                                                                                               ),
-                                                                                            ].divide(const SizedBox(height: 24.0)),
+                                                                                            ].divide(SizedBox(height: 24.0)),
                                                                                           ),
                                                                                           wrapWithModel(
                                                                                             model: _model.dividerModel4,
                                                                                             updateCallback: () => safeSetState(() {}),
-                                                                                            child: const DividerWidget(
+                                                                                            child: DividerWidget(
                                                                                               titleInLeftSide: false,
                                                                                             ),
                                                                                           ),
@@ -1625,7 +1628,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                         size: 24.0,
                                                                                                       ),
                                                                                                       Padding(
-                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                                                         child: Text(
                                                                                                           'Comentario respuesta',
                                                                                                           style: FlutterFlowTheme.of(context).titleLarge.override(
@@ -1649,7 +1652,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                   scrollDirection: Axis.vertical,
                                                                                                   children: [
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(20.0, 12.0, 20.0, 12.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(20.0, 12.0, 20.0, 12.0),
                                                                                                       child: Column(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         children: [
@@ -1688,8 +1691,8 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                             children: [
                                                                                                               Expanded(
                                                                                                                 child: Padding(
-                                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
-                                                                                                                  child: SizedBox(
+                                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
+                                                                                                                  child: Container(
                                                                                                                     width: 200.0,
                                                                                                                     child: TextFormField(
                                                                                                                       controller: _model.txtCommentResponseTextController,
@@ -1708,14 +1711,14 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                                               letterSpacing: 0.0,
                                                                                                                             ),
                                                                                                                         enabledBorder: OutlineInputBorder(
-                                                                                                                          borderSide: const BorderSide(
+                                                                                                                          borderSide: BorderSide(
                                                                                                                             color: Color(0x00000000),
                                                                                                                             width: 1.0,
                                                                                                                           ),
                                                                                                                           borderRadius: BorderRadius.circular(8.0),
                                                                                                                         ),
                                                                                                                         focusedBorder: OutlineInputBorder(
-                                                                                                                          borderSide: const BorderSide(
+                                                                                                                          borderSide: BorderSide(
                                                                                                                             color: Color(0x00000000),
                                                                                                                             width: 1.0,
                                                                                                                           ),
@@ -1753,30 +1756,30 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                               ),
                                                                                                             ],
                                                                                                           ),
-                                                                                                        ].divide(const SizedBox(height: 10.0)),
+                                                                                                        ].divide(SizedBox(height: 10.0)),
                                                                                                       ),
                                                                                                     ),
                                                                                                     wrapWithModel(
                                                                                                       model: _model.dividerModel5,
                                                                                                       updateCallback: () => safeSetState(() {}),
-                                                                                                      child: const DividerWidget(
+                                                                                                      child: DividerWidget(
                                                                                                         titleInLeftSide: false,
                                                                                                       ),
                                                                                                     ),
                                                                                                   ],
                                                                                                 ),
                                                                                               ),
-                                                                                            ].divide(const SizedBox(height: 24.0)),
+                                                                                            ].divide(SizedBox(height: 24.0)),
                                                                                           ),
-                                                                                        ].divide(const SizedBox(height: 24.0)),
+                                                                                        ].divide(SizedBox(height: 24.0)),
                                                                                       ),
                                                                                     ),
                                                                                   ],
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(height: 24.0)).addToStart(const SizedBox(height: 12.0)).addToEnd(const SizedBox(height: 24.0)),
+                                                                            ].divide(SizedBox(height: 24.0)).addToStart(SizedBox(height: 12.0)).addToEnd(SizedBox(height: 24.0)),
                                                                           ),
-                                                                        ].divide(const SizedBox(height: 8.0)),
+                                                                        ].divide(SizedBox(height: 8.0)),
                                                                       ),
                                                                     ),
                                                                   ),
@@ -1791,7 +1794,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                           updateCallback: () =>
                                                               safeSetState(
                                                                   () {}),
-                                                          child: const DividerWidget(
+                                                          child: DividerWidget(
                                                             titleInLeftSide:
                                                                 false,
                                                           ),
@@ -1801,10 +1804,10 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                               double.infinity,
                                                           height: 80.0,
                                                           decoration:
-                                                              const BoxDecoration(),
+                                                              BoxDecoration(),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsets.all(
+                                                                EdgeInsets.all(
                                                                     20.0),
                                                             child: Row(
                                                               mainAxisSize:
@@ -1824,7 +1827,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                               .all(
                                                                         color: valueOrDefault<
                                                                             Color>(
-                                                                          _model.messageTextFieldTextController.text != ''
+                                                                          _model.messageTextFieldTextController.text != null && _model.messageTextFieldTextController.text != ''
                                                                               ? FlutterFlowTheme.of(context).primary
                                                                               : FlutterFlowTheme.of(context).neutral100,
                                                                           FlutterFlowTheme.of(context)
@@ -1843,7 +1846,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                           [
                                                                         Expanded(
                                                                           child:
-                                                                              SizedBox(
+                                                                              Container(
                                                                             width:
                                                                                 500.0,
                                                                             child:
@@ -1852,7 +1855,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                               focusNode: _model.messageTextFieldFocusNode,
                                                                               onChanged: (_) => EasyDebounce.debounce(
                                                                                 '_model.messageTextFieldTextController',
-                                                                                const Duration(milliseconds: 500),
+                                                                                Duration(milliseconds: 500),
                                                                                 () => safeSetState(() {}),
                                                                               ),
                                                                               autofocus: false,
@@ -1872,7 +1875,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                 focusedBorder: InputBorder.none,
                                                                                 errorBorder: InputBorder.none,
                                                                                 focusedErrorBorder: InputBorder.none,
-                                                                                contentPadding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                contentPadding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                     fontFamily: 'Plus Jakarta Sans',
@@ -1948,7 +1951,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                             }
                                                                           },
                                                                         ),
-                                                                      ].divide(const SizedBox(
+                                                                      ].divide(SizedBox(
                                                                               width: 16.0)),
                                                                     ),
                                                                   ),
@@ -1980,7 +1983,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                         'IconButton pressed ...');
                                                                   },
                                                                 ),
-                                                              ].divide(const SizedBox(
+                                                              ].divide(SizedBox(
                                                                   width: 16.0)),
                                                             ),
                                                           ),
@@ -1995,9 +1998,9 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                       ),
                                     ),
                                   ]
-                                      .divide(const SizedBox(height: 20.0))
-                                      .addToStart(const SizedBox(height: 20.0))
-                                      .addToEnd(const SizedBox(height: 20.0)),
+                                      .divide(SizedBox(height: 20.0))
+                                      .addToStart(SizedBox(height: 20.0))
+                                      .addToEnd(SizedBox(height: 20.0)),
                                 ),
                               ),
                             ),

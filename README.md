@@ -1,7 +1,7 @@
-# Help desk named SUPPORT LINK
+# Real Estate Dashboard UI Kit
 
-Un nuevo proyecto de flutter en combinacion con django rest framework.
+A new Flutter project.
 
 ## Getting Started
 
-Bienvendio a este humilde proyecto
+FlutterFlow projects are built to run on the Flutter _stable_ release.

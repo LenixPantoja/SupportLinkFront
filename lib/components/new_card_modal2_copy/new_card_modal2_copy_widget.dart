@@ -5,6 +5,8 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'new_card_modal2_copy_model.dart';
 export 'new_card_modal2_copy_model.dart';
 
@@ -70,7 +72,7 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              const Spacer(),
+              Spacer(),
               Expanded(
                 flex: 4,
                 child: Row(
@@ -81,11 +83,11 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                       phone: false,
                       tablet: false,
                     ))
-                      const Spacer(),
+                      Spacer(),
                     Expanded(
                       flex: 2,
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             20.0, 0.0, 20.0, 0.0),
                         child: Container(
                           height: 500.0,
@@ -110,7 +112,7 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 10.0, 10.0, 0.0),
                                           child: FlutterFlowIconButton(
                                             borderRadius: 20.0,
@@ -131,7 +133,7 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 20.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -155,14 +157,14 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 32.0, 0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 0.0, 20.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -198,7 +200,7 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                                                   onChanged: (_) =>
                                                       EasyDebounce.debounce(
                                                     '_model.textController1',
-                                                    const Duration(milliseconds: 500),
+                                                    Duration(milliseconds: 500),
                                                     () => safeSetState(() {}),
                                                   ),
                                                   autofocus: false,
@@ -278,7 +280,7 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                                                               4.0),
                                                     ),
                                                     contentPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 0.0, 0.0),
                                                   ),
@@ -298,12 +300,12 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                                                       .textController1Validator
                                                       .asValidator(context),
                                                 ),
-                                              ].divide(const SizedBox(height: 8.0)),
+                                              ].divide(SizedBox(height: 8.0)),
                                             ),
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 0.0, 20.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -339,7 +341,7 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                                                   onChanged: (_) =>
                                                       EasyDebounce.debounce(
                                                     '_model.textController2',
-                                                    const Duration(milliseconds: 500),
+                                                    Duration(milliseconds: 500),
                                                     () => safeSetState(() {}),
                                                   ),
                                                   autofocus: false,
@@ -419,7 +421,7 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                                                               4.0),
                                                     ),
                                                     contentPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 0.0, 0.0),
                                                   ),
@@ -439,19 +441,19 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                                                       .textController2Validator
                                                       .asValidator(context),
                                                 ),
-                                              ].divide(const SizedBox(height: 8.0)),
+                                              ].divide(SizedBox(height: 8.0)),
                                             ),
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 0.0, 20.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Container(
                                                   width: 160.0,
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -480,7 +482,7 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                                                       Container(
                                                         width: 180.0,
                                                         decoration:
-                                                            const BoxDecoration(),
+                                                            BoxDecoration(),
                                                         child: TextFormField(
                                                           controller: _model
                                                               .textController3,
@@ -490,7 +492,7 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                                                               EasyDebounce
                                                                   .debounce(
                                                             '_model.textController3',
-                                                            const Duration(
+                                                            Duration(
                                                                 milliseconds:
                                                                     500),
                                                             () => safeSetState(
@@ -582,7 +584,7 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                                                                           4.0),
                                                             ),
                                                             contentPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -620,12 +622,12 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        const SizedBox(height: 8.0)),
+                                                        SizedBox(height: 8.0)),
                                                   ),
                                                 ),
                                                 Container(
                                                   width: 160.0,
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -654,7 +656,7 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                                                       Container(
                                                         width: 180.0,
                                                         decoration:
-                                                            const BoxDecoration(),
+                                                            BoxDecoration(),
                                                         child: TextFormField(
                                                           controller: _model
                                                               .textController4,
@@ -664,7 +666,7 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                                                               EasyDebounce
                                                                   .debounce(
                                                             '_model.textController4',
-                                                            const Duration(
+                                                            Duration(
                                                                 milliseconds:
                                                                     500),
                                                             () => safeSetState(
@@ -756,7 +758,7 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                                                                           4.0),
                                                             ),
                                                             contentPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -794,20 +796,20 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        const SizedBox(height: 8.0)),
+                                                        SizedBox(height: 8.0)),
                                                   ),
                                                 ),
-                                              ].divide(const SizedBox(width: 16.0)),
+                                              ].divide(SizedBox(width: 16.0)),
                                             ),
                                           ),
-                                        ].divide(const SizedBox(height: 16.0)),
+                                        ].divide(SizedBox(height: 16.0)),
                                       ),
                                     ),
                                   ],
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(20.0),
+                                padding: EdgeInsets.all(20.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -832,7 +834,7 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                                                         ),
                                               ),
                                               duration:
-                                                  const Duration(milliseconds: 3000),
+                                                  Duration(milliseconds: 3000),
                                               backgroundColor:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
@@ -845,10 +847,10 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                                           width: 250.0,
                                           height: 50.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 13.0, 24.0, 13.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -863,7 +865,7 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                           elevation: 0.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -885,11 +887,11 @@ class _NewCardModal2CopyWidgetState extends State<NewCardModal2CopyWidget> {
                       phone: false,
                       tablet: false,
                     ))
-                      const Spacer(),
+                      Spacer(),
                   ],
                 ),
               ),
-              const Spacer(),
+              Spacer(),
             ],
           ),
         ),

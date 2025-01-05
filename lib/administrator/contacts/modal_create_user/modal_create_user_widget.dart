@@ -7,6 +7,8 @@ import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'modal_create_user_model.dart';
 export 'modal_create_user_model.dart';
 
@@ -74,7 +76,7 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              const Spacer(),
+              Spacer(),
               Expanded(
                 flex: 4,
                 child: Row(
@@ -85,11 +87,11 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                       phone: false,
                       tablet: false,
                     ))
-                      const Spacer(),
+                      Spacer(),
                     Expanded(
                       flex: 2,
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             20.0, 0.0, 20.0, 0.0),
                         child: Container(
                           decoration: BoxDecoration(
@@ -116,7 +118,7 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 10.0, 0.0),
                                             child: FlutterFlowIconButton(
                                               borderRadius: 20.0,
@@ -137,7 +139,7 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                         ],
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             20.0, 0.0, 20.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -161,13 +163,13 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 32.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       20.0, 0.0, 20.0, 0.0),
                                               child: Column(
@@ -203,7 +205,7 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                     onChanged: (_) =>
                                                         EasyDebounce.debounce(
                                                       '_model.textController1',
-                                                      const Duration(
+                                                      Duration(
                                                           milliseconds: 500),
                                                       () => safeSetState(() {}),
                                                     ),
@@ -285,7 +287,7 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                                 .circular(4.0),
                                                       ),
                                                       contentPadding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -308,11 +310,11 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                         .textController1Validator
                                                         .asValidator(context),
                                                   ),
-                                                ].divide(const SizedBox(height: 8.0)),
+                                                ].divide(SizedBox(height: 8.0)),
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       20.0, 0.0, 20.0, 0.0),
                                               child: Column(
@@ -348,7 +350,7 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                     onChanged: (_) =>
                                                         EasyDebounce.debounce(
                                                       '_model.textController2',
-                                                      const Duration(
+                                                      Duration(
                                                           milliseconds: 500),
                                                       () => safeSetState(() {}),
                                                     ),
@@ -431,7 +433,7 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                                 .circular(4.0),
                                                       ),
                                                       contentPadding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -474,11 +476,11 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                         .textController2Validator
                                                         .asValidator(context),
                                                   ),
-                                                ].divide(const SizedBox(height: 8.0)),
+                                                ].divide(SizedBox(height: 8.0)),
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       20.0, 0.0, 20.0, 0.0),
                                               child: Column(
@@ -514,7 +516,7 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                     onChanged: (_) =>
                                                         EasyDebounce.debounce(
                                                       '_model.textController3',
-                                                      const Duration(
+                                                      Duration(
                                                           milliseconds: 500),
                                                       () => safeSetState(() {}),
                                                     ),
@@ -596,7 +598,7 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                                 .circular(4.0),
                                                       ),
                                                       contentPadding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -619,11 +621,11 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                         .textController3Validator
                                                         .asValidator(context),
                                                   ),
-                                                ].divide(const SizedBox(height: 8.0)),
+                                                ].divide(SizedBox(height: 8.0)),
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       20.0, 0.0, 20.0, 0.0),
                                               child: Column(
@@ -659,7 +661,7 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                     onChanged: (_) =>
                                                         EasyDebounce.debounce(
                                                       '_model.textController4',
-                                                      const Duration(
+                                                      Duration(
                                                           milliseconds: 500),
                                                       () => safeSetState(() {}),
                                                     ),
@@ -741,7 +743,7 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                                 .circular(4.0),
                                                       ),
                                                       contentPadding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -764,11 +766,11 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                         .textController4Validator
                                                         .asValidator(context),
                                                   ),
-                                                ].divide(const SizedBox(height: 8.0)),
+                                                ].divide(SizedBox(height: 8.0)),
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       20.0, 0.0, 20.0, 0.0),
                                               child: Column(
@@ -804,7 +806,7 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                     onChanged: (_) =>
                                                         EasyDebounce.debounce(
                                                       '_model.textController5',
-                                                      const Duration(
+                                                      Duration(
                                                           milliseconds: 500),
                                                       () => safeSetState(() {}),
                                                     ),
@@ -886,7 +888,7 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                                 .circular(4.0),
                                                       ),
                                                       contentPadding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -909,11 +911,11 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                         .textController5Validator
                                                         .asValidator(context),
                                                   ),
-                                                ].divide(const SizedBox(height: 8.0)),
+                                                ].divide(SizedBox(height: 8.0)),
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       20.0, 0.0, 20.0, 0.0),
                                               child: Column(
@@ -954,7 +956,7 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                                 .dropDownValueController1 ??=
                                                             FormFieldController<
                                                                 String>(null),
-                                                        options: const [
+                                                        options: [
                                                           'Option 1',
                                                           'Option 2',
                                                           'Option 3'
@@ -993,7 +995,7 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                         borderWidth: 0.0,
                                                         borderRadius: 8.0,
                                                         margin:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     12.0,
                                                                     0.0,
@@ -1010,7 +1012,7 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                                 .dropDownValueController2 ??=
                                                             FormFieldController<
                                                                 String>(null),
-                                                        options: const [
+                                                        options: [
                                                           'Option 1',
                                                           'Option 2',
                                                           'Option 3'
@@ -1049,7 +1051,7 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                         borderWidth: 0.0,
                                                         borderRadius: 8.0,
                                                         margin:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     12.0,
                                                                     0.0,
@@ -1062,10 +1064,10 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                       ),
                                                     ],
                                                   ),
-                                                ].divide(const SizedBox(height: 8.0)),
+                                                ].divide(SizedBox(height: 8.0)),
                                               ),
                                             ),
-                                          ].divide(const SizedBox(height: 16.0)),
+                                          ].divide(SizedBox(height: 16.0)),
                                         ),
                                       ),
                                     ],
@@ -1073,7 +1075,7 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(20.0),
+                                padding: EdgeInsets.all(20.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -1098,7 +1100,7 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                         ),
                                               ),
                                               duration:
-                                                  const Duration(milliseconds: 3000),
+                                                  Duration(milliseconds: 3000),
                                               backgroundColor:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
@@ -1111,10 +1113,10 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                           width: 250.0,
                                           height: 50.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 13.0, 24.0, 13.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -1129,7 +1131,7 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                           elevation: 0.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -1151,11 +1153,11 @@ class _ModalCreateUserWidgetState extends State<ModalCreateUserWidget> {
                       phone: false,
                       tablet: false,
                     ))
-                      const Spacer(),
+                      Spacer(),
                   ],
                 ),
               ),
-              const Spacer(),
+              Spacer(),
             ],
           ),
         ),

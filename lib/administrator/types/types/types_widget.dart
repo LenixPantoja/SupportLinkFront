@@ -5,7 +5,9 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'types_model.dart';
 export 'types_model.dart';
@@ -57,7 +59,7 @@ class _TypesWidgetState extends State<TypesWidget> {
               phone: false,
               tablet: false,
             ),
-            child: SizedBox(
+            child: Container(
               width: double.infinity,
               height: double.infinity,
               child: Stack(
@@ -82,7 +84,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                             model: _model.menuModel,
                             updateCallback: () => safeSetState(() {}),
                             updateOnChange: true,
-                            child: const MenuWidget(
+                            child: MenuWidget(
                               activePageName: 'Dashboard',
                               pageIsInSubMenu: false,
                             ),
@@ -95,7 +97,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                 model: _model.headerAdministratorModel,
                                 updateCallback: () => safeSetState(() {}),
                                 updateOnChange: true,
-                                child: const HeaderAdministratorWidget(),
+                                child: HeaderAdministratorWidget(),
                               ),
                               Expanded(
                                 child: Container(
@@ -125,10 +127,10 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                 Container(
                                                   width: double.infinity,
                                                   height: 24.0,
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                 ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 16.0, 0.0, 4.0),
                                                 child: Text(
@@ -144,22 +146,22 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           4.0, 16.0, 4.0, 16.0),
                                                   child: Container(
                                                     width: double.infinity,
-                                                    constraints: const BoxConstraints(
+                                                    constraints: BoxConstraints(
                                                       maxWidth: 1170.0,
                                                     ),
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .secondaryBackground,
-                                                      boxShadow: const [
+                                                      boxShadow: [
                                                         BoxShadow(
                                                           blurRadius: 3.0,
                                                           color:
@@ -181,7 +183,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsets.all(16.0),
+                                                          EdgeInsets.all(16.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -207,7 +209,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           4.0,
                                                                           12.0,
@@ -256,7 +258,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                           padding:
                                                                               MediaQuery.viewInsetsOf(context),
                                                                           child:
-                                                                              const ModalCreateGroupWidget(),
+                                                                              ModalCreateGroupWidget(),
                                                                         ),
                                                                       );
                                                                     },
@@ -266,7 +268,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                 },
                                                                 text:
                                                                     'Crear tipo',
-                                                                icon: const Icon(
+                                                                icon: Icon(
                                                                   Icons
                                                                       .add_rounded,
                                                                   size: 15.0,
@@ -274,13 +276,13 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                 options:
                                                                     FFButtonOptions(
                                                                   height: 40.0,
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
-                                                                  iconPadding: const EdgeInsetsDirectional
+                                                                  iconPadding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -303,7 +305,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                   elevation:
                                                                       3.0,
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Colors
                                                                         .transparent,
                                                                     width: 1.0,
@@ -318,7 +320,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         16.0,
@@ -334,7 +336,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                         context)
                                                                     .primaryBackground,
                                                                 borderRadius:
-                                                                    const BorderRadius
+                                                                    BorderRadius
                                                                         .only(
                                                                   bottomLeft: Radius
                                                                       .circular(
@@ -351,7 +353,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                 ),
                                                               ),
                                                               child: Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
@@ -429,7 +431,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -450,7 +452,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
                                                                         offset:
-                                                                            const Offset(
+                                                                            Offset(
                                                                           0.0,
                                                                           1.0,
                                                                         ),
@@ -459,7 +461,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             0.0,
@@ -502,9 +504,9 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                   borderRadius: BorderRadius.circular(40.0),
                                                                                 ),
-                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                alignment: AlignmentDirectional(0.0, 0.0),
                                                                                 child: Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                   child: Text(
                                                                                     'Descripcion tipo',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -535,7 +537,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                                   tablet: false,
                                                                                 ))
                                                                                   Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: FlutterFlowIconButton(
                                                                                       borderColor: Colors.transparent,
                                                                                       borderRadius: 30.0,
@@ -579,7 +581,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -600,7 +602,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
                                                                         offset:
-                                                                            const Offset(
+                                                                            Offset(
                                                                           0.0,
                                                                           1.0,
                                                                         ),
@@ -609,7 +611,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             0.0,
@@ -652,9 +654,9 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                   borderRadius: BorderRadius.circular(40.0),
                                                                                 ),
-                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                alignment: AlignmentDirectional(0.0, 0.0),
                                                                                 child: Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                   child: Text(
                                                                                     'Descripcion tipo',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -685,7 +687,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                                   tablet: false,
                                                                                 ))
                                                                                   Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: FlutterFlowIconButton(
                                                                                       borderColor: Colors.transparent,
                                                                                       borderRadius: 30.0,
@@ -729,7 +731,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -750,7 +752,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
                                                                         offset:
-                                                                            const Offset(
+                                                                            Offset(
                                                                           0.0,
                                                                           1.0,
                                                                         ),
@@ -759,7 +761,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             0.0,
@@ -802,9 +804,9 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                   borderRadius: BorderRadius.circular(40.0),
                                                                                 ),
-                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                alignment: AlignmentDirectional(0.0, 0.0),
                                                                                 child: Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                   child: Text(
                                                                                     'Descripcion tipo',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -835,7 +837,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                                   tablet: false,
                                                                                 ))
                                                                                   Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: FlutterFlowIconButton(
                                                                                       borderColor: Colors.transparent,
                                                                                       borderRadius: 30.0,
@@ -879,7 +881,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -900,7 +902,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
                                                                         offset:
-                                                                            const Offset(
+                                                                            Offset(
                                                                           0.0,
                                                                           1.0,
                                                                         ),
@@ -909,7 +911,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             0.0,
@@ -952,9 +954,9 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                   borderRadius: BorderRadius.circular(40.0),
                                                                                 ),
-                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                alignment: AlignmentDirectional(0.0, 0.0),
                                                                                 child: Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                   child: Text(
                                                                                     'Descripcion tipo',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -985,7 +987,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                                   tablet: false,
                                                                                 ))
                                                                                   Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                     child: FlutterFlowIconButton(
                                                                                       borderColor: Colors.transparent,
                                                                                       borderRadius: 30.0,
@@ -1029,7 +1031,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1050,7 +1052,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
                                                                         offset:
-                                                                            const Offset(
+                                                                            Offset(
                                                                           0.0,
                                                                           1.0,
                                                                         ),
@@ -1061,7 +1063,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1082,7 +1084,7 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
                                                                         offset:
-                                                                            const Offset(
+                                                                            Offset(
                                                                           0.0,
                                                                           1.0,
                                                                         ),
@@ -1099,13 +1101,13 @@ class _TypesWidgetState extends State<TypesWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            ].addToEnd(const SizedBox(height: 64.0)),
+                                            ].addToEnd(SizedBox(height: 64.0)),
                                           ),
                                         ),
                                       ]
-                                          .divide(const SizedBox(height: 20.0))
-                                          .addToStart(const SizedBox(height: 20.0))
-                                          .addToEnd(const SizedBox(height: 20.0)),
+                                          .divide(SizedBox(height: 20.0))
+                                          .addToStart(SizedBox(height: 20.0))
+                                          .addToEnd(SizedBox(height: 20.0)),
                                     ),
                                   ),
                                 ),

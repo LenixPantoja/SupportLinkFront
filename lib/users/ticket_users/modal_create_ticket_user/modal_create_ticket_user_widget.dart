@@ -8,6 +8,8 @@ import '/flutter_flow/upload_data.dart';
 import 'dart:ui';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'modal_create_ticket_user_model.dart';
 export 'modal_create_ticket_user_model.dart';
 
@@ -68,7 +70,7 @@ class _ModalCreateTicketUserWidgetState
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              const Spacer(),
+              Spacer(),
               Expanded(
                 flex: 4,
                 child: Row(
@@ -79,11 +81,11 @@ class _ModalCreateTicketUserWidgetState
                       phone: false,
                       tablet: false,
                     ))
-                      const Spacer(),
+                      Spacer(),
                     Expanded(
                       flex: 2,
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             20.0, 0.0, 20.0, 0.0),
                         child: Container(
                           decoration: BoxDecoration(
@@ -110,7 +112,7 @@ class _ModalCreateTicketUserWidgetState
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 10.0, 0.0),
                                             child: FlutterFlowIconButton(
                                               borderRadius: 20.0,
@@ -131,7 +133,7 @@ class _ModalCreateTicketUserWidgetState
                                         ],
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             20.0, 0.0, 20.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -155,13 +157,13 @@ class _ModalCreateTicketUserWidgetState
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 32.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       20.0, 0.0, 20.0, 0.0),
                                               child: Column(
@@ -197,7 +199,7 @@ class _ModalCreateTicketUserWidgetState
                                                     onChanged: (_) =>
                                                         EasyDebounce.debounce(
                                                       '_model.textController1',
-                                                      const Duration(
+                                                      Duration(
                                                           milliseconds: 500),
                                                       () => safeSetState(() {}),
                                                     ),
@@ -279,7 +281,7 @@ class _ModalCreateTicketUserWidgetState
                                                                 .circular(4.0),
                                                       ),
                                                       contentPadding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -302,11 +304,11 @@ class _ModalCreateTicketUserWidgetState
                                                         .textController1Validator
                                                         .asValidator(context),
                                                   ),
-                                                ].divide(const SizedBox(height: 8.0)),
+                                                ].divide(SizedBox(height: 8.0)),
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       20.0, 0.0, 20.0, 0.0),
                                               child: Column(
@@ -339,7 +341,7 @@ class _ModalCreateTicketUserWidgetState
                                                             .dropDownValueController1 ??=
                                                         FormFieldController<
                                                             String>(null),
-                                                    options: const [
+                                                    options: [
                                                       'Desarrollo',
                                                       'Soporte y correctivo',
                                                       'Option 3'
@@ -378,7 +380,7 @@ class _ModalCreateTicketUserWidgetState
                                                     borderWidth: 0.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 12.0, 0.0),
                                                     hidesUnderline: true,
@@ -386,11 +388,11 @@ class _ModalCreateTicketUserWidgetState
                                                     isSearchable: false,
                                                     isMultiSelect: false,
                                                   ),
-                                                ].divide(const SizedBox(height: 8.0)),
+                                                ].divide(SizedBox(height: 8.0)),
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       20.0, 0.0, 20.0, 0.0),
                                               child: Column(
@@ -423,7 +425,7 @@ class _ModalCreateTicketUserWidgetState
                                                             .dropDownValueController2 ??=
                                                         FormFieldController<
                                                             String>(null),
-                                                    options: const [
+                                                    options: [
                                                       'Sistemas',
                                                       'Mantenimiento',
                                                       'Infraestructura'
@@ -462,7 +464,7 @@ class _ModalCreateTicketUserWidgetState
                                                     borderWidth: 0.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 12.0, 0.0),
                                                     hidesUnderline: true,
@@ -470,20 +472,20 @@ class _ModalCreateTicketUserWidgetState
                                                     isSearchable: false,
                                                     isMultiSelect: false,
                                                   ),
-                                                ].divide(const SizedBox(height: 8.0)),
+                                                ].divide(SizedBox(height: 8.0)),
                                               ),
                                             ),
-                                          ].divide(const SizedBox(height: 16.0)),
+                                          ].divide(SizedBox(height: 16.0)),
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 32.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       20.0, 0.0, 20.0, 0.0),
                                               child: Column(
@@ -516,7 +518,7 @@ class _ModalCreateTicketUserWidgetState
                                                             .dropDownValueController3 ??=
                                                         FormFieldController<
                                                             String>(null),
-                                                    options: const [
+                                                    options: [
                                                       'Baja',
                                                       'Media',
                                                       'Alta'
@@ -554,7 +556,7 @@ class _ModalCreateTicketUserWidgetState
                                                     borderWidth: 0.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 12.0, 0.0),
                                                     hidesUnderline: true,
@@ -562,11 +564,11 @@ class _ModalCreateTicketUserWidgetState
                                                     isSearchable: false,
                                                     isMultiSelect: false,
                                                   ),
-                                                ].divide(const SizedBox(height: 8.0)),
+                                                ].divide(SizedBox(height: 8.0)),
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       20.0, 0.0, 20.0, 0.0),
                                               child: Column(
@@ -597,10 +599,10 @@ class _ModalCreateTicketUserWidgetState
                                                   Container(
                                                     width: double.infinity,
                                                     height: 500.0,
-                                                    decoration: const BoxDecoration(),
+                                                    decoration: BoxDecoration(),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsets.all(20.0),
+                                                          EdgeInsets.all(20.0),
                                                       child: Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -622,6 +624,8 @@ class _ModalCreateTicketUserWidgetState
                                                                       valueOrDefault<
                                                                           Color>(
                                                                     _model.messageTextFieldTextController.text !=
+                                                                                null &&
+                                                                            _model.messageTextFieldTextController.text !=
                                                                                 ''
                                                                         ? FlutterFlowTheme.of(context)
                                                                             .primary
@@ -643,7 +647,7 @@ class _ModalCreateTicketUserWidgetState
                                                                 children: [
                                                                   Expanded(
                                                                     child:
-                                                                        SizedBox(
+                                                                        Container(
                                                                       width:
                                                                           250.0,
                                                                       child:
@@ -656,7 +660,7 @@ class _ModalCreateTicketUserWidgetState
                                                                             (_) =>
                                                                                 EasyDebounce.debounce(
                                                                           '_model.messageTextFieldTextController',
-                                                                          const Duration(
+                                                                          Duration(
                                                                               milliseconds: 500),
                                                                           () =>
                                                                               safeSetState(() {}),
@@ -770,21 +774,21 @@ class _ModalCreateTicketUserWidgetState
                                                                       }
                                                                     },
                                                                   ),
-                                                                ].divide(const SizedBox(
+                                                                ].divide(SizedBox(
                                                                     width:
                                                                         16.0)),
                                                               ),
                                                             ),
                                                           ),
-                                                        ].divide(const SizedBox(
+                                                        ].divide(SizedBox(
                                                             width: 16.0)),
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(const SizedBox(height: 8.0)),
+                                                ].divide(SizedBox(height: 8.0)),
                                               ),
                                             ),
-                                          ].divide(const SizedBox(height: 16.0)),
+                                          ].divide(SizedBox(height: 16.0)),
                                         ),
                                       ),
                                     ],
@@ -792,7 +796,7 @@ class _ModalCreateTicketUserWidgetState
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(20.0),
+                                padding: EdgeInsets.all(20.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -817,7 +821,7 @@ class _ModalCreateTicketUserWidgetState
                                                         ),
                                               ),
                                               duration:
-                                                  const Duration(milliseconds: 3000),
+                                                  Duration(milliseconds: 3000),
                                               backgroundColor:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
@@ -830,10 +834,10 @@ class _ModalCreateTicketUserWidgetState
                                           width: 250.0,
                                           height: 50.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 13.0, 24.0, 13.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -848,7 +852,7 @@ class _ModalCreateTicketUserWidgetState
                                                 letterSpacing: 0.0,
                                               ),
                                           elevation: 0.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -870,11 +874,11 @@ class _ModalCreateTicketUserWidgetState
                       phone: false,
                       tablet: false,
                     ))
-                      const Spacer(),
+                      Spacer(),
                   ],
                 ),
               ),
-              const Spacer(),
+              Spacer(),
             ],
           ),
         ),

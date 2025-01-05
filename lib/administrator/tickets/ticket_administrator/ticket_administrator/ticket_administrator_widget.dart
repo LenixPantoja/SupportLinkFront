@@ -8,10 +8,14 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:math';
+import 'dart:ui';
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'ticket_administrator_model.dart';
 export 'ticket_administrator_model.dart';
@@ -53,8 +57,8 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 50.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 50.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -90,7 +94,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: SafeArea(
           top: true,
-          child: SizedBox(
+          child: Container(
             width: double.infinity,
             height: double.infinity,
             child: Stack(
@@ -115,7 +119,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                           model: _model.menuModel,
                           updateCallback: () => safeSetState(() {}),
                           updateOnChange: true,
-                          child: const MenuWidget(
+                          child: MenuWidget(
                             activePageName: 'Dashboard',
                             pageIsInSubMenu: false,
                           ),
@@ -128,10 +132,10 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                               model: _model.headerAdministratorModel,
                               updateCallback: () => safeSetState(() {}),
                               updateOnChange: true,
-                              child: const HeaderAdministratorWidget(),
+                              child: HeaderAdministratorWidget(),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 20.0, 20.0, 20.0),
                               child: Container(
                                 width: double.infinity,
@@ -149,7 +153,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -174,7 +178,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -194,7 +198,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                             .dropDownValueController1 ??=
                                                         FormFieldController<
                                                             String>(null),
-                                                    options: const [
+                                                    options: [
                                                       'Baja',
                                                       'Media',
                                                       'Alta'
@@ -232,7 +236,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                     borderWidth: 0.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 12.0, 0.0),
                                                     hidesUnderline: true,
@@ -258,7 +262,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -278,7 +282,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                             .dropDownValueController2 ??=
                                                         FormFieldController<
                                                             String>(null),
-                                                    options: const [
+                                                    options: [
                                                       'Lenix Pantoja',
                                                       'Yazmin Teran',
                                                       'Thamara Pantoja Teran'
@@ -337,7 +341,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                     borderWidth: 0.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 12.0, 0.0),
                                                     hidesUnderline: true,
@@ -363,7 +367,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -383,7 +387,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                             .dropDownValueController3 ??=
                                                         FormFieldController<
                                                             String>(null),
-                                                    options: const [
+                                                    options: [
                                                       'Sistemas',
                                                       'Mantenimiento',
                                                       'Infraestructura'
@@ -442,7 +446,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                     borderWidth: 0.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 12.0, 0.0),
                                                     hidesUnderline: true,
@@ -468,7 +472,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -488,7 +492,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                             .dropDownValueController4 ??=
                                                         FormFieldController<
                                                             String>(null),
-                                                    options: const [
+                                                    options: [
                                                       'Option 1',
                                                       'Option 2',
                                                       'Option 3'
@@ -526,7 +530,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                     borderWidth: 0.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 12.0, 0.0),
                                                     hidesUnderline: true,
@@ -542,17 +546,17 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                 print('Button pressed ...');
                                               },
                                               text: 'Filtrar',
-                                              icon: const Icon(
+                                              icon: Icon(
                                                 Icons.filter_alt,
                                                 size: 20.0,
                                               ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -601,13 +605,13 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                           isGlobal: false,
                                                           avoidOverflow: false,
                                                           targetAnchor:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                       -1.0, 1.0)
                                                                   .resolve(
                                                                       Directionality.of(
                                                                           context)),
                                                           followerAnchor:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                       -1.0,
                                                                       -1.0)
                                                                   .resolve(
@@ -630,7 +634,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                       ?.unfocus();
                                                                 },
                                                                 child:
-                                                                    const CalendarWidget(),
+                                                                    CalendarWidget(),
                                                               ),
                                                             );
                                                           },
@@ -650,14 +654,14 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                       options: FFButtonOptions(
                                                         height: 40.0,
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
                                                                     16.0,
                                                                     0.0),
                                                         iconPadding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -718,13 +722,13 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                           isGlobal: false,
                                                           avoidOverflow: false,
                                                           targetAnchor:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                       -1.0, 1.0)
                                                                   .resolve(
                                                                       Directionality.of(
                                                                           context)),
                                                           followerAnchor:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                       -1.0,
                                                                       -1.0)
                                                                   .resolve(
@@ -747,7 +751,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                       ?.unfocus();
                                                                 },
                                                                 child:
-                                                                    const CalendarWidget(),
+                                                                    CalendarWidget(),
                                                               ),
                                                             );
                                                           },
@@ -766,14 +770,14 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                       options: FFButtonOptions(
                                                         height: 40.0,
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
                                                                     16.0,
                                                                     0.0),
                                                         iconPadding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -833,17 +837,17 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                 print('Button pressed ...');
                                               },
                                               text: '.',
-                                              icon: const Icon(
+                                              icon: Icon(
                                                 Icons.filter_alt,
                                                 size: 20.0,
                                               ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -887,7 +891,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                         CrossAxisAlignment.stretch,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             20.0, 0.0, 20.0, 0.0),
                                         child: Wrap(
                                           spacing: 20.0,
@@ -919,7 +923,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   5.0,
                                                                   12.0,
@@ -932,7 +936,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
-                                                          boxShadow: const [
+                                                          boxShadow: [
                                                             BoxShadow(
                                                               blurRadius: 5.0,
                                                               color: Color(
@@ -969,7 +973,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                       .stretch,
                                                               children: [
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           0.0,
@@ -987,7 +991,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                               context)
                                                                           .primaryBackground,
                                                                       borderRadius:
-                                                                          const BorderRadius
+                                                                          BorderRadius
                                                                               .only(
                                                                         bottomLeft:
                                                                             Radius.circular(10.0),
@@ -1001,7 +1005,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                       border:
                                                                           Border
                                                                               .all(
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0x00FFFFFF),
                                                                       ),
                                                                     ),
@@ -1020,7 +1024,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                       ),
                                                                       child:
                                                                           Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -1040,7 +1044,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                             context.pushNamed(
                                                                               'TicketView',
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: const TransitionInfo(
+                                                                                kTransitionInfoKey: TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.topToBottom,
                                                                                   duration: Duration(milliseconds: 300),
@@ -1058,7 +1062,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                 CrossAxisAlignment.start,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -1067,7 +1071,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
                                                                                         Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                                           child: FaIcon(
                                                                                             FontAwesomeIcons.ticketAlt,
                                                                                             color: FlutterFlowTheme.of(context).primary,
@@ -1077,7 +1081,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                       ],
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(10.0, 4.0, 24.0, 10.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(10.0, 4.0, 24.0, 10.0),
                                                                                       child: Text(
                                                                                         'Ticket: # 32158',
                                                                                         maxLines: 1,
@@ -1093,7 +1097,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                 ),
                                                                               ),
                                                                               Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 4.0, 24.0, 10.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(10.0, 4.0, 24.0, 10.0),
                                                                                 child: Text(
                                                                                   'Hematologia advia 2120 alarma de laser perox bajaHematologia advia 2120 alarma de laser perox baja',
                                                                                   maxLines: 1,
@@ -1110,13 +1114,13 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                     child: Column(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       crossAxisAlignment: CrossAxisAlignment.start,
                                                                                       children: [
                                                                                         Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                                                                                           child: Row(
                                                                                             mainAxisSize: MainAxisSize.max,
                                                                                             children: [
@@ -1126,7 +1130,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                                 size: 24.0,
                                                                                               ),
                                                                                               Padding(
-                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                                                 child: Text(
                                                                                                   'PEPITO PEREZ LOPEZ',
                                                                                                   style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -1140,7 +1144,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 24.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 24.0, 0.0),
                                                                                           child: Text(
                                                                                             'Creado el  2024-01-01 a las 05:59:55 PM',
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -1169,7 +1173,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                     ),
                                                                                   ),
                                                                                   Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                                                                                     child: Container(
                                                                                       width: 400.0,
                                                                                       decoration: BoxDecoration(
@@ -1188,7 +1192,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                           children: [
                                                                                             FlutterFlowDropDown<String>(
                                                                                               controller: _model.dropDownValueController5 ??= FormFieldController<String>(null),
-                                                                                              options: const [
+                                                                                              options: [
                                                                                                 'Baja',
                                                                                                 'Media',
                                                                                                 'Alta'
@@ -1211,7 +1215,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                               borderColor: Colors.transparent,
                                                                                               borderWidth: 0.0,
                                                                                               borderRadius: 8.0,
-                                                                                              margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                              margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                               hidesUnderline: true,
                                                                                               isOverButton: false,
                                                                                               isSearchable: false,
@@ -1219,7 +1223,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                             ),
                                                                                             FlutterFlowDropDown<String>(
                                                                                               controller: _model.dropDownValueController6 ??= FormFieldController<String>(null),
-                                                                                              options: const [
+                                                                                              options: [
                                                                                                 'Lenix Pantoja',
                                                                                                 'Yazmin Teran',
                                                                                                 'Thamara Pantoja Teran'
@@ -1251,7 +1255,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                               borderColor: Colors.transparent,
                                                                                               borderWidth: 0.0,
                                                                                               borderRadius: 8.0,
-                                                                                              margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                              margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                               hidesUnderline: true,
                                                                                               isOverButton: false,
                                                                                               isSearchable: true,
@@ -1259,7 +1263,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                             ),
                                                                                             FlutterFlowDropDown<String>(
                                                                                               controller: _model.dropDownValueController7 ??= FormFieldController<String>(null),
-                                                                                              options: const [
+                                                                                              options: [
                                                                                                 'Sistemas',
                                                                                                 'Mantenimiento',
                                                                                                 'Infraestructura'
@@ -1291,7 +1295,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                               borderColor: Colors.transparent,
                                                                                               borderWidth: 0.0,
                                                                                               borderRadius: 8.0,
-                                                                                              margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                              margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                               hidesUnderline: true,
                                                                                               isOverButton: false,
                                                                                               isSearchable: true,
@@ -1299,7 +1303,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                             ),
                                                                                             FlutterFlowDropDown<String>(
                                                                                               controller: _model.dropDownValueController8 ??= FormFieldController<String>(null),
-                                                                                              options: const [
+                                                                                              options: [
                                                                                                 'Abierto',
                                                                                                 'Pendiente',
                                                                                                 'Cerrado'
@@ -1332,14 +1336,14 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                               borderColor: Colors.transparent,
                                                                                               borderWidth: 0.0,
                                                                                               borderRadius: 8.0,
-                                                                                              margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                              margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                               hidesUnderline: true,
                                                                                               isOverButton: false,
                                                                                               isSearchable: true,
                                                                                               isMultiSelect: false,
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
                                                                                               child: FFButtonWidget(
                                                                                                 onPressed: () async {
                                                                                                   ScaffoldMessenger.of(context).showSnackBar(
@@ -1353,7 +1357,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                                             ),
                                                                                                         textAlign: TextAlign.center,
                                                                                                       ),
-                                                                                                      duration: const Duration(milliseconds: 1650),
+                                                                                                      duration: Duration(milliseconds: 1650),
                                                                                                       backgroundColor: FlutterFlowTheme.of(context).success,
                                                                                                     ),
                                                                                                   );
@@ -1362,8 +1366,8 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                                 options: FFButtonOptions(
                                                                                                   width: 170.0,
                                                                                                   height: 30.0,
-                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                         fontFamily: 'Plus Jakarta Sans',
@@ -1371,7 +1375,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                                         letterSpacing: 0.0,
                                                                                                       ),
                                                                                                   elevation: 2.0,
-                                                                                                  borderSide: const BorderSide(
+                                                                                                  borderSide: BorderSide(
                                                                                                     color: Colors.transparent,
                                                                                                     width: 1.0,
                                                                                                   ),
@@ -1394,7 +1398,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           0.0,
@@ -1412,7 +1416,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                               context)
                                                                           .primaryBackground,
                                                                       borderRadius:
-                                                                          const BorderRadius
+                                                                          BorderRadius
                                                                               .only(
                                                                         bottomLeft:
                                                                             Radius.circular(10.0),
@@ -1426,7 +1430,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                       border:
                                                                           Border
                                                                               .all(
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0x00FFFFFF),
                                                                       ),
                                                                     ),
@@ -1445,7 +1449,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                       ),
                                                                       child:
                                                                           Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -1460,7 +1464,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                               CrossAxisAlignment.start,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -1469,7 +1473,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                                         child: FaIcon(
                                                                                           FontAwesomeIcons.ticketAlt,
                                                                                           color: FlutterFlowTheme.of(context).primary,
@@ -1479,7 +1483,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                     ],
                                                                                   ),
                                                                                   Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(10.0, 4.0, 24.0, 10.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(10.0, 4.0, 24.0, 10.0),
                                                                                     child: Text(
                                                                                       'Ticket: # 32145',
                                                                                       maxLines: 1,
@@ -1495,7 +1499,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 4.0, 24.0, 10.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 4.0, 24.0, 10.0),
                                                                               child: Text(
                                                                                 'PAGINA SIOS DE PASTO SALUD CAIDA',
                                                                                 maxLines: 1,
@@ -1512,13 +1516,13 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                               crossAxisAlignment: CrossAxisAlignment.start,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                   child: Column(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           children: [
@@ -1528,7 +1532,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                               size: 24.0,
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                                               child: Text(
                                                                                                 'PEPITO PEREZ LOPEZ',
                                                                                                 style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -1542,7 +1546,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                         ),
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 24.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 24.0, 0.0),
                                                                                         child: Text(
                                                                                           'Creado el  2024-01-01 a las 05:59:55 PM',
                                                                                           style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -1571,7 +1575,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                   ),
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                                                                                   child: Container(
                                                                                     width: 400.0,
                                                                                     decoration: BoxDecoration(
@@ -1590,7 +1594,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                         children: [
                                                                                           FlutterFlowDropDown<String>(
                                                                                             controller: _model.dropDownValueController9 ??= FormFieldController<String>(null),
-                                                                                            options: const [
+                                                                                            options: [
                                                                                               'Baja',
                                                                                               'Media',
                                                                                               'Alta'
@@ -1613,7 +1617,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                             borderColor: Colors.transparent,
                                                                                             borderWidth: 0.0,
                                                                                             borderRadius: 8.0,
-                                                                                            margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                             hidesUnderline: true,
                                                                                             isOverButton: false,
                                                                                             isSearchable: false,
@@ -1621,7 +1625,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                           ),
                                                                                           FlutterFlowDropDown<String>(
                                                                                             controller: _model.dropDownValueController10 ??= FormFieldController<String>(null),
-                                                                                            options: const [
+                                                                                            options: [
                                                                                               'Lenix Pantoja',
                                                                                               'Yazmin Teran',
                                                                                               'Thamara Pantoja Teran'
@@ -1653,7 +1657,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                             borderColor: Colors.transparent,
                                                                                             borderWidth: 0.0,
                                                                                             borderRadius: 8.0,
-                                                                                            margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                             hidesUnderline: true,
                                                                                             isOverButton: false,
                                                                                             isSearchable: true,
@@ -1661,7 +1665,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                           ),
                                                                                           FlutterFlowDropDown<String>(
                                                                                             controller: _model.dropDownValueController11 ??= FormFieldController<String>(null),
-                                                                                            options: const [
+                                                                                            options: [
                                                                                               'Sistemas',
                                                                                               'Mantenimiento',
                                                                                               'Infraestructura'
@@ -1693,7 +1697,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                             borderColor: Colors.transparent,
                                                                                             borderWidth: 0.0,
                                                                                             borderRadius: 8.0,
-                                                                                            margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                             hidesUnderline: true,
                                                                                             isOverButton: false,
                                                                                             isSearchable: true,
@@ -1701,7 +1705,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                           ),
                                                                                           FlutterFlowDropDown<String>(
                                                                                             controller: _model.dropDownValueController12 ??= FormFieldController<String>(null),
-                                                                                            options: const [
+                                                                                            options: [
                                                                                               'Abierto',
                                                                                               'Pendiente',
                                                                                               'Cerrado'
@@ -1734,14 +1738,14 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                             borderColor: Colors.transparent,
                                                                                             borderWidth: 0.0,
                                                                                             borderRadius: 8.0,
-                                                                                            margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                             hidesUnderline: true,
                                                                                             isOverButton: false,
                                                                                             isSearchable: true,
                                                                                             isMultiSelect: false,
                                                                                           ),
                                                                                           Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
                                                                                             child: FFButtonWidget(
                                                                                               onPressed: () async {
                                                                                                 ScaffoldMessenger.of(context).showSnackBar(
@@ -1755,7 +1759,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                                           ),
                                                                                                       textAlign: TextAlign.center,
                                                                                                     ),
-                                                                                                    duration: const Duration(milliseconds: 1650),
+                                                                                                    duration: Duration(milliseconds: 1650),
                                                                                                     backgroundColor: FlutterFlowTheme.of(context).success,
                                                                                                   ),
                                                                                                 );
@@ -1764,8 +1768,8 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                               options: FFButtonOptions(
                                                                                                 width: 170.0,
                                                                                                 height: 40.0,
-                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                                 color: FlutterFlowTheme.of(context).primary,
                                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                       fontFamily: 'Plus Jakarta Sans',
@@ -1773,7 +1777,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                                       letterSpacing: 0.0,
                                                                                                     ),
                                                                                                 elevation: 2.0,
-                                                                                                borderSide: const BorderSide(
+                                                                                                borderSide: BorderSide(
                                                                                                   color: Colors.transparent,
                                                                                                   width: 1.0,
                                                                                                 ),
@@ -1795,7 +1799,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           0.0,
@@ -1813,7 +1817,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                               context)
                                                                           .primaryBackground,
                                                                       borderRadius:
-                                                                          const BorderRadius
+                                                                          BorderRadius
                                                                               .only(
                                                                         bottomLeft:
                                                                             Radius.circular(10.0),
@@ -1827,7 +1831,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                       border:
                                                                           Border
                                                                               .all(
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0x00FFFFFF),
                                                                       ),
                                                                     ),
@@ -1846,7 +1850,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                       ),
                                                                       child:
                                                                           Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -1861,7 +1865,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                               CrossAxisAlignment.start,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -1870,7 +1874,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                                         child: FaIcon(
                                                                                           FontAwesomeIcons.ticketAlt,
                                                                                           color: FlutterFlowTheme.of(context).primary,
@@ -1880,7 +1884,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                     ],
                                                                                   ),
                                                                                   Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(10.0, 4.0, 24.0, 10.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(10.0, 4.0, 24.0, 10.0),
                                                                                     child: Text(
                                                                                       'Ticket: # 32136',
                                                                                       maxLines: 1,
@@ -1896,7 +1900,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 4.0, 24.0, 10.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 4.0, 24.0, 10.0),
                                                                               child: Text(
                                                                                 'CAMBIO DE TECLADO DEL AREA DE PROCESO',
                                                                                 maxLines: 1,
@@ -1913,13 +1917,13 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                               crossAxisAlignment: CrossAxisAlignment.start,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                   child: Column(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           children: [
@@ -1929,7 +1933,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                               size: 24.0,
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                                               child: Text(
                                                                                                 'PEPITO PEREZ LOPEZ',
                                                                                                 style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -1943,7 +1947,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                         ),
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 24.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 24.0, 0.0),
                                                                                         child: Text(
                                                                                           'Creado el  2024-01-01 a las 05:59:55 PM',
                                                                                           style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -1972,7 +1976,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                   ),
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                                                                                   child: Container(
                                                                                     width: 400.0,
                                                                                     decoration: BoxDecoration(
@@ -1991,7 +1995,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                         children: [
                                                                                           FlutterFlowDropDown<String>(
                                                                                             controller: _model.dropDownValueController13 ??= FormFieldController<String>(null),
-                                                                                            options: const [
+                                                                                            options: [
                                                                                               'Baja',
                                                                                               'Media',
                                                                                               'Alta'
@@ -2014,7 +2018,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                             borderColor: Colors.transparent,
                                                                                             borderWidth: 0.0,
                                                                                             borderRadius: 8.0,
-                                                                                            margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                             hidesUnderline: true,
                                                                                             isOverButton: false,
                                                                                             isSearchable: false,
@@ -2022,7 +2026,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                           ),
                                                                                           FlutterFlowDropDown<String>(
                                                                                             controller: _model.dropDownValueController14 ??= FormFieldController<String>(null),
-                                                                                            options: const [
+                                                                                            options: [
                                                                                               'Lenix Pantoja',
                                                                                               'Yazmin Teran',
                                                                                               'Thamara Pantoja Teran'
@@ -2054,7 +2058,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                             borderColor: Colors.transparent,
                                                                                             borderWidth: 0.0,
                                                                                             borderRadius: 8.0,
-                                                                                            margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                             hidesUnderline: true,
                                                                                             isOverButton: false,
                                                                                             isSearchable: true,
@@ -2062,7 +2066,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                           ),
                                                                                           FlutterFlowDropDown<String>(
                                                                                             controller: _model.dropDownValueController15 ??= FormFieldController<String>(null),
-                                                                                            options: const [
+                                                                                            options: [
                                                                                               'Sistemas',
                                                                                               'Mantenimiento',
                                                                                               'Infraestructura'
@@ -2094,7 +2098,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                             borderColor: Colors.transparent,
                                                                                             borderWidth: 0.0,
                                                                                             borderRadius: 8.0,
-                                                                                            margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                             hidesUnderline: true,
                                                                                             isOverButton: false,
                                                                                             isSearchable: true,
@@ -2102,7 +2106,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                           ),
                                                                                           FlutterFlowDropDown<String>(
                                                                                             controller: _model.dropDownValueController16 ??= FormFieldController<String>(null),
-                                                                                            options: const [
+                                                                                            options: [
                                                                                               'Abierto',
                                                                                               'Pendiente',
                                                                                               'Cerrado'
@@ -2135,14 +2139,14 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                             borderColor: Colors.transparent,
                                                                                             borderWidth: 0.0,
                                                                                             borderRadius: 8.0,
-                                                                                            margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                             hidesUnderline: true,
                                                                                             isOverButton: false,
                                                                                             isSearchable: true,
                                                                                             isMultiSelect: false,
                                                                                           ),
                                                                                           Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
                                                                                             child: FFButtonWidget(
                                                                                               onPressed: () async {
                                                                                                 ScaffoldMessenger.of(context).showSnackBar(
@@ -2156,7 +2160,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                                           ),
                                                                                                       textAlign: TextAlign.center,
                                                                                                     ),
-                                                                                                    duration: const Duration(milliseconds: 1650),
+                                                                                                    duration: Duration(milliseconds: 1650),
                                                                                                     backgroundColor: FlutterFlowTheme.of(context).success,
                                                                                                   ),
                                                                                                 );
@@ -2165,8 +2169,8 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                               options: FFButtonOptions(
                                                                                                 width: 170.0,
                                                                                                 height: 40.0,
-                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                                 color: FlutterFlowTheme.of(context).primary,
                                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                       fontFamily: 'Plus Jakarta Sans',
@@ -2174,7 +2178,7 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                                                                       letterSpacing: 0.0,
                                                                                                     ),
                                                                                                 elevation: 2.0,
-                                                                                                borderSide: const BorderSide(
+                                                                                                borderSide: BorderSide(
                                                                                                   color: Colors.transparent,
                                                                                                   width: 1.0,
                                                                                                 ),
@@ -2204,11 +2208,11 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                                               'containerOnPageLoadAnimation']!),
                                                     ),
                                                   ]
-                                                      .divide(const SizedBox(
+                                                      .divide(SizedBox(
                                                           height: 24.0))
-                                                      .addToStart(const SizedBox(
+                                                      .addToStart(SizedBox(
                                                           height: 12.0))
-                                                      .addToEnd(const SizedBox(
+                                                      .addToEnd(SizedBox(
                                                           height: 24.0)),
                                                 ),
                                               ),
@@ -2217,9 +2221,9 @@ class _TicketAdministratorWidgetState extends State<TicketAdministratorWidget>
                                         ),
                                       ),
                                     ]
-                                        .divide(const SizedBox(height: 20.0))
-                                        .addToStart(const SizedBox(height: 20.0))
-                                        .addToEnd(const SizedBox(height: 20.0)),
+                                        .divide(SizedBox(height: 20.0))
+                                        .addToStart(SizedBox(height: 20.0))
+                                        .addToEnd(SizedBox(height: 20.0)),
                                   ),
                                 ),
                               ),
