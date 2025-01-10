@@ -1,3 +1,4 @@
+import '../../../backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -24,7 +25,65 @@ class ModalCreateTicketUserWidget extends StatefulWidget {
 class _ModalCreateTicketUserWidgetState
     extends State<ModalCreateTicketUserWidget> {
   late ModalCreateTicketUserModel _model;
+  List<dynamic> typesList = [];
+  List<dynamic> groupsList = [];
+  List<dynamic> priorityList = [];
 
+
+  String? selectedType;
+  String? selectedGroup;
+  int? idType=0;
+  int? idGroup=0;
+  int? idPriority=0;
+
+
+  Future<void> _fetchTypes() async {
+    try {
+      ApiGetTipoSolicitud apiCall = ApiGetTipoSolicitud();
+      List<dynamic> dataTypes = await apiCall.fetchTypeRequest();
+      // Save in
+      setState(() {
+        typesList = dataTypes;
+        // Get information of content api response
+        
+      });
+    } catch (e) {
+      print("Error al obtener los typos: $e");
+      // Puedes mostrar un mensaje de error en la UI si es necesario.
+    }
+  }
+
+  Future<void> _fetchGroups() async {
+    try {
+      ApiGetGroups apiCall = ApiGetGroups();
+      List<dynamic> dataGroups = await apiCall.fetchGroups();
+      // Save in
+      setState(() {
+        groupsList = dataGroups;
+        // Get information of content api response
+        
+      });
+    } catch (e) {
+      print("Error al obtener los grupos: $e");
+      // Puedes mostrar un mensaje de error en la UI si es necesario.
+    }
+  }
+
+  Future<void> _fetchPriority() async {
+    try {
+      ApiGetPriority apiCall = ApiGetPriority();
+      List<dynamic> dataPriority = await apiCall.fetchPriority();
+      // Save in
+      setState(() {
+        priorityList = dataPriority;
+        // Get information of content api response
+        
+      });
+    } catch (e) {
+      print("Error al obtener los grupos: $e");
+      // Puedes mostrar un mensaje de error en la UI si es necesario.
+    }
+  }
   @override
   void setState(VoidCallback callback) {
     super.setState(callback);
@@ -34,6 +93,11 @@ class _ModalCreateTicketUserWidgetState
   @override
   void initState() {
     super.initState();
+
+    _fetchTypes();
+    _fetchGroups();
+    _fetchPriority();
+
     _model = createModel(context, () => ModalCreateTicketUserModel());
 
     _model.textController1 ??= TextEditingController();
@@ -337,57 +401,46 @@ class _ModalCreateTicketUserWidgetState
                                                     ],
                                                   ),
                                                   FlutterFlowDropDown<String>(
-                                                    controller: _model
-                                                            .dropDownValueController1 ??=
-                                                        FormFieldController<
-                                                            String>(null),
-                                                    options: [
-                                                      'Desarrollo',
-                                                      'Soporte y correctivo',
-                                                      'Option 3'
-                                                    ],
-                                                    onChanged: (val) =>
-                                                        safeSetState(() => _model
-                                                                .dropDownValue1 =
-                                                            val),
+                                                    controller: _model.dropDownValueController1 ??= FormFieldController<String>(null),
+                                                    options: typesList.isEmpty
+                                                        ? ['Cargando...']  // Si los tipos están vacíos, mostrar "Cargando..."
+                                                        : typesList.map<String>((type) => type['Type_ticket_name'] as String).toList(),  // Mostrar los nombres
+                                                    onChanged: (val) {
+                                                      setState(() {
+                                                        selectedType = val;
+                                                      });
+                                                      
+                                                      // Get `id` of types:
+                                                      int? selectedId = typesList.firstWhere((type) => type['Type_ticket_name'] == val)['id'];
+                                                      idType = selectedId; // Assign id at variable
+                                                      print("ID seleccionado: $selectedId");
+                                                    },
                                                     width: 200.0,
                                                     height: 40.0,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    hintText:
-                                                        'Seleccionar item',
+                                                    textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                      fontFamily: 'Plus Jakarta Sans',
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                                    hintText: 'Seleccionar tipo',
                                                     icon: Icon(
-                                                      Icons
-                                                          .keyboard_arrow_down_rounded,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
+                                                      Icons.keyboard_arrow_down_rounded,
+                                                      color: FlutterFlowTheme.of(context).secondaryText,
                                                       size: 24.0,
                                                     ),
-                                                    fillColor: FlutterFlowTheme
-                                                            .of(context)
-                                                        .secondaryBackground,
+                                                    fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                                                     elevation: 2.0,
-                                                    borderColor:
-                                                        Colors.transparent,
+                                                    borderColor: Colors.transparent,
                                                     borderWidth: 0.0,
                                                     borderRadius: 8.0,
-                                                    margin:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(12.0, 0.0,
-                                                                12.0, 0.0),
+                                                    margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: false,
                                                     isSearchable: false,
                                                     isMultiSelect: false,
                                                   ),
+                                                  // Mostrar el tipo seleccionado
+                                                  if (selectedType != null)
+                                                    Text('Tipo seleccionado: $selectedType'),
                                                 ].divide(SizedBox(height: 8.0)),
                                               ),
                                             ),
@@ -425,15 +478,19 @@ class _ModalCreateTicketUserWidgetState
                                                             .dropDownValueController2 ??=
                                                         FormFieldController<
                                                             String>(null),
-                                                    options: [
-                                                      'Sistemas',
-                                                      'Mantenimiento',
-                                                      'Infraestructura'
-                                                    ],
-                                                    onChanged: (val) =>
-                                                        safeSetState(() => _model
-                                                                .dropDownValue2 =
-                                                            val),
+                                                    options: groupsList.isEmpty
+                                                        ? ['Cargando...']  // Si los tipos están vacíos, mostrar "Cargando..."
+                                                        : groupsList.map<String>((type) => type['Name_Group'] as String).toList(),  // Mostrar los nombres
+                                                    onChanged: (val) {
+                                                      setState(() {
+                                                        selectedGroup = val;
+                                                      });
+                                                      
+                                                      // Get `id` of groups:
+                                                      int? selecteGroupdId = groupsList.firstWhere((type) => type['Name_Group'] == val)['Id_Group'];
+                                                      idGroup = selecteGroupdId;
+                                                      print("ID seleccionadoGrupo: $selecteGroupdId");
+                                                    },
                                                     width: 200.0,
                                                     height: 40.0,
                                                     textStyle: FlutterFlowTheme
@@ -445,7 +502,7 @@ class _ModalCreateTicketUserWidgetState
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintText:
-                                                        'Seleccionar item',
+                                                        'Seleccionar prioridad',
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -518,15 +575,19 @@ class _ModalCreateTicketUserWidgetState
                                                             .dropDownValueController3 ??=
                                                         FormFieldController<
                                                             String>(null),
-                                                    options: [
-                                                      'Baja',
-                                                      'Media',
-                                                      'Alta'
-                                                    ],
-                                                    onChanged: (val) =>
-                                                        safeSetState(() => _model
-                                                                .dropDownValue3 =
-                                                            val),
+                                                    options: priorityList.isEmpty
+                                                        ? ['Cargando...']  // Si los tipos están vacíos, mostrar "Cargando..."
+                                                        : priorityList.map<String>((type) => type['Priority_name'] as String).toList(),  // Mostrar los nombres
+                                                    onChanged: (val) {
+                                                      setState(() {
+                                                        selectedType = val;
+                                                      });
+                                                      
+                                                      // Get `id` of prioridad:
+                                                      int? selectedPriodityId = priorityList.firstWhere((type) => type['Priority_name'] == val)['Priority_id'];
+                                                      idPriority = selectedPriodityId;
+                                                      print("ID seleccionadoPrioridad: $selectedPriodityId");
+                                                    },
                                                     width: 200.0,
                                                     height: 40.0,
                                                     textStyle: FlutterFlowTheme
@@ -803,11 +864,20 @@ class _ModalCreateTicketUserWidgetState
                                     Expanded(
                                       child: FFButtonWidget(
                                         onPressed: () async {
+                                          dataUser userData = dataUser();
+                                           _model.apiResultnmd =
+                                              await ServicesBackendGroup.ApiTicket.createTicket(
+                                                pTicketAffair: _model.messageTextFieldTextController.text, 
+                                                pTicketDescription: _model.messageTextFieldTextController.text, 
+                                                pTicketUserContact: userData.idUser, 
+                                                pGroupId: idGroup, 
+                                                pPriorityId: idPriority, 
+                                                pTicketType: idType);
                                           ScaffoldMessenger.of(context)
                                               .showSnackBar(
                                             SnackBar(
                                               content: Text(
-                                                'Tipo de soporte creado correctamente  !',
+                                                'Ticket creado correctamente !',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .titleLarge

@@ -1,3 +1,4 @@
+import '../../backend/api_requests/api_calls.dart';
 import '/components/divider/divider_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -30,11 +31,11 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
     _model = createModel(context, () => LoginPageModel());
 
     _model.emailTextFieldTextController ??=
-        TextEditingController(text: 'demo@email.com');
+        TextEditingController(text: '');
     _model.emailTextFieldFocusNode ??= FocusNode();
 
     _model.passwordTextFieldTextController ??=
-        TextEditingController(text: '111111');
+        TextEditingController(text: '');
     _model.passwordTextFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -990,9 +991,24 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                 .validate()) {
                                                           return;
                                                         }
+                                                        // call to api for access
+                                                        final apiLogin = ApiLoginCall();
+                                                        bool loginExitoso =
+                                                        await apiLogin.call(
+                                                      username: _model
+                                                          .emailTextFieldTextController
+                                                          .text,
+                                                      password: _model
+                                                          .passwordTextFieldTextController
+                                                          .text,
+                                                      );
+                                                      
 
+                                                      if (loginExitoso) {
                                                         context
                                                             .pushNamed('Home');
+                                                      }
+                                                        
                                                       },
                                                       text: 'Login',
                                                       options: FFButtonOptions(

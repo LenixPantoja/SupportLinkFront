@@ -31,12 +31,12 @@ class LoginPageModel extends FlutterFlowModel<LoginPageWidget> {
   String? _emailTextFieldTextControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return 'Este campo es obligatorio';
     }
 
-    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
+    /* if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
       return 'Has to be a valid email address.';
-    }
+    } */
     return null;
   }
 

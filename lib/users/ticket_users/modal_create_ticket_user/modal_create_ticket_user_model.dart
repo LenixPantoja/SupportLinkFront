@@ -1,3 +1,4 @@
+import '../../../backend/api_requests/api_manager.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -37,6 +38,8 @@ class ModalCreateTicketUserModel
   bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));
+
+  ApiCallResponse? apiResultnmd;
 
   @override
   void initState(BuildContext context) {}
