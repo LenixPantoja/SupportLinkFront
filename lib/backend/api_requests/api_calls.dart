@@ -19,6 +19,8 @@ class ServicesBackendGroup {
   static Map<String, String> headers = {};
   static ApiLoginCall ApiLogin = ApiLoginCall();
   static ApiTicketCall ApiTicket = ApiTicketCall();
+  static ApiTicketComment ApiComment = ApiTicketComment();
+
 }
 
 String access_token = "";
@@ -149,7 +151,7 @@ class ApiGetTipoSolicitud {
 
       final http.Response response = await http.get(
         Uri.parse(apiUrl),
-        headers: {'Authorization': 'Bearer $token'},
+        headers: {},
       );
 
       if (response.statusCode == 200) {
@@ -186,7 +188,7 @@ class ApiGetGroups {
 
       final http.Response response = await http.get(
         Uri.parse(apiUrl),
-        headers: {'Authorization': 'Bearer $token'},
+        headers: {},
       );
 
       if (response.statusCode == 200) {
@@ -223,7 +225,7 @@ class ApiGetPriority {
 
       final http.Response response = await http.get(
         Uri.parse(apiUrl),
-        headers: {'Authorization': 'Bearer $token'},
+        headers: {},
       );
 
       if (response.statusCode == 200) {
@@ -268,7 +270,7 @@ class ApiTicketCall{
         "ticket_affair":pTicketAffair,
         "ticket_description":pTicketDescription,
         "ticket_user_contact":pTicketUserContact,
-        "ticket_user_agent":5, // by default is required changed, depends on item creation in backend
+        "ticket_user_agent":1, // by default is required changed, depends on item creation in backend
         "ticket_group":pGroupId,
         "ticket_priority":pPriorityId,
         "ticket_state":1, // by default is required changed, depends on item creation in backend
@@ -326,7 +328,7 @@ class ApiGetTicketsOpenedUser {
 
     try {
       final String apiUrl =
-          '${ServicesBackendGroup.getBaseUrl()}/api/Ticket/tickets_contact/$idUser/?page=$pPage';
+          '${ServicesBackendGroup.getBaseUrl()}/api/Ticket/contact/tickets_opened/$idUser/?page=$pPage';
 
       final http.Response response = await http.get(
         Uri.parse(apiUrl),
@@ -352,7 +354,10 @@ class ApiGetTicketsOpenedUser {
           };
         }
       } else {
-        print("Error HTTP: ${response.statusCode}");
+        print(token);
+        print(idUser);
+
+        print("Error en api tickets opened HTTP: ${response.statusCode}");
         return {
           "count": 0,
           "next": null,
@@ -372,7 +377,185 @@ class ApiGetTicketsOpenedUser {
   }
 }
 
+class ApiGetTicketsPendingUser {
+  Future<Map<String, dynamic>> fetchTicketsPending( int pPage ) async {
+    //get variales 
+    final prefs = await SharedPreferences.getInstance();
+    final token = prefs.getString('access_token') ?? '';
+    final idUser = prefs.getInt('id_user') ?? 0;
 
+    try {
+      final String apiUrl =
+          '${ServicesBackendGroup.getBaseUrl()}/api/Ticket/contact/tickets_pending/$idUser/?page=$pPage';
+
+      final http.Response response = await http.get(
+        Uri.parse(apiUrl),
+        headers: {'Authorization': 'Bearer $token'},
+      );
+
+      if (response.statusCode == 200) {
+        String decodedResponse = utf8.decode(response.bodyBytes);
+        print('Respuesta cruda de la API: $decodedResponse');
+
+        final jsonData = json.decode(decodedResponse);
+
+        if (jsonData is Map<String, dynamic> && jsonData.containsKey('results')) {
+          // Retorna el mapa completo (incluyendo resultados, paginación, etc.)
+          return jsonData;
+        } else {
+          print('Estructura inesperada: $jsonData');
+          return {
+            "count": 0,
+            "next": null,
+            "previous": null,
+            "results": []
+          };
+        }
+      } else {
+        print(token);
+        print(idUser);
+
+        print("Error en api tickets pending contact HTTP: ${response.statusCode}");
+        return {
+          "count": 0,
+          "next": null,
+          "previous": null,
+          "results": []
+        };
+      }
+    } catch (e) {
+      print("Error al procesar la API tickets pending contact: $e");
+      return {
+        "count": 0,
+        "next": null,
+        "previous": null,
+        "results": []
+      };
+    }
+  }
+}
+
+class ApiGetTicketsClosedUser {
+  Future<Map<String, dynamic>> fetchTicketsClosed( int pPage ) async {
+    //get variales 
+    final prefs = await SharedPreferences.getInstance();
+    final token = prefs.getString('access_token') ?? '';
+    final idUser = prefs.getInt('id_user') ?? 0;
+
+    try {
+      final String apiUrl =
+          '${ServicesBackendGroup.getBaseUrl()}/api/Ticket/contact/tickets_closed/$idUser/?page=$pPage';
+
+      final http.Response response = await http.get(
+        Uri.parse(apiUrl),
+        headers: {'Authorization': 'Bearer $token'},
+      );
+
+      if (response.statusCode == 200) {
+        String decodedResponse = utf8.decode(response.bodyBytes);
+        print('Respuesta cruda de la API: $decodedResponse');
+
+        final jsonData = json.decode(decodedResponse);
+
+        if (jsonData is Map<String, dynamic> && jsonData.containsKey('results')) {
+          // Retorna el mapa completo (incluyendo resultados, paginación, etc.)
+          return jsonData;
+        } else {
+          print('Estructura inesperada: $jsonData');
+          return {
+            "count": 0,
+            "next": null,
+            "previous": null,
+            "results": []
+          };
+        }
+      } else {
+        print(token);
+        print(idUser);
+
+        print("Error en api tickets opened contact HTTP: ${response.statusCode}");
+        return {
+          "count": 0,
+          "next": null,
+          "previous": null,
+          "results": []
+        };
+      }
+    } catch (e) {
+      print("Error al procesar la API tickets opened contact: $e");
+      return {
+        "count": 0,
+        "next": null,
+        "previous": null,
+        "results": []
+      };
+    }
+  }
+}
+
+class ApiTicketComment{
+  Future<ApiCallResponse> createAddCommentTicket({
+    required int comment_ticket,
+    //required int comment_user,
+    required String comment_description,
+    //required int pTicketAgentContact, false by default database for users request tickets
+    //required bool is_agent_response,
+    
+  }) async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final token = prefs.getString('access_token') ?? '';
+      final idUser = prefs.getInt('id_user') ?? 0;
+      // Construir el cuerpo de la solicitud
+      final Map<String, dynamic> requestBody = {
+        
+        "comment_ticket": comment_ticket,  
+        "comment_user": idUser, 
+        "comment_description": comment_description, 
+        "is_agent_response": false
+      };
+
+      // Serializar el cuerpo en formato JSON
+      final String ffApiRequestBody = jsonEncode(requestBody);
+
+      // Realizar la llamada a la API
+      final response = await ApiManager.instance.makeApiCall(
+        callName: 'createAddComment',
+        apiUrl:
+            '${ServicesBackendGroup.getBaseUrl()}/api/Ticket/add_comment/',
+        callType: ApiCallType.POST,
+        headers: {
+          'Authorization': 'Bearer $token', // Incluir el token en los headers
+          'Content-Type':
+              'application/json', // Asegurar que el tipo de contenido sea JSON
+        },
+        params: {}, // Si hay parámetros en la URL, aquí se deben añadir
+        body: ffApiRequestBody, // Enviar el cuerpo en formato JSON
+        bodyType: BodyType.JSON,
+        returnBody: true,
+        encodeBodyUtf8: false,
+        decodeUtf8: false,
+        cache: false,
+        alwaysAllowBody: false,
+      );
+
+      // Verificar el estado de la respuesta
+      if (response.statusCode == 201) {
+        print("Comentario creado exitosamente.");
+        return response; // Devuelve la respuesta exitosa
+      } else {
+        // Manejar diferentes códigos de error
+        print(
+            "Error en la API crear commentario. Código de estado: ${response.statusCode}");
+        throw Exception('Error en la API: ${response.statusCode}');
+      }
+    } catch (error) {
+      // Capturar cualquier error en el proceso
+      print("Error al crear el comentariao: $error");
+      rethrow; // Lanza nuevamente el error para manejarlo a otro nivel
+    }
+  }
+}
 
 /// End servicesBackend Group Code
 

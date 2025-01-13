@@ -28,19 +28,42 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
     with TickerProviderStateMixin {
   late TicketsUserModel _model;
 
-  List<dynamic> ticketsList = [];
 
-  int currentPage = 1; // Página actual.
-  bool isLoading = false; // Indicador de carga.
-  bool hasMore = true; // Si hay más páginas para cargar.
-  final ScrollController _scrollController = ScrollController();
+  String numberTextTicket = "";
+  String dateCreatedTicket = "";
+  String hourCreatedTextTicket = "";
+  String affairTextTicket = "";
+  String descriptionTextTicket = "";
+  String nameTextAgentTicket = "";
+  String groupTextTicket = "";
+
+  List<dynamic> ticketsOpenedList = [];
+  List<dynamic> ticketsPendingList = [];
+  List<dynamic> ticketsClosedList = [];
+  
+
+
+  int currentPageOpen = 1; // Página actual.
+  bool isLoadingOpened = false; // Indicador de carga.
+  bool hasMoreOpened = true; // Si hay más páginas para cargar.
+  final ScrollController _scrollControllerOpened = ScrollController();
+
+  int currentPagePending = 1; // Página actual.
+  bool isLoadingPending = false; // Indicador de carga.
+  bool hasMorePending = true; // Si hay más páginas para cargar.
+  final ScrollController _scrollControllerPending = ScrollController();
+
+  int currentPageClosed = 1; // Página actual.
+  bool isLoadingClosed = false; // Indicador de carga.
+  bool hasMoreClosed = true; // Si hay más páginas para cargar.
+  final ScrollController _scrollControllerClosed = ScrollController();
 
 
   Future<void> _fetchTicketsOpenedUser() async {
-    if (isLoading || !hasMore) return;
+    if (isLoadingOpened || !hasMoreOpened) return;
 
     setState(() {
-      isLoading = true;
+      isLoadingOpened = true;
     });
 
     try {
@@ -48,33 +71,96 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
       dataUser userData = dataUser();
 
       // Llama a la API y recibe un mapa con todos los datos
-      final response = await apiCall.fetchTicketsOpened( currentPage );
+      final response = await apiCall.fetchTicketsOpened( currentPageOpen );
 
       // Extrae los resultados
       final List<dynamic> newTickets = response['results'] ?? [];
 
       setState(() {
-        ticketsList.addAll(newTickets); // Agrega los tickets a la lista
-        hasMore = response['next'] != null; // Verifica si hay más páginas
-        currentPage++; // Incrementa la página
+        ticketsOpenedList.addAll(newTickets); // Agrega los tickets a la lista
+        hasMoreOpened = response['next'] != null; // Verifica si hay más páginas
+        currentPageOpen++; // Incrementa la página
       });
     } catch (e) {
       print("Error al cargar los tickets: $e");
     } finally {
       setState(() {
-        isLoading = false;
+        isLoadingOpened = false;
+      });
+    }
+  }
+
+  Future<void> _fetchTicketsPendingUser() async {
+    if (isLoadingPending || !hasMorePending) return;
+
+    setState(() {
+      isLoadingPending = true;
+    });
+
+    try {
+      ApiGetTicketsPendingUser apiCall = ApiGetTicketsPendingUser();
+      dataUser userData = dataUser();
+
+      // Llama a la API y recibe un mapa con todos los datos
+      final response = await apiCall.fetchTicketsPending( currentPagePending );
+
+      // Extrae los resultados
+      final List<dynamic> newTickets = response['results'] ?? [];
+
+      setState(() {
+        ticketsPendingList.addAll(newTickets); // Agrega los tickets a la lista
+        hasMorePending = response['next'] != null; // Verifica si hay más páginas
+        currentPagePending++; // Incrementa la página
+      });
+    } catch (e) {
+      print("Error al cargar los tickets pendentes: $e");
+    } finally {
+      setState(() {
+        isLoadingPending = false;
+      });
+    }
+
+  }
+  void _onScroll() {
+  if (_scrollControllerOpened.position.pixels >=
+          _scrollControllerOpened.position.maxScrollExtent &&
+      !isLoadingOpened) {
+    _fetchTicketsOpenedUser(); // Cargar la siguiente página.
+  }
+}
+
+Future<void> _fetchTicketsClosedUser() async {
+    if (isLoadingClosed || !hasMoreClosed) return;
+
+    setState(() {
+      isLoadingClosed = true;
+    });
+
+    try {
+      ApiGetTicketsClosedUser apiCall = ApiGetTicketsClosedUser();
+      dataUser userData = dataUser();
+
+      // Llama a la API y recibe un mapa con todos los datos
+      final response = await apiCall.fetchTicketsClosed( currentPagePending );
+
+      // Extrae los resultados
+      final List<dynamic> newTickets = response['results'] ?? [];
+
+      setState(() {
+        ticketsClosedList.addAll(newTickets); // Agrega los tickets a la lista
+        hasMoreClosed = response['next'] != null; // Verifica si hay más páginas
+        currentPageClosed++; // Incrementa la página
+      });
+    } catch (e) {
+      print("Error al cargar los tickets closed: $e");
+    } finally {
+      setState(() {
+        isLoadingClosed = false;
       });
     }
 
   }
 
-  void _onScroll() {
-  if (_scrollController.position.pixels >=
-          _scrollController.position.maxScrollExtent &&
-      !isLoading) {
-    _fetchTicketsOpenedUser(); // Cargar la siguiente página.
-  }
-}
 
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -83,12 +169,27 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
   void initState() {
     super.initState();
     _fetchTicketsOpenedUser();
+    _fetchTicketsPendingUser();
+    _fetchTicketsClosedUser();
 
-    _scrollController.addListener(() {
-      if (_scrollController.position.pixels >= _scrollController.position.maxScrollExtent && hasMore && !isLoading) {
+    _scrollControllerOpened.addListener(() {
+      if (_scrollControllerOpened.position.pixels >= _scrollControllerOpened.position.maxScrollExtent && hasMoreOpened && !isLoadingOpened) {
         _fetchTicketsOpenedUser();
       }
     });
+
+    _scrollControllerPending.addListener(() {
+      if (_scrollControllerPending.position.pixels >= _scrollControllerPending.position.maxScrollExtent && hasMorePending && !isLoadingPending) {
+        _fetchTicketsPendingUser();
+      }
+    });
+
+    _scrollControllerClosed.addListener(() {
+      if (_scrollControllerClosed.position.pixels >= _scrollControllerClosed.position.maxScrollExtent && hasMoreClosed && !isLoadingClosed) {
+        _fetchTicketsClosedUser();
+      }
+    });
+
     _model = createModel(context, () => TicketsUserModel());
 
     _model.searchTextFieldTextController ??= TextEditingController();
@@ -241,7 +342,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                     safeSetState(
                                                                         () {}),
                                                                 child:
-                                                                    SubHeaderWidget(
+                                                                    const SubHeaderWidget(
                                                                   title:
                                                                       'Mis solicitudes',
                                                                   showBackBtn:
@@ -503,7 +604,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                           decoration:
                                                               BoxDecoration(),
                                                           child: Container(
-                                                            height: 200.0,
+                                                            height: 400.0,
                                                             child: Column(
                                                               children: [
                                                                 Align(
@@ -573,304 +674,197 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
-                                                                            24.0),
-                                                                        
-                                                                            
-                                                                          
-                                                                              
-  child: ListView.builder(
-    itemCount: ticketsList.length,
-    itemBuilder: (context, index) {
-      final ticket = ticketsList[index];
+                                                                            24.0), 
+                                                                        child: ListView.builder(
+                                                                          controller: _scrollControllerOpened,
+                                                                          itemCount: ticketsOpenedList.length,
+                                                                          itemBuilder: (context, index) {
+                                                                            final ticket = ticketsOpenedList[index];
 
-      return GestureDetector(
-        onTap: () {
-          print("Contenido del ticket: $ticket");
-        },
-         child: Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12.0),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Ticket ID: #${ticket['id']}",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16.0,
-                      ),
-                    ),
-                    SizedBox(height: 8.0),
-                    Text(
-                      "Asunto: ${ticket['ticket_affair']}",
-                      style: TextStyle(fontSize: 14.0),
-                    ),
-                    SizedBox(height: 4.0),
-                    Text(
-                      "Prioridad: ${ticket['ticket_priority']}",
-                      style: TextStyle(fontSize: 12.0, color: Colors.grey),
-                    ),
-                    SizedBox(height: 4.0),
-                    Text(
-                      "Estado: ${ticket['ticket_state']}",
-                      style: TextStyle(fontSize: 12.0, color: Colors.grey),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-      );
-    },
-  ),
+                                                                            return GestureDetector(
+                                                                              onTap: () {
+                                                                                setState(() {
+                                                                                numberTextTicket = ticket['id'].toString();
+                                                                                affairTextTicket = ticket['ticket_affair'];
+                                                                                nameTextAgentTicket = ticket['ticket_user_agent'];
+                                                                                groupTextTicket = ticket['ticket_group'];
+                                                                                _model.txtDescriptionTicketTextController.text = ticket['ticket_description'];
+                                                                                dateCreatedTicket = ticket['ticket_date_created_at'];
+                                                                                hourCreatedTextTicket = ticket['ticket_hour_created_at'];
+                                                                                });
+                                                                                
+                                                                                print("Contenido del ticket: $ticket");
+                                                                              },
+                                                                              child: Card(
+                                                                                    shape: RoundedRectangleBorder(
+                                                                                      borderRadius: BorderRadius.circular(12.0),
+                                                                                    ),
+                                                                                    child: Padding(
+                                                                                      padding: const EdgeInsets.all(16.0),
+                                                                                      child: Column(
+                                                                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                        children: [
+                                                                                          Text(
+                                                                                            "Ticket ID: #${ticket['id']}",
+                                                                                            style: TextStyle(
+                                                                                              fontWeight: FontWeight.bold,
+                                                                                              fontSize: 16.0,
+                                                                                            ),
+                                                                                          ),
+                                                                                          SizedBox(height: 8.0),
+                                                                                          Text(
+                                                                                            "Asunto: ${ticket['ticket_affair']}",
+                                                                                            style: TextStyle(fontSize: 14.0),
+                                                                                          ),
+                                                                                          SizedBox(height: 4.0),
+                                                                                          Text(
+                                                                                            "Prioridad: ${ticket['ticket_priority']}",
+                                                                                            style: TextStyle(fontSize: 12.0, color: Colors.grey),
+                                                                                          ),
+                                                                                          SizedBox(height: 4.0),
+                                                                                          Text(
+                                                                                            "Estado: ${ticket['ticket_state']}",
+                                                                                            style: TextStyle(fontSize: 12.0, color: Colors.grey),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                            );
+                                                                          },
+                                                                        ),
 
     
                                                                         
                                                                       ),
-                                                                      Container(
-                                                                        width:
-                                                                            100.0,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryBackground,
-                                                                        ),
-                                                                        child:
-                                                                            ListView(
-                                                                          padding:
-                                                                              EdgeInsets.zero,
-                                                                          shrinkWrap:
-                                                                              true,
-                                                                          scrollDirection:
-                                                                              Axis.vertical,
-                                                                          children: [
-                                                                            Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                              child: Container(
-                                                                                width: double.infinity,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                  borderRadius: BorderRadius.circular(12.0),
-                                                                                  border: Border.all(
-                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 1.0,
-                                                                                  ),
-                                                                                ),
-                                                                                child: Card(
-                                                                                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                  elevation: 5.0,
-                                                                                  shape: RoundedRectangleBorder(
-                                                                                    borderRadius: BorderRadius.circular(8.0),
-                                                                                  ),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                    children: [
-                                                                                      Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 0.0, 0.0),
-                                                                                        child: Text(
-                                                                                          'Ticket : #23551',
-                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: 'Plus Jakarta Sans',
-                                                                                                color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FontWeight.bold,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ),
-                                                                                      Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
-                                                                                        child: Container(
-                                                                                          width: double.infinity,
-                                                                                          child: TextFormField(
-                                                                                            controller: _model.txtAffairPendingTextController,
-                                                                                            focusNode: _model.txtAffairPendingFocusNode,
-                                                                                            autofocus: false,
-                                                                                            readOnly: true,
-                                                                                            obscureText: false,
-                                                                                            decoration: InputDecoration(
-                                                                                              isDense: true,
-                                                                                              labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                    fontFamily: 'Plus Jakarta Sans',
-                                                                                                    letterSpacing: 0.0,
-                                                                                                  ),
-                                                                                              hintText: 'Asunto del ticketAsunto del ticketAsunto del ticketAsunto del ticket',
-                                                                                              hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                    fontFamily: 'Plus Jakarta Sans',
-                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                  ),
-                                                                                              enabledBorder: OutlineInputBorder(
-                                                                                                borderSide: BorderSide(
-                                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                                  width: 1.0,
-                                                                                                ),
-                                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                                              ),
-                                                                                              focusedBorder: OutlineInputBorder(
-                                                                                                borderSide: BorderSide(
-                                                                                                  color: Color(0x00000000),
-                                                                                                  width: 1.0,
-                                                                                                ),
-                                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                                              ),
-                                                                                              errorBorder: OutlineInputBorder(
-                                                                                                borderSide: BorderSide(
-                                                                                                  color: FlutterFlowTheme.of(context).error,
-                                                                                                  width: 1.0,
-                                                                                                ),
-                                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                                              ),
-                                                                                              focusedErrorBorder: OutlineInputBorder(
-                                                                                                borderSide: BorderSide(
-                                                                                                  color: FlutterFlowTheme.of(context).error,
-                                                                                                  width: 1.0,
-                                                                                                ),
-                                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                                              ),
-                                                                                              filled: true,
-                                                                                              fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                                                                        Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            24.0), 
+                                                                        child: ListView.builder(
+                                                                          controller: _scrollControllerOpened,
+                                                                          itemCount: ticketsPendingList.length,
+                                                                          itemBuilder: (context, index) {
+                                                                            final ticket = ticketsPendingList[index];
+
+                                                                            return GestureDetector(
+                                                                              onTap: () {
+                                                                                setState(() {
+                                                                                numberTextTicket = ticket['id'].toString();
+                                                                                affairTextTicket = ticket['ticket_affair'];
+                                                                                nameTextAgentTicket = ticket['ticket_user_agent'];
+                                                                                groupTextTicket = ticket['ticket_group'];
+                                                                                _model.txtDescriptionTicketTextController.text = ticket['ticket_description'];
+                                                                                dateCreatedTicket = ticket['ticket_date_created_at'];
+                                                                                hourCreatedTextTicket = ticket['ticket_hour_created_at'];
+                                                                                });
+                                                                                
+                                                                                print("Contenido del ticket: $ticket");
+                                                                              },
+                                                                              child: Card(
+                                                                                    shape: RoundedRectangleBorder(
+                                                                                      borderRadius: BorderRadius.circular(12.0),
+                                                                                    ),
+                                                                                    child: Padding(
+                                                                                      padding: const EdgeInsets.all(16.0),
+                                                                                      child: Column(
+                                                                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                        children: [
+                                                                                          Text(
+                                                                                            "Ticket ID: #${ticket['id']}",
+                                                                                            style: TextStyle(
+                                                                                              fontWeight: FontWeight.bold,
+                                                                                              fontSize: 16.0,
                                                                                             ),
-                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: 'Plus Jakarta Sans',
-                                                                                                  letterSpacing: 0.0,
-                                                                                                ),
-                                                                                            cursorColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                            validator: _model.txtAffairPendingTextControllerValidator.asValidator(context),
                                                                                           ),
-                                                                                        ),
+                                                                                          SizedBox(height: 8.0),
+                                                                                          Text(
+                                                                                            "Asunto: ${ticket['ticket_affair']}",
+                                                                                            style: TextStyle(fontSize: 14.0),
+                                                                                          ),
+                                                                                          SizedBox(height: 4.0),
+                                                                                          Text(
+                                                                                            "Prioridad: ${ticket['ticket_priority']}",
+                                                                                            style: TextStyle(fontSize: 12.0, color: Colors.grey),
+                                                                                          ),
+                                                                                          SizedBox(height: 4.0),
+                                                                                          Text(
+                                                                                            "Estado: ${ticket['ticket_state']}",
+                                                                                            style: TextStyle(fontSize: 12.0, color: Colors.grey),
+                                                                                          ),
+                                                                                        ],
                                                                                       ),
-                                                                                    ],
+                                                                                    ),
                                                                                   ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                          ],
+                                                                            );
+                                                                          },
                                                                         ),
                                                                       ),
-                                                                      Container(
-                                                                        width:
-                                                                            100.0,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryBackground,
-                                                                        ),
-                                                                        child:
-                                                                            ListView(
-                                                                          padding:
-                                                                              EdgeInsets.zero,
-                                                                          shrinkWrap:
-                                                                              true,
-                                                                          scrollDirection:
-                                                                              Axis.vertical,
-                                                                          children: [
-                                                                            Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                              child: Container(
-                                                                                width: double.infinity,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                  borderRadius: BorderRadius.circular(12.0),
-                                                                                  border: Border.all(
-                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 1.0,
-                                                                                  ),
-                                                                                ),
-                                                                                child: Card(
-                                                                                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                  elevation: 5.0,
-                                                                                  shape: RoundedRectangleBorder(
-                                                                                    borderRadius: BorderRadius.circular(8.0),
-                                                                                  ),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                    children: [
-                                                                                      Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 0.0, 0.0),
-                                                                                        child: Text(
-                                                                                          'Ticket : #23551',
-                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: 'Plus Jakarta Sans',
-                                                                                                color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FontWeight.bold,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ),
-                                                                                      Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
-                                                                                        child: Container(
-                                                                                          width: double.infinity,
-                                                                                          child: TextFormField(
-                                                                                            controller: _model.txtAffairClosedTicketTextController,
-                                                                                            focusNode: _model.txtAffairClosedTicketFocusNode,
-                                                                                            autofocus: false,
-                                                                                            readOnly: true,
-                                                                                            obscureText: false,
-                                                                                            decoration: InputDecoration(
-                                                                                              isDense: true,
-                                                                                              labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                    fontFamily: 'Plus Jakarta Sans',
-                                                                                                    letterSpacing: 0.0,
-                                                                                                  ),
-                                                                                              hintText: 'Asunto del ticketAsunto del ticketAsunto del ticketAsunto del ticket',
-                                                                                              hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                    fontFamily: 'Plus Jakarta Sans',
-                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                  ),
-                                                                                              enabledBorder: OutlineInputBorder(
-                                                                                                borderSide: BorderSide(
-                                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                                  width: 1.0,
-                                                                                                ),
-                                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                                              ),
-                                                                                              focusedBorder: OutlineInputBorder(
-                                                                                                borderSide: BorderSide(
-                                                                                                  color: Color(0x00000000),
-                                                                                                  width: 1.0,
-                                                                                                ),
-                                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                                              ),
-                                                                                              errorBorder: OutlineInputBorder(
-                                                                                                borderSide: BorderSide(
-                                                                                                  color: FlutterFlowTheme.of(context).error,
-                                                                                                  width: 1.0,
-                                                                                                ),
-                                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                                              ),
-                                                                                              focusedErrorBorder: OutlineInputBorder(
-                                                                                                borderSide: BorderSide(
-                                                                                                  color: FlutterFlowTheme.of(context).error,
-                                                                                                  width: 1.0,
-                                                                                                ),
-                                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                                              ),
-                                                                                              filled: true,
-                                                                                              fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                                                                      Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            24.0), 
+                                                                        child: ListView.builder(
+                                                                          controller: _scrollControllerClosed,
+                                                                          itemCount: ticketsClosedList.length,
+                                                                          itemBuilder: (context, index) {
+                                                                            final ticket = ticketsClosedList[index];
+
+                                                                            return GestureDetector(
+                                                                              onTap: () {
+                                                                                setState(() {
+                                                                                numberTextTicket = ticket['id'].toString();
+                                                                                affairTextTicket = ticket['ticket_affair'];
+                                                                                nameTextAgentTicket = ticket['ticket_user_agent'];
+                                                                                groupTextTicket = ticket['ticket_group'];
+                                                                                _model.txtDescriptionTicketTextController.text = ticket['ticket_description'];
+                                                                                dateCreatedTicket = ticket['ticket_date_created_at'];
+                                                                                hourCreatedTextTicket = ticket['ticket_hour_created_at'];
+                                                                                });
+                                                                                
+                                                                                print("Contenido del ticket: $ticket");
+                                                                              },
+                                                                              child: Card(
+                                                                                    shape: RoundedRectangleBorder(
+                                                                                      borderRadius: BorderRadius.circular(12.0),
+                                                                                    ),
+                                                                                    child: Padding(
+                                                                                      padding: const EdgeInsets.all(16.0),
+                                                                                      child: Column(
+                                                                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                        children: [
+                                                                                          Text(
+                                                                                            "Ticket ID: #${ticket['id']}",
+                                                                                            style: TextStyle(
+                                                                                              fontWeight: FontWeight.bold,
+                                                                                              fontSize: 16.0,
                                                                                             ),
-                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: 'Plus Jakarta Sans',
-                                                                                                  letterSpacing: 0.0,
-                                                                                                ),
-                                                                                            cursorColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                            validator: _model.txtAffairClosedTicketTextControllerValidator.asValidator(context),
                                                                                           ),
-                                                                                        ),
+                                                                                          SizedBox(height: 8.0),
+                                                                                          Text(
+                                                                                            "Asunto: ${ticket['ticket_affair']}",
+                                                                                            style: TextStyle(fontSize: 14.0),
+                                                                                          ),
+                                                                                          SizedBox(height: 4.0),
+                                                                                          Text(
+                                                                                            "Prioridad: ${ticket['ticket_priority']}",
+                                                                                            style: TextStyle(fontSize: 12.0, color: Colors.grey),
+                                                                                          ),
+                                                                                          SizedBox(height: 4.0),
+                                                                                          Text(
+                                                                                            "Estado: ${ticket['ticket_state']}",
+                                                                                            style: TextStyle(fontSize: 12.0, color: Colors.grey),
+                                                                                          ),
+                                                                                        ],
                                                                                       ),
-                                                                                    ],
+                                                                                    ),
                                                                                   ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                          ],
+                                                                            );
+                                                                          },
                                                                         ),
                                                                       ),
                                                                     ],
@@ -1036,7 +1030,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                 children: [
                                                                                   Text(
-                                                                                    'Cameron Williamson',
+                                                                                    '$nameTextAgentTicket',
                                                                                     maxLines: 2,
                                                                                     style: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                           fontFamily: 'Plus Jakarta Sans',
@@ -1081,74 +1075,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                             crossAxisAlignment:
                                                                                 CrossAxisAlignment.start,
                                                                             children: [
-                                                                              Container(
-                                                                                width: double.infinity,
-                                                                                child: TextFormField(
-                                                                                  controller: _model.txtPrioritysTextController,
-                                                                                  focusNode: _model.txtPrioritysFocusNode,
-                                                                                  autofocus: false,
-                                                                                  readOnly: true,
-                                                                                  obscureText: false,
-                                                                                  decoration: InputDecoration(
-                                                                                    isDense: true,
-                                                                                    labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
-                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                          letterSpacing: 0.0,
-                                                                                        ),
-                                                                                    hintText: 'Priodidad: - -',
-                                                                                    hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
-                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                          fontSize: 12.0,
-                                                                                          letterSpacing: 0.0,
-                                                                                        ),
-                                                                                    enabledBorder: OutlineInputBorder(
-                                                                                      borderSide: BorderSide(
-                                                                                        color: Color(0x00000000),
-                                                                                        width: 1.0,
-                                                                                      ),
-                                                                                      borderRadius: BorderRadius.circular(8.0),
-                                                                                    ),
-                                                                                    focusedBorder: OutlineInputBorder(
-                                                                                      borderSide: BorderSide(
-                                                                                        color: Color(0x00000000),
-                                                                                        width: 1.0,
-                                                                                      ),
-                                                                                      borderRadius: BorderRadius.circular(8.0),
-                                                                                    ),
-                                                                                    errorBorder: OutlineInputBorder(
-                                                                                      borderSide: BorderSide(
-                                                                                        color: FlutterFlowTheme.of(context).error,
-                                                                                        width: 1.0,
-                                                                                      ),
-                                                                                      borderRadius: BorderRadius.circular(8.0),
-                                                                                    ),
-                                                                                    focusedErrorBorder: OutlineInputBorder(
-                                                                                      borderSide: BorderSide(
-                                                                                        color: FlutterFlowTheme.of(context).error,
-                                                                                        width: 1.0,
-                                                                                      ),
-                                                                                      borderRadius: BorderRadius.circular(8.0),
-                                                                                    ),
-                                                                                    filled: true,
-                                                                                    fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    prefixIcon: Icon(
-                                                                                      Icons.scatter_plot,
-                                                                                      color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                    ),
-                                                                                  ),
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
-                                                                                        color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                        fontSize: 14.0,
-                                                                                        letterSpacing: 0.0,
-                                                                                      ),
-                                                                                  cursorColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                  validator: _model.txtPrioritysTextControllerValidator.asValidator(context),
-                                                                                ),
-                                                                              ),
-                                                                              Container(
+                                                                                Container(
                                                                                 width: double.infinity,
                                                                                 child: TextFormField(
                                                                                   controller: _model.txtGroupTextController,
@@ -1163,7 +1090,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                           color: FlutterFlowTheme.of(context).secondaryText,
                                                                                           letterSpacing: 0.0,
                                                                                         ),
-                                                                                    hintText: 'Grupo: - -',
+                                                                                    hintText: 'Grupo: $groupTextTicket',
                                                                                     hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                           fontFamily: 'Plus Jakarta Sans',
                                                                                           color: FlutterFlowTheme.of(context).secondaryText,
@@ -1214,72 +1141,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                   validator: _model.txtGroupTextControllerValidator.asValidator(context),
                                                                                 ),
                                                                               ),
-                                                                              Container(
-                                                                                width: double.infinity,
-                                                                                child: TextFormField(
-                                                                                  controller: _model.txtTypeTextController,
-                                                                                  focusNode: _model.txtTypeFocusNode,
-                                                                                  autofocus: false,
-                                                                                  readOnly: true,
-                                                                                  obscureText: false,
-                                                                                  decoration: InputDecoration(
-                                                                                    isDense: true,
-                                                                                    labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
-                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                          letterSpacing: 0.0,
-                                                                                        ),
-                                                                                    hintText: 'Tipo: - -',
-                                                                                    hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                          fontFamily: 'Plus Jakarta Sans',
-                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                          fontSize: 12.0,
-                                                                                          letterSpacing: 0.0,
-                                                                                        ),
-                                                                                    enabledBorder: OutlineInputBorder(
-                                                                                      borderSide: BorderSide(
-                                                                                        color: Color(0x00000000),
-                                                                                        width: 1.0,
-                                                                                      ),
-                                                                                      borderRadius: BorderRadius.circular(8.0),
-                                                                                    ),
-                                                                                    focusedBorder: OutlineInputBorder(
-                                                                                      borderSide: BorderSide(
-                                                                                        color: Color(0x00000000),
-                                                                                        width: 1.0,
-                                                                                      ),
-                                                                                      borderRadius: BorderRadius.circular(8.0),
-                                                                                    ),
-                                                                                    errorBorder: OutlineInputBorder(
-                                                                                      borderSide: BorderSide(
-                                                                                        color: FlutterFlowTheme.of(context).error,
-                                                                                        width: 1.0,
-                                                                                      ),
-                                                                                      borderRadius: BorderRadius.circular(8.0),
-                                                                                    ),
-                                                                                    focusedErrorBorder: OutlineInputBorder(
-                                                                                      borderSide: BorderSide(
-                                                                                        color: FlutterFlowTheme.of(context).error,
-                                                                                        width: 1.0,
-                                                                                      ),
-                                                                                      borderRadius: BorderRadius.circular(8.0),
-                                                                                    ),
-                                                                                    filled: true,
-                                                                                    fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    prefixIcon: Icon(
-                                                                                      Icons.all_out_outlined,
-                                                                                      color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                    ),
-                                                                                  ),
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Plus Jakarta Sans',
-                                                                                        color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                        letterSpacing: 0.0,
-                                                                                      ),
-                                                                                  cursorColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                  validator: _model.txtTypeTextControllerValidator.asValidator(context),
-                                                                                ),
-                                                                              ),
+                                                                              
                                                                             ],
                                                                           ),
                                                                         ),
@@ -1295,7 +1157,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                       Flexible(
                                                                         child:
                                                                             Text(
-                                                                          'Ticket: #23548',
+                                                                          'Ticket: #$numberTextTicket',
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .titleLarge
                                                                               .override(
@@ -1415,7 +1277,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                             color: Colors.transparent,
                                                                                                             child: ListTile(
                                                                                                               title: Text(
-                                                                                                                'Asunto del ticket o solicitud',
+                                                                                                                'Asunto: $affairTextTicket',
                                                                                                                 style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                                                       fontFamily: 'Plus Jakarta Sans',
                                                                                                                       fontSize: 15.0,
@@ -1423,7 +1285,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                                     ),
                                                                                                               ),
                                                                                                               subtitle: Text(
-                                                                                                                'Creado el : 2025-01-04 a las: 05:50:00 PM',
+                                                                                                                'Creado el : $dateCreatedTicket a las: $hourCreatedTextTicket',
                                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                       fontFamily: 'Plus Jakarta Sans',
                                                                                                                       color: FlutterFlowTheme.of(context).neutral500,
@@ -1467,7 +1329,7 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                                                 letterSpacing: 0.0,
                                                                                                               ),
-                                                                                                          hintText: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+                                                                                                          hintText: 'Descripcion del ticket',
                                                                                                           hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                                                 fontSize: 12.0,
@@ -1994,10 +1856,11 @@ class _TicketsUserWidgetState extends State<TicketsUserWidget>
                                                                         .primaryBackground,
                                                                     size: 16.0,
                                                                   ),
-                                                                  onPressed:
-                                                                      () {
-                                                                    print(
-                                                                        'IconButton pressed ...');
+                                                                  onPressed  :
+                                                                      () async{
+                                                                    _model.apiResultnmd = await ServicesBackendGroup.ApiComment.createAddCommentTicket(
+                                                                      comment_ticket: int.parse(numberTextTicket),
+                                                                      comment_description: _model.messageTextFieldTextController.text);
                                                                   },
                                                                 ),
                                                               ].divide(SizedBox(

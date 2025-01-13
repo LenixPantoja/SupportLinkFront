@@ -1,3 +1,4 @@
+import '../../../backend/api_requests/api_manager.dart';
 import '/components/divider/divider_widget.dart';
 import '/components/heade_user/heade_user_widget.dart';
 import '/components/sub_header/sub_header_widget.dart';
@@ -87,6 +88,8 @@ class TicketsUserModel extends FlutterFlowModel<TicketsUserWidget> {
       messageTextFieldTextControllerValidator;
   bool isDataUploading = false;
   List<FFUploadedFile> uploadedLocalFiles = [];
+
+  ApiCallResponse? apiResultnmd;
 
   @override
   void initState(BuildContext context) {

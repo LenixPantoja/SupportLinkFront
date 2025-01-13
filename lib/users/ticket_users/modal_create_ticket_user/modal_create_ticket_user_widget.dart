@@ -867,7 +867,7 @@ class _ModalCreateTicketUserWidgetState
                                           dataUser userData = dataUser();
                                            _model.apiResultnmd =
                                               await ServicesBackendGroup.ApiTicket.createTicket(
-                                                pTicketAffair: _model.messageTextFieldTextController.text, 
+                                                pTicketAffair: _model.textController1.text, 
                                                 pTicketDescription: _model.messageTextFieldTextController.text, 
                                                 pTicketUserContact: userData.idUser, 
                                                 pGroupId: idGroup, 
