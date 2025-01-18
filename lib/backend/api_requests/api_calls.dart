@@ -547,6 +547,8 @@ class ApiTicketComment{
         // Manejar diferentes códigos de error
         print(
             "Error en la API crear commentario. Código de estado: ${response.statusCode}");
+        print(
+            "Error en la API crear commentario. Código de estado: ${response.jsonBody}");
         throw Exception('Error en la API: ${response.statusCode}');
       }
     } catch (error) {

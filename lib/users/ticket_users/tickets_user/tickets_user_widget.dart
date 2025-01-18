@@ -1265,7 +1265,7 @@ Future<void> _fetchTicketsClosedUser() async {
                                                                                                       FaIcon(
                                                                                                         FontAwesomeIcons.ticketAlt,
                                                                                                         color: FlutterFlowTheme.of(context).primary,
-                                                                                                        size: 40.0,
+                                                                                                        size: 20.0,
                                                                                                       ),
                                                                                                       Expanded(
                                                                                                         child: Container(
@@ -1784,51 +1784,34 @@ Future<void> _fetchTicketsClosedUser() async {
                                                                             size:
                                                                                 20.0,
                                                                           ),
-                                                                          onPressed:
-                                                                              () async {
-                                                                            final selectedFiles =
-                                                                                await selectFiles(
-                                                                              multiFile: true,
-                                                                            );
-                                                                            if (selectedFiles !=
-                                                                                null) {
-                                                                              safeSetState(() => _model.isDataUploading = true);
-                                                                              var selectedUploadedFiles = <FFUploadedFile>[];
+                                                                          onPressed: () async {
+                                                                                    final selectedFiles = await selectFiles(
+                                                                                      multiFile: false,
+                                                                                    );
+                                                                                    if (selectedFiles != null) {
+                                                                                      safeSetState(() => _model.isDataUploading = true);
+                                                                                      var selectedUploadedFiles = <FFUploadedFile>[];
 
-                                                                              try {
-                                                                                showUploadMessage(
-                                                                                  context,
-                                                                                  'Uploading file...',
-                                                                                  showLoading: true,
-                                                                                );
-                                                                                selectedUploadedFiles = selectedFiles
-                                                                                    .map((m) => FFUploadedFile(
-                                                                                          name: m.storagePath.split('/').last,
-                                                                                          bytes: m.bytes,
-                                                                                        ))
-                                                                                    .toList();
-                                                                              } finally {
-                                                                                ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                                                                                _model.isDataUploading = false;
-                                                                              }
-                                                                              if (selectedUploadedFiles.length == selectedFiles.length) {
-                                                                                safeSetState(() {
-                                                                                  _model.uploadedLocalFiles = selectedUploadedFiles;
-                                                                                });
-                                                                                showUploadMessage(
-                                                                                  context,
-                                                                                  'Success!',
-                                                                                );
-                                                                              } else {
-                                                                                safeSetState(() {});
-                                                                                showUploadMessage(
-                                                                                  context,
-                                                                                  'Failed to upload file',
-                                                                                );
-                                                                                return;
-                                                                              }
-                                                                            }
-                                                                          },
+                                                                                      try {
+                                                                                        selectedUploadedFiles = selectedFiles
+                                                                                            .map((m) => FFUploadedFile(
+                                                                                                  name: m.storagePath.split('/').last,
+                                                                                                  bytes: m.bytes,
+                                                                                                ))
+                                                                                            .toList();
+                                                                                      } finally {
+                                                                                        _model.isDataUploading = false;
+                                                                                      }
+                                                                                      if (selectedUploadedFiles.length == selectedFiles.length) {
+                                                                                        safeSetState(() {
+                                                                                          _model.uploadedLocalFile = selectedUploadedFiles.first;
+                                                                                        });
+                                                                                      } else {
+                                                                                        safeSetState(() {});
+                                                                                        return;
+                                                                                      }
+                                                                                    }
+                                                                                  },
                                                                         ),
                                                                       ].divide(SizedBox(
                                                                               width: 16.0)),
@@ -1856,12 +1839,55 @@ Future<void> _fetchTicketsClosedUser() async {
                                                                         .primaryBackground,
                                                                     size: 16.0,
                                                                   ),
-                                                                  onPressed  :
-                                                                      () async{
+                                                                  onPressed: () async {
+  // Verificar que el campo de texto no esté vacío
+                                                                  if (_model.messageTextFieldTextController.text.isEmpty) {
+                                                                    ScaffoldMessenger.of(context).showSnackBar(
+                                                                      SnackBar(
+                                                                        content: Text(
+                                                                          'Por favor, ingresa un comentario.',
+                                                                          style: FlutterFlowTheme.of(context).titleLarge.override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                color: FlutterFlowTheme.of(context).white0,
+                                                                              ),
+                                                                        ),
+                                                                        backgroundColor: FlutterFlowTheme.of(context).error,
+                                                                        duration: Duration(milliseconds: 3000),
+                                                                      ),
+                                                                    );
+                                                                    return;
+                                                                  }else{
                                                                     _model.apiResultnmd = await ServicesBackendGroup.ApiComment.createAddCommentTicket(
-                                                                      comment_ticket: int.parse(numberTextTicket),
-                                                                      comment_description: _model.messageTextFieldTextController.text);
-                                                                  },
+                                                                      comment_ticket: int.parse(numberTextTicket), // ID del ticket
+                                                                      comment_description: _model.messageTextFieldTextController.text,
+                                                                    );
+                                                                  }
+                                                                  ScaffoldMessenger.of(context)
+                                                                    .showSnackBar(
+                                                                  SnackBar(
+                                                                    content: Text(
+                                                                      'Comentario creado correctamente !',
+                                                                      style:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleLarge
+                                                                              .override(
+                                                                                fontFamily:
+                                                                                    'Plus Jakarta Sans',
+                                                                                color: FlutterFlowTheme
+                                                                                        .of(context)
+                                                                                    .white0,
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                    ),
+                                                                    duration:
+                                                                        Duration(milliseconds: 3000),
+                                                                    backgroundColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .success,
+                                                                  ),
+                                                                );
+                                                                }
+
                                                                 ),
                                                               ].divide(SizedBox(
                                                                   width: 16.0)),

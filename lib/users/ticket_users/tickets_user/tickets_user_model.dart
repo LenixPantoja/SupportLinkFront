@@ -87,7 +87,8 @@ class TicketsUserModel extends FlutterFlowModel<TicketsUserWidget> {
   String? Function(BuildContext, String?)?
       messageTextFieldTextControllerValidator;
   bool isDataUploading = false;
-  List<FFUploadedFile> uploadedLocalFiles = [];
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
 
   ApiCallResponse? apiResultnmd;
 

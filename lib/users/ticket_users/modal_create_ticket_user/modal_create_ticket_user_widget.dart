@@ -13,6 +13,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'modal_create_ticket_user_model.dart';
 export 'modal_create_ticket_user_model.dart';
+import 'package:http/http.dart' as http;
+
 
 class ModalCreateTicketUserWidget extends StatefulWidget {
   const ModalCreateTicketUserWidget({super.key});
@@ -28,6 +30,8 @@ class _ModalCreateTicketUserWidgetState
   List<dynamic> typesList = [];
   List<dynamic> groupsList = [];
   List<dynamic> priorityList = [];
+
+  List<FFUploadedFile> uploadedFiles = [];
 
 
   String? selectedType;
@@ -773,68 +777,41 @@ class _ModalCreateTicketUserWidgetState
                                                                     ),
                                                                   ),
                                                                   FlutterFlowIconButton(
-                                                                    borderColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    borderRadius:
-                                                                        20.0,
-                                                                    borderWidth:
-                                                                        1.0,
-                                                                    buttonSize:
-                                                                        40.0,
-                                                                    icon: Icon(
-                                                                      Icons
-                                                                          .attach_file,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .neutral500,
-                                                                      size:
-                                                                          20.0,
-                                                                    ),
-                                                                    onPressed:
-                                                                        () async {
-                                                                      final selectedFiles =
-                                                                          await selectFiles(
-                                                                        allowedExtensions: [
-                                                                          'pdf'
-                                                                        ],
-                                                                        multiFile:
-                                                                            false,
-                                                                      );
-                                                                      if (selectedFiles !=
-                                                                          null) {
-                                                                        safeSetState(() =>
-                                                                            _model.isDataUploading =
-                                                                                true);
-                                                                        var selectedUploadedFiles =
-                                                                            <FFUploadedFile>[];
-
-                                                                        try {
-                                                                          selectedUploadedFiles = selectedFiles
-                                                                              .map((m) => FFUploadedFile(
-                                                                                    name: m.storagePath.split('/').last,
-                                                                                    bytes: m.bytes,
-                                                                                  ))
-                                                                              .toList();
-                                                                        } finally {
-                                                                          _model.isDataUploading =
-                                                                              false;
-                                                                        }
-                                                                        if (selectedUploadedFiles.length ==
-                                                                            selectedFiles.length) {
-                                                                          safeSetState(
-                                                                              () {
-                                                                            _model.uploadedLocalFile =
-                                                                                selectedUploadedFiles.first;
-                                                                          });
-                                                                        } else {
-                                                                          safeSetState(
-                                                                              () {});
-                                                                          return;
-                                                                        }
-                                                                      }
-                                                                    },
-                                                                  ),
+  borderColor: Colors.transparent,
+  borderRadius: 20.0,
+  borderWidth: 1.0,
+  buttonSize: 40.0,
+  icon: Icon(
+    Icons.attach_file,
+    color: FlutterFlowTheme.of(context).neutral500,
+    size: 20.0,
+  ),
+  onPressed: () async {
+    final selectedFiles = await selectFiles(
+      multiFile: true, // Habilitar selección de múltiples archivos
+    );
+    if (selectedFiles != null) {
+      safeSetState(() => _model.isDataUploading = true);
+      try {
+        uploadedFiles.addAll(
+          selectedFiles.map((file) => FFUploadedFile(
+                name: file.storagePath.split('/').last,
+                bytes: file.bytes,
+              )),
+        );
+        // Muestra un mensaje de éxito
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text("Archivos cargados correctamente."),
+            duration: Duration(milliseconds: 1500),
+          ),
+        );
+      } finally {
+        safeSetState(() => _model.isDataUploading = false);
+      }
+    }
+  },
+),
                                                                 ].divide(SizedBox(
                                                                     width:
                                                                         16.0)),
@@ -857,83 +834,106 @@ class _ModalCreateTicketUserWidgetState
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsets.all(20.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Expanded(
-                                      child: FFButtonWidget(
-                                        onPressed: () async {
-                                          dataUser userData = dataUser();
-                                           _model.apiResultnmd =
-                                              await ServicesBackendGroup.ApiTicket.createTicket(
-                                                pTicketAffair: _model.textController1.text, 
-                                                pTicketDescription: _model.messageTextFieldTextController.text, 
-                                                pTicketUserContact: userData.idUser, 
-                                                pGroupId: idGroup, 
-                                                pPriorityId: idPriority, 
-                                                pTicketType: idType);
-                                          ScaffoldMessenger.of(context)
-                                              .showSnackBar(
-                                            SnackBar(
-                                              content: Text(
-                                                'Ticket creado correctamente !',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleLarge
-                                                        .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .white0,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                              duration:
-                                                  Duration(milliseconds: 3000),
-                                              backgroundColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .success,
-                                            ),
-                                          );
-                                          Navigator.pop(context);
-                                        },
-                                        text: 'Guardar',
-                                        options: FFButtonOptions(
-                                          width: 250.0,
-                                          height: 50.0,
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  24.0, 13.0, 24.0, 13.0),
-                                          iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .titleLarge
-                                              .override(
-                                                fontFamily: 'Plus Jakarta Sans',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                letterSpacing: 0.0,
-                                              ),
-                                          elevation: 0.0,
-                                          borderSide: BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+  padding: EdgeInsets.all(20.0),
+  child: Row(
+    mainAxisSize: MainAxisSize.max,
+    children: [
+      Expanded(
+        child: FFButtonWidget(
+          onPressed: () async {
+            dataUser userData = dataUser();
+            
+            // Crear un objeto de multipart request
+            var uri = Uri.parse(
+                '${ServicesBackendGroup.getBaseUrl()}/api/Ticket/tickets/');
+            var request = http.MultipartRequest('POST', uri);
+            int id_agent_default=2;
+            // Agregar datos del ticket
+            request.fields.addAll({
+              "ticket_affair": _model.textController1.text,
+              "ticket_description": _model.messageTextFieldTextController.text,
+              "ticket_user_contact": userData.idUser.toString(),
+              "ticket_user_agent": id_agent_default.toString(),
+              "ticket_group": idGroup.toString(),
+              "ticket_priority": idPriority.toString(),
+              "ticket_state": "1", // Por defecto en estado abierto
+              "ticket_type": idType.toString(),
+            });
+
+            // Agregar archivos adjuntos
+            for (var file in uploadedFiles) {
+              request.files.add(http.MultipartFile.fromBytes(
+                'files', // Nombre del campo en la API
+                file.bytes!,
+                filename: file.name,
+              ));
+            }
+
+            // Enviar la solicitud
+            var response = await request.send();
+
+            // Leer y decodificar la respuesta
+            final responseString = await response.stream.bytesToString();
+            print('Respuesta del servidor: $responseString');
+
+            // Manejar la respuesta
+            if (response.statusCode == 201) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    'Ticket creado correctamente con archivos adjuntos!',
+                    style: FlutterFlowTheme.of(context)
+                        .titleLarge
+                        .override(
+                          fontFamily: 'Plus Jakarta Sans',
+                          color: FlutterFlowTheme.of(context).white0,
+                        ),
+                  ),
+                  duration: Duration(milliseconds: 3000),
+                  backgroundColor: FlutterFlowTheme.of(context).success,
+                ),
+              );
+              Navigator.pop(context); // Cerrar la pantalla
+            } else {
+              print('Error: ${response.statusCode}');
+              print('Detalles del error: $responseString'); // Mostrar detalles del error
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text('Error al crear el ticket.'),
+                  backgroundColor: Colors.red,
+                ),
+              );
+            }
+          },
+          text: 'Guardar',
+          options: FFButtonOptions(
+            width: 250.0,
+            height: 50.0,
+            padding:
+                EdgeInsetsDirectional.fromSTEB(24.0, 13.0, 24.0, 13.0),
+            iconPadding:
+                EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+            color: FlutterFlowTheme.of(context).primary,
+            textStyle: FlutterFlowTheme.of(context)
+                .titleLarge
+                .override(
+                  fontFamily: 'Plus Jakarta Sans',
+                  color: FlutterFlowTheme.of(context).primaryBackground,
+                  letterSpacing: 0.0,
+                ),
+            elevation: 0.0,
+            borderSide: BorderSide(
+              color: Colors.transparent,
+              width: 1.0,
+            ),
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+        ),
+      ),
+    ],
+  ),
+),
+
                             ],
                           ),
                         ),
